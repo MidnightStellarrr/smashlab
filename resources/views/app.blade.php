@@ -1,22 +1,100 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmashLab</title>
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        <!-- Scripts -->
-        @routes
-        @viteReactRefresh
-        @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+</head>
+<body>
+
+<header class="hero">
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <img src="images/logo.png" class="logo" alt="Logo">
+
+            <ul class="nav-links">
+                <li><a href="#">Book Now</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="nav-right">
+
+            <button class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="login-btn">
+                Login
+            </button>
+
+            <button class="signup-btn">
+                Sign up
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Content -->
+
+    <div class="hero-content">
+
+        <div class="left-content">
+
+            <h1>
+                Let the Smashing <br>
+                Begin
+            </h1>
+
+        </div>
+
+        <div class="right-content">
+
+            <p>
+                Feel the rush of the game, the
+                energy of the crowd, and the thrill
+                of every smash.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="learn-btn">
+                    Learn more
+                </a>
+
+                <a href="#" class="book-btn">
+                    Book now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+</body>
 </html>
