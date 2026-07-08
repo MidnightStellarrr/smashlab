@@ -96,5 +96,73 @@
 
 </header>
 
+<!-- Announcement Bar -->
+
+<section class="announcement-bar">
+
+    <div class="announcement-track">
+
+        <div class="announcement-content">
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+        </div>
+
+        <!-- Duplicate for seamless looping -->
+
+        <div class="announcement-content">
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+            <span class="dot"></span>
+            <span>Level up your game</span>
+
+        </div>
+
+    </div>
+
+</section>
+
 </body>
 </html>
