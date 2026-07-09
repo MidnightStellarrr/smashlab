@@ -497,6 +497,36 @@
 
 </section>
 
+<!-- Statistics -->
+
+<section class="stats">
+
+    <div class="stats-container">
+
+        <div class="stat-item">
+            <h3>500+</h3>
+            <p>Active Members</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>10</h3>
+            <p>Pro Coaches</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>2,000+</h3>
+            <p>Monthly Bookings</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>4.5</h3>
+            <p>Avg. Rating</p>
+        </div>
+
+    </div>
+
+</section>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
