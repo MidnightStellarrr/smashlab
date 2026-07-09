@@ -349,6 +349,154 @@
 
 </section>
 
+<!-- What We Offer -->
+
+<section class="what-we-offer">
+
+    <div class="owo-top">
+
+        <div class="owo-left">
+            <span class="owo-badge">What We Offer</span>
+            <h2>THE SMASH LAB <br> EXPERIENCE</h2>
+        </div>
+
+        <div class="owo-right">
+            <p>
+                Everything you need for the perfect game. From
+                finding an open court to renting a racket and grabbing
+                a drink. We handle it all.
+            </p>
+
+            <button class="owo-arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="offer-cards">
+
+        <div class="offer-card court-card">
+            <div class="card-overlay blue-overlay"></div>
+            <div class="card-content">
+                <h3>Premium Courts</h3>
+                <p>
+                    Well-maintained courts with professional
+                    flooring, tournament-grade dimensions,
+                    premium lighting, and real-time online
+                    booking for a seamless playing experience.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card class-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Pro Classes</h3>
+                <p>
+                    Learn from certified coaches — beginners to
+                    advanced.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card gear-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Gears and Snacks</h3>
+                <p>
+                    Gears and snacks available for purchase.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card booking-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Smart Booking</h3>
+                <p>
+                    Book, manage, and track everything from
+                    your dashboard.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Train Like a Pro -->
+
+<section class="train-pro">
+
+    <div class="section-heading">
+        <h2>Train Like a Pro</h2>
+        <p>
+            Book your spot and start training with Smash Lab's certified coaches
+            today.
+        </p>
+    </div>
+
+    <div class="train-cards">
+
+        <div class="train-card beginner-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Beginner Class.</h3>
+                    <p>
+                        Perfect for first-timers. Learn basic
+                        strokes, footwork, and game rules
+                        in a supportive group setting.
+                    </p>
+                </div>
+
+                <button class="learn-more-btn">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="train-card intermediate-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Intermediate Class.</h3>
+                    <p>
+                        Refine your techniques and learn
+                        smarter plays. Perfect for players
+                        ready to compete.
+                    </p>
+                </div>
+
+                <button class="learn-more-btn">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="train-card advanced-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Advanced Class.</h3>
+                    <p>
+                        Train like a champion. Master the
+                        techniques and tactics used by
+                        professional players.
+                    </p>
+                </div>
+
+                <button class="learn-more-btn">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 

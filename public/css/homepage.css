@@ -779,3 +779,475 @@ th {
         font-size: 12px;
     }
 }
+
+/* ============================================
+   WHAT WE OFFER SECTION
+   ============================================ */
+
+.what-we-offer {
+    position: relative;
+    width: 100%;
+    padding: 50px 90px 60px;
+    background: linear-gradient(135deg, #050814 0%, #0a1030 30%, #16327d 70%, #1f47d8 100%);
+    overflow: hidden;
+}
+
+/* ── Top Row: Heading + Description ── */
+
+.owo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.owo-left {
+    max-width: 60%;
+}
+
+.owo-badge {
+    display: inline-block;
+    padding: 10px 26px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 26px;
+}
+
+.owo-left h2 {
+    color: #fff;
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+}
+
+.owo-right {
+    display: flex;
+    flex-direction: column;     /* ← Stack items vertically */
+    align-items: flex-end;      /* ← Align to the right */
+    gap: 20px;                  /* ← Space between text and button */
+    max-width: 460px;
+}
+
+.owo-right p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: right;
+    margin: 0;                  /* ← Remove default margin */
+}
+
+.owo-arrow-btn {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.owo-arrow-btn:hover {
+    background: #fff;
+    color: #16327d;
+    transform: translateX(4px);
+}
+
+/* ── Cards Grid ── */
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.offer-card {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.offer-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.offer-card .card-overlay.blue-overlay {
+    background: rgba(31, 71, 216, 0.35);
+}
+
+.offer-card .card-overlay.grey-overlay {
+    background: rgba(20, 20, 20, 0.45);
+}
+
+.offer-card .card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.offer-card .card-content.bottom {
+    justify-content: flex-end;
+}
+
+.offer-card .card-content h3 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.offer-card .card-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 320px;
+}
+
+/* ── Individual Card Backgrounds ── */
+
+.court-card {
+    background-image: url("../images/badminton_courts.jpg");
+}
+
+.class-card {
+    background-image: url("../images/badminton_class.jpg");
+}
+
+.gear-card {
+    background-image: url("../images/gear_and_shop.jpg");
+}
+
+.booking-card {
+    background-image: url("../images/smart_booking.png");
+}
+
+/* ============================================
+   RESPONSIVE (WHAT WE OFFER)
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .what-we-offer {
+        padding: 70px 40px 80px;
+    }
+
+    .owo-left h2 {
+        font-size: 44px;
+    }
+
+    .offer-cards {
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .offer-card {
+        min-height: 420px;
+    }
+
+    .offer-card .card-content h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    .owo-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .owo-left {
+        max-width: 100%;
+    }
+
+    .owo-right {
+        max-width: 100%;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .owo-right p {
+        text-align: left;
+    }
+
+    .offer-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .offer-card {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .what-we-offer {
+        padding: 60px 20px 60px;
+    }
+
+    .owo-left h2 {
+        font-size: 32px;
+    }
+
+    .offer-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card {
+        min-height: 280px;
+    }
+
+    .offer-card .card-content {
+        padding: 28px;
+    }
+}
+
+/* ============================================
+   TRAIN LIKE A PRO SECTION
+   ============================================ */
+
+.train-pro {
+    width: 100%;
+    padding: 100px 90px 110px;
+    background: #fff;
+    text-align: center;
+}
+
+.train-pro .section-heading h2 {
+    font-size: 58px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 14px;
+}
+
+.train-pro .section-heading p {
+    font-size: 18px;
+    color: #555;
+    max-width: 560px;
+    margin: 0 auto 60px;
+    line-height: 1.5;
+}
+
+/* ── Cards Row ── */
+
+.train-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.train-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ── Lift Effect on Hover ── */
+
+.train-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.train-card-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.train-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(128, 128, 128, 0.6);  /* ← Gray overlay */
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* ── Blur Effect on Background Image ── */
+
+.train-card-img {
+    filter: blur(0px);
+    transition: filter 0.4s ease;
+}
+
+/* ── On Hover: Remove Gray Overlay and Blur ── */
+
+.train-card:hover .train-card-img::after {
+    opacity: 0;                 /* ← Gray disappears */
+}
+
+.train-card:hover .train-card-img {
+    filter: blur(0px);          /* ← Optional: remove blur on hover */
+}
+
+/* ── If you want blur on the image itself ── */
+
+.train-card-img .bg-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);          /* ← Blur the background image */
+    transition: filter 0.4s ease;
+}
+
+.train-card:hover .train-card-img .bg-image {
+    filter: blur(0px);          /* ← Remove blur on hover */
+}
+
+.beginner-card .train-card-img {
+    background-image: url("../images/beginner_class.jpg");
+}
+
+.intermediate-card .train-card-img {
+    background-image: url("../images/intermediate_class.jpg");
+}
+
+.advanced-card .train-card-img {
+    background-image: url("../images/advance_class.jpg");
+}
+
+.train-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 30px 32px;
+}
+
+.train-card-body h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.train-card-body p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+/* ── Learn More Button ── */
+
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 14px 26px;
+    margin-top: 26px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn i {
+    font-size: 13px;
+}
+
+.learn-more-btn:hover {
+    background: #1f47d8;
+}
+
+.learn-more-btn:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   RESPONSIVE (TRAIN LIKE A PRO)
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .train-pro {
+        padding: 80px 40px 90px;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 44px;
+    }
+
+    .train-card-img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    .train-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .train-pro .section-heading p {
+        font-size: 16px;
+    }
+
+    .train-card-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .train-pro {
+        padding: 60px 20px 70px;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .train-card-body {
+        padding: 22px 22px 26px;
+    }
+
+    .train-card-body h3 {
+        font-size: 22px;
+    }
+
+    .learn-more-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
