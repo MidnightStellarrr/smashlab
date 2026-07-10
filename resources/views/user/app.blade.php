@@ -32,11 +32,11 @@
             <img src="images/logo.png" class="logo" alt="Logo">
 
             <ul class="nav-links">
-                <li><a href="#">Book Now</a></li>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ url('/book_now') }}">Book Now</a></li>
+                <li><a href="{{ url('/classes') }}">Classes</a></li>
+                <li><a href="{{ url('/shop') }}">Shop</a></li>
+                <li><a href="{{ url('/about_us') }}">About Us</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
 
         </div>
@@ -83,11 +83,11 @@
 
             <div class="buttons">
 
-                <a href="#" class="learn-btn">
+                <a href="{{ url('/services') }}" class="learn-btn">
                     Learn more
                 </a>
 
-                <a href="#" class="book-btn">
+                <a href="{{ url('/book_now') }}" class="book-btn">
                     Book now
                 </a>
 
@@ -346,7 +346,7 @@
 
     </div>
 
-    <a href="#" class="book-now-btn">
+    <a href="{{ url('/book_now') }}" class="book-now-btn">
         + Book now
     </a>
 
@@ -370,9 +370,9 @@
                 a drink. We handle it all.
             </p>
 
-            <button class="owo-arrow-btn">
+            <a class="owo-arrow-btn" href="{{ url('/services') }}">
                 <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            </a>
         </div>
 
     </div>
@@ -454,9 +454,9 @@
                     </p>
                 </div>
 
-                <button class="learn-more-btn">
+                <a class="learn-more-btn" href="{{ url('/classes/beginner_class') }}">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -472,9 +472,9 @@
                     </p>
                 </div>
 
-                <button class="learn-more-btn">
+                <a class="learn-more-btn" href="{{ url('/classes/intermediate_class') }}">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -490,9 +490,9 @@
                     </p>
                 </div>
 
-                <button class="learn-more-btn">
+                <a class="learn-more-btn" href="{{ url('/classes/advanced_class') }}">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -689,7 +689,7 @@
             play at Smash Lab.
         </p>
 
-        <a href="#" class="ready-btn">
+        <a href="{{ url('/book_now') }}" class="ready-btn">
             Get Started Now
         </a>
 
@@ -719,11 +719,11 @@
 
             <div class="footer-socials">
 
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@smashlab" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/smashlab" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
 
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/smashlab" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 
             </div>
 
@@ -744,47 +744,30 @@
         </div>
 
         <!-- MAIN -->
-
         <div class="footer-links">
-
             <h4>MAIN</h4>
-
             <ul>
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">Book now</a></li>
-
-                <li><a href="#">Classes</a></li>
-
-                <li><a href="#">Shop</a></li>
-
-                <li><a href="#">About Us</a></li>
-
+                <li><a href="{{ url('/app') }}">Home</a></li>
+                <li><a href="{{ url('/book_now') }}">Book now</a></li>
+                <li><a href="{{ url('/classes') }}">Classes</a></li>
+                <li><a href="{{ url('/shop') }}">Shop</a></li>
+                <li><a href="{{ url('/about_us') }}">About Us</a></li>
             </ul>
-
         </div>
 
         <!-- SUPPORT -->
 
         <div class="footer-links">
-
             <h4>SUPPORT</h4>
-
             <ul>
-
-                <li><a href="#">Contact</a></li>
-
-                <li><a href="#">FAQ</a></li>
-
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
+                <li><a href="{{ url('/services') }}">FAQ</a></li>
             </ul>
-
         </div>
 
         <!-- RIGHT -->
 
         <div class="footer-newsletter">
-
             <input
                 type="email"
                 placeholder="Enter e-mail address"
