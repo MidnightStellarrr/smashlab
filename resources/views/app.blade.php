@@ -12,6 +12,9 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
 </head>
 <body>
@@ -527,6 +530,151 @@
 
 </section>
 
+<!-- Testimonials -->
+<section class="testimonials">
+
+    <div class="testimonial-header">
+        <span>Testimonials</span>
+        <h2>What Our Players Say</h2>
+    </div>
+
+    <div class="testimonial-wrapper">
+
+        <button class="testimonial-prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="swiper testimonialSwiper">
+
+            <div class="swiper-wrapper">
+
+                <!-- SLIDE 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p>
+                            The courts are world-class and the community
+                            is incredible. I've improved so much since
+                            joining Smash Lab. The coaches really care
+                            about your progress and the booking system
+                            makes everything so convenient.
+                        </p>
+                        <div class="author">
+                            <div class="avatar"></div>
+                            <div>
+                                <h4>John Doe</h4>
+                                <span>Active Member — 2 Years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p>
+                            Booking is so easy now. I play twice a week
+                            without any hassle. The dashboard tells me
+                            exactly which courts are free. No more calling
+                            the front desk or guessing.
+                        </p>
+                        <div class="author">
+                            <div class="avatar"></div>
+                            <div>
+                                <h4>Carlo Villanueva</h4>
+                                <span>Class Student — 1 Year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p>
+                            Coach Sarah transformed my game completely.
+                            I went from intermediate to advanced in just
+                            three months. Her attention to detail pushed
+                            me further than I ever imagined.
+                        </p>
+                        <div class="author">
+                            <div class="avatar"></div>
+                            <div>
+                                <h4>Juan Dela Cruz</h4>
+                                <span>Advanced Class — 6 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p>
+                            The booking process is seamless and the
+                            facilities are excellent. I highly recommend
+                            Smash Lab to anyone looking to improve their
+                            badminton skills.
+                        </p>
+                        <div class="author">
+                            <div class="avatar"></div>
+                            <div>
+                                <h4>Maria Santos</h4>
+                                <span>Premium Member</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p>
+                            Smash Lab is the best place to train. The
+                            coaches are experienced, the courts are
+                            top-notch, and the community is very
+                            welcoming. Highly recommended!
+                        </p>
+                        <div class="author">
+                            <div class="avatar"></div>
+                            <div>
+                                <h4>Mark Rivera</h4>
+                                <span>Competitive Player — 1 Year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="testimonial-next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -599,6 +747,65 @@
         });
 
     });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const testimonialSwiper = new Swiper(".testimonialSwiper", {
+
+        /* ── General ── */
+        loop: true,
+        centeredSlides: true,
+        grabCursor: true,
+        speed: 800,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+
+        /* ── Slides ── */
+        slidesPerView: 1,
+        spaceBetween: 0,
+
+        /* ── Navigation ── */
+        navigation: {
+            nextEl: ".testimonial-next",
+            prevEl: ".testimonial-prev",
+        },
+
+        /* ── Pagination ── */
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+
+        /* ── Responsive ── */
+        breakpoints: {
+
+            640: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 0,
+            },
+
+            768: {
+                slidesPerView: 2,
+                centeredSlides: true,
+                spaceBetween: 0,
+            },
+
+            1024: {
+                slidesPerView: 3,
+                centeredSlides: true,
+                spaceBetween: 0,
+            }
+
+        }
+
+    });
+
+});
 </script>
 
 </body>
