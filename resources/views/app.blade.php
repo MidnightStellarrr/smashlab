@@ -675,6 +675,28 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- Ready To Play CTA Section -->
+<section class="ready-section">
+
+    <div class="ready-overlay"></div>
+
+    <div class="ready-content">
+
+        <h2>Ready to Smash?</h2>
+
+        <p>
+            Join thousands of players who book, train, <br>and
+            play at Smash Lab.
+        </p>
+
+        <a href="#" class="ready-btn">
+            Get Started Now
+        </a>
+
+    </div>
+
+</section>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
