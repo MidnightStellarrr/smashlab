@@ -172,5 +172,11 @@
         </iframe>
     </div>
 </section>
+
+<!-- ===========================
+        FOOTER
+============================ -->
+@include('user.partials.footer')
+
 </body>
 </html>
