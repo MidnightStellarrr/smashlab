@@ -747,7 +747,7 @@
         <div class="footer-links">
             <h4>MAIN</h4>
             <ul>
-                <li><a href="{{ url('/app') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/book_now') }}">Book now</a></li>
                 <li><a href="{{ url('/classes') }}">Classes</a></li>
                 <li><a href="{{ url('/shop') }}">Shop</a></li>
