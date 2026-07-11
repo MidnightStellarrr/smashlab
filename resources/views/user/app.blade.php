@@ -15,7 +15,7 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user/homepage.css') }}">
 </head>
 <body>
 
@@ -32,6 +32,7 @@
             <img src="images/logo.png" class="logo" alt="Logo">
 
             <ul class="nav-links">
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/book_now') }}">Book Now</a></li>
                 <li><a href="{{ url('/classes') }}">Classes</a></li>
                 <li><a href="{{ url('/shop') }}">Shop</a></li>

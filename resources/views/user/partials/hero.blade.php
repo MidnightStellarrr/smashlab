@@ -1,12 +1,11 @@
-<!-- navbar -->
-@include('user.partials.navbar')
+<link rel="stylesheet" href="{{ asset('css/user/partials/hero.css') }}">
 
 <!-- Hero Content -->
-<section class="contact-hero">
+<section class="hero-section">
 
-    <div class="contact-overlay"></div>
+    <div class="hero-overlay"></div>
 
-    <div class="contact-hero-content">
+    <div class="hero-content">
 
         <h1>{{ $mainHeading ?? 'Main headline' }}</h1>
 

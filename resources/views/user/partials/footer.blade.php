@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/user/partials/footer.css') }}">
+
 <footer class="footer">
 
     <div class="footer-container">
