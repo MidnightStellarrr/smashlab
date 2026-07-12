@@ -25,110 +25,129 @@
         'subHeading' => 'Where passion meets the court — and every player finds their game.'
     ])
 
-<!-- ==========================
-        OUR STORY
-=========================== -->
-
-<section class="our-story">
-
-    <div class="story-container">
-
-        <!-- Left Side -->
-
-        <div class="story-side">
-
-            <p>About us.</p>
-            <p>Our Team.</p>
-            <p>Values.</p>
-
-        </div>
-
-        <!-- Right Side -->
-
-        <div class="story-content">
-
-            <h2>Our Story.</h2>
-
-            <p>
-                SmashHIT started with a simple observation:
-                booking a badminton court was harder than it
-                needed to be. Players had to call ahead hoping
-                a slot was available or show up only to find
-                all courts taken. Gym-goers faced the same
-                frustration — expensive memberships, long
-                contracts, and confusing policies.
-                We knew there had to be a better way.
-
-                So we built SmashHIT: a facility where you
-                can book a court in under a minute, pay
-                online, and just show up to play.
-                No phone calls. No guesswork. No hassle.
-            </p>
-
-            <br>
-
-            <p>
-                Today SmashHIT has grown into more than just
-                a badminton facility. We now offer a fully-equipped
-                gym designed for all skill levels and regular
-                tournaments for players who want to compete.
-
-                Our core belief hasn't changed:
-                fitness should be simple, affordable,
-                and built around you.
-
-                Whether you're booking your first court
-                or your hundredth, we're here to make every
-                experience smooth from start to finish.
-
-                That's our promise.
-
-                That's SmashHIT.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
     <!-- ========================================
-            SECTION 3: MISSION & VALUES
+            SECTION 2: OUR STORY
     ======================================== -->
 
-    <section class="mission-section">
+    <section class="our-story">
 
-        <div class="mission-container">
+        <div class="story-container">
 
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fa-solid fa-bullseye"></i>
-                </div>
-                <h3>Our Mission</h3>
+            <!-- Left Side -->
+
+            <div class="story-side">
+
+                <p>About us.</p>
+                <p>Our Team.</p>
+                <p>Values.</p>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="story-content">
+
+                <h2>Our Story.</h2>
+
                 <p>
-                    To make badminton accessible, enjoyable, and seamless for every player.
+                    SmashHIT started with a simple observation:
+                    booking a badminton court was harder than it
+                    needed to be. Players had to call ahead hoping
+                    a slot was available or show up only to find
+                    all courts taken. Gym-goers faced the same
+                    frustration — expensive memberships, long
+                    contracts, and confusing policies.
+                    We knew there had to be a better way.
+
+                    So we built SmashHIT: a facility where you
+                    can book a court in under a minute, pay
+                    online, and just show up to play.
+                    No phone calls. No guesswork. No hassle.
+                </p>
+
+                <br>
+
+                <p>
+                    Today SmashHIT has grown into more than just
+                    a badminton facility. We now offer a fully-equipped
+                    gym designed for all skill levels and regular
+                    tournaments for players who want to compete.
+
+                    Our core belief hasn't changed:
+                    fitness should be simple, affordable,
+                    and built around you.
+
+                    Whether you're booking your first court
+                    or your hundredth, we're here to make every
+                    experience smooth from start to finish.
+
+                    That's our promise.
+
+                    That's SmashHIT.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================
+            SECTION 3: MISSION & VISION
+    ======================================== -->
+
+    <section class="mission-vision">
+
+        <!-- MISSION ROW -->
+
+        <div class="mission-row">
+
+            <div class="mission-text">
+                <h2>Our Mission</h2>
+                <p>
+                    Our mission is to make fitness simple,
+                    affordable, and accessible for everyone.
+                    We remove the barriers that keep people from
+                    staying active—no hidden fees, no complicated
+                    booking systems, and no long-term contracts.
+
+                    Every service we offer is built around giving
+                    our members the freedom to exercise on their
+                    schedule while creating a welcoming environment
+                    where everyone feels encouraged to grow.
+
+                    Because staying active should never feel like
+                    a chore or a financial burden.
                 </p>
             </div>
 
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <h3>Our Vision</h3>
-                <p>
-                    To be the premier badminton destination where champions are made and
-                    communities are built.
-                </p>
+            <div class="mission-image">
+                <img src="/images/about_us_mission.jpg" alt="Our Mission">
             </div>
 
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-                <h3>Our Values</h3>
+        </div>
+
+        <!-- VISION ROW -->
+
+        <div class="vision-row">
+
+            <div class="vision-image">
+                <img src="/images/about_us_vision.jpg" alt="Our Vision">
+            </div>
+
+            <div class="vision-text">
+                <h2>Our Vision</h2>
                 <p>
-                    Excellence, Community, Innovation, and Integrity — these are the
-                    pillars that guide everything we do.
+                    Our vision is to become the leading destination
+                    for badminton and fitness where players of every
+                    age and skill level feel welcomed, inspired, and
+                    empowered.
+
+                    We strive to build a community where beginners
+                    find confidence, experienced players continue to
+                    improve, and every member enjoys a modern facility
+                    designed to make fitness and recreation part of
+                    everyday life.
                 </p>
             </div>
 
@@ -245,38 +264,6 @@
     </section>
 
     <!-- ========================================
-            SECTION 7: STATISTICS
-    ======================================== -->
-
-    <section class="stats-section">
-
-        <div class="stats-container">
-
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Active Members</p>
-            </div>
-
-            <div class="stat-item">
-                <h3>10</h3>
-                <p>Pro Coaches</p>
-            </div>
-
-            <div class="stat-item">
-                <h3>2,000+</h3>
-                <p>Monthly Bookings</p>
-            </div>
-
-            <div class="stat-item">
-                <h3>4.5</h3>
-                <p>Avg. Rating</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================================
             SECTION 6: MEET OUR COACHES
     ======================================== -->
 
@@ -334,6 +321,38 @@
                     </div>
                 </div>
 
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================
+            SECTION 7: STATISTICS
+    ======================================== -->
+
+    <section class="stats-section">
+
+        <div class="stats-container">
+
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Active Members</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>10</h3>
+                <p>Pro Coaches</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>2,000+</h3>
+                <p>Monthly Bookings</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>4.5</h3>
+                <p>Avg. Rating</p>
             </div>
 
         </div>

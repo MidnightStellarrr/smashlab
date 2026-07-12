@@ -2,213 +2,120 @@
         OUR STORY
 =====================================*/
 
-.our-story{
-
-    padding:140px 8%;
-
-    background:#fff;
-
+.our-story {
+    padding: 140px 8%;
+    background: #fff;
 }
 
-.story-container{
-
-    max-width:1400px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:220px 1fr;
-
-    gap:90px;
-
-    align-items:flex-start;
-
-}
-
-/* Left */
-
-.story-side{
-
-    padding-top:165px;
-
-}
-
-.story-side p{
-
-    font-size:20px;
-
-    font-weight:500;
-
-    color:#2f2f2f;
-
-    line-height:1.25;
-
-    margin:0;
-
-}
-
-/* Right */
-
-.story-content{
-    margin-left: 90px;
-}
-
-.story-content h2{
-
-    font-size:64px;
-
-    font-weight:700;
-
-    color:#000;
-
-    margin-bottom:45px;
-
-    line-height:1;
-
-}
-
-.story-content p{
-
-    font-size:16px;
-
-    line-height:1.8;
-
-    color:#333;
-
-    max-width:900px;
-
-    text-align:justify;
-
-}
-
-/* Responsive */
-
-@media(max-width:992px){
-
-    .story-container{
-
-        grid-template-columns:1fr;
-
-        gap:50px;
-
-    }
-
-    .story-side{
-
-        padding-top:0;
-
-        display:flex;
-
-        gap:30px;
-
-        flex-wrap:wrap;
-
-    }
-
-    .story-content h2{
-
-        font-size:60px;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    .our-story{
-
-        padding:80px 30px;
-
-    }
-
-    .story-content h2{
-
-        font-size:46px;
-
-    }
-
-    .story-side{
-
-        justify-content:center;
-
-        text-align:center;
-
-    }
-
-    .story-side p{
-
-        font-size:22px;
-
-    }
-
-    .story-content p{
-
-        font-size:17px;
-
-        line-height:1.7;
-
-    }
-
-}
-
-/*============================================
-    SECTION 3: MISSION & VALUES
-============================================*/
-
-.mission-section {
-    padding: 80px 8%;
-    background: #f5f6f8;
-}
-
-.mission-container {
+.story-container {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: 220px 1fr;
+    gap: 90px;
+    align-items: flex-start;
 }
 
-.mission-card {
+/* Left */
+.story-side {
+    padding-top: 165px;
+}
+
+.story-side p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #2f2f2f;
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* Right */
+.story-content {
+    margin-left: 90px;
+}
+
+.story-content h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 45px;
+    line-height: 1;
+}
+
+.story-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 900px;
+    text-align: justify;
+}
+
+/*======================================
+        MISSION & VISION
+======================================*/
+
+.mission-vision {
+    padding: 120px 8%;
     background: #fff;
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.3s ease;
 }
 
-.mission-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-.mission-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: rgba(23, 58, 141, 0.1);
-    display: flex;
+.mission-row,
+.vision-row {
+    max-width: 1350px;
+    margin: 0 auto 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: center;
+}
+
+.vision-row {
+    margin-bottom: 0;
+}
+
+/* ── Text ── */
+
+.mission-text,
+.vision-text {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 0 auto 18px;
 }
 
-.mission-icon i {
-    font-size: 28px;
-    color: #173A8D;
-}
-
-.mission-card h3 {
-    font-size: 22px;
+.mission-text h2,
+.vision-text h2 {
+    font-size: 64px;
     font-weight: 700;
     color: #111;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
+    line-height: 1;
 }
 
-.mission-card p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
+.mission-text p,
+.vision-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    max-width: 600px;
+}
+
+/* ── Image ── */
+
+.mission-image,
+.vision-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-image img,
+.vision-image img {
+    width: 100%;
+    max-width: 550px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 /*============================================
@@ -632,53 +539,73 @@
 ============================================*/
 
 @media (max-width: 1200px) {
-    .our-story-container {
-        gap: 40px;
+    .mission-row,
+    .vision-row {
+        gap: 60px;
     }
 
-    .our-story-text h2 {
-        font-size: 38px;
+    .mission-image img,
+    .vision-image img {
+        height: 420px;
+        max-width: 450px;
     }
 
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 40px;
     }
-
-    .stat-item:nth-child(2)::after {
-        display: none;
-    }
-}
-
-@media (max-width: 1024px) {
-    .offer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .coaches-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 992px) {
-    .our-story-container {
+    .story-container {
         grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .story-side {
+        padding-top: 0;
+        display: flex;
         gap: 30px;
+        flex-wrap: wrap;
     }
 
-    .our-story-image img {
-        height: 280px;
+    .story-content {
+        margin-left: 0;
     }
 
-    .mission-container {
+    .story-content h2 {
+        font-size: 60px;
+    }
+
+    .mission-row,
+    .vision-row {
         grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+        margin-bottom: 90px;
+    }
+
+    .vision-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .mission-text p,
+    .vision-text p {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .mission-text h2,
+    .vision-text h2 {
+        text-align: center;
+    }
+
+    .mission-image img,
+    .vision-image img {
+        height: 380px;
         max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .stats-section {
@@ -691,8 +618,48 @@
 }
 
 @media (max-width: 768px) {
-    .our-story-section,
-    .mission-section,
+    .our-story {
+        padding: 80px 30px;
+    }
+
+    .story-content h2 {
+        font-size: 46px;
+    }
+
+    .story-side {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .story-side p {
+        font-size: 22px;
+    }
+
+    .story-content p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .mission-vision {
+        padding: 80px 30px;
+    }
+
+    .mission-text h2,
+    .vision-text h2 {
+        font-size: 48px;
+    }
+
+    .mission-text p,
+    .vision-text p {
+        font-size: 16px;
+    }
+
+    .mission-image img,
+    .vision-image img {
+        height: 280px;
+        max-width: 100%;
+    }
+
     .offer-section,
     .why-section,
     .coaches-section {
@@ -703,10 +670,6 @@
     .why-header h2,
     .coaches-header h2 {
         font-size: 32px;
-    }
-
-    .our-story-text h2 {
-        font-size: 30px;
     }
 
     .offer-grid {
@@ -767,24 +730,32 @@
 }
 
 @media (max-width: 480px) {
-    .our-story-section,
-    .mission-section,
+    .our-story {
+        padding: 60px 20px;
+    }
+
+    .story-content h2 {
+        font-size: 34px;
+    }
+
+    .mission-vision {
+        padding: 60px 20px;
+    }
+
+    .mission-text h2,
+    .vision-text h2 {
+        font-size: 34px;
+    }
+
+    .mission-image img,
+    .vision-image img {
+        height: 220px;
+    }
+
     .offer-section,
     .why-section,
     .coaches-section {
         padding: 40px 4%;
-    }
-
-    .our-story-text h2 {
-        font-size: 26px;
-    }
-
-    .our-story-image img {
-        height: 200px;
-    }
-
-    .mission-card {
-        padding: 28px 20px;
     }
 
     .stats-section {
