@@ -155,179 +155,7 @@
 
     </section>
 
-    <!-- ========================================
-            SECTION 4: WHAT WE OFFER
-    ======================================== -->
-
-    <section class="offer-section">
-
-        <div class="offer-container">
-
-            <div class="offer-header">
-                <span class="offer-badge">What We Offer</span>
-                <h2>The Smash Lab Experience</h2>
-                <p>Everything you need for the perfect game — all in one place.</p>
-            </div>
-
-            <div class="offer-grid">
-
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fa-solid fa-court-sport"></i>
-                    </div>
-                    <h3>Premium Courts</h3>
-                    <p>Tournament-grade facilities with professional flooring and lighting.</p>
-                </div>
-
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                    </div>
-                    <h3>Pro Classes</h3>
-                    <p>Certified coaches for every skill level — from beginners to pros.</p>
-                </div>
-
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3>Smart Booking</h3>
-                    <p>Real-time availability and instant confirmations at your fingertips.</p>
-                </div>
-
-                <div class="offer-card">
-                    <div class="offer-icon">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <h3>Gear & Snacks</h3>
-                    <p>Rackets, shuttlecocks, snacks, and drinks — all in one place.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================================
-            SECTION 5: WHY CHOOSE US
-    ======================================== -->
-
-    <section class="why-section">
-
-        <div class="why-container">
-
-            <div class="why-header">
-                <span class="why-badge">Why Smash Lab</span>
-                <h2>The Smash Lab Difference</h2>
-                <p>What sets us apart from the rest.</p>
-            </div>
-
-            <div class="why-grid">
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3>10 Premium Courts</h3>
-                    <p>World-class facilities designed for every level of play.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h3>Welcoming Community</h3>
-                    <p>From beginners to pros, everyone belongs at Smash Lab.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h3>Flexible Hours</h3>
-                    <p>Open from 9:00 AM to 12:00 AM — play when it suits you.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-credit-card"></i>
-                    </div>
-                    <h3>Flexible Payments</h3>
-                    <p>GCash, Maya, or front desk payment — choose what works for you.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================================
-            SECTION 6: MEET OUR COACHES
-    ======================================== -->
-
-    <section class="coaches-section">
-
-        <div class="coaches-container">
-
-            <div class="coaches-header">
-                <span class="coaches-badge">Meet Our Team</span>
-                <h2>Our Expert Coaches</h2>
-                <p>Certified professionals dedicated to helping you improve, compete, and love the game.</p>
-            </div>
-
-            <div class="coaches-grid">
-
-                <div class="coach-card">
-                    <div class="coach-image">
-                        <img src="/images/beginner_class.jpg" alt="Coach Mike">
-                    </div>
-                    <div class="coach-info">
-                        <h3>Coach Mike</h3>
-                        <span class="coach-level">Beginner Class</span>
-                        <p>5+ Years Experience · Certified Coach · 50+ Students Trained</p>
-                        <div class="coach-specialty">
-                            <i class="fa-solid fa-star"></i> Specializes in Fundamentals
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coach-card">
-                    <div class="coach-image">
-                        <img src="/images/intermediate_class.jpg" alt="Coach Sarah">
-                    </div>
-                    <div class="coach-info">
-                        <h3>Coach Sarah</h3>
-                        <span class="coach-level">Intermediate Class</span>
-                        <p>7+ Years Experience · Certified Coach · Former Tournament Player</p>
-                        <div class="coach-specialty">
-                            <i class="fa-solid fa-star"></i> Specializes in Shot Precision
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coach-card">
-                    <div class="coach-image">
-                        <img src="/images/advance_class.jpg" alt="Coach Alex">
-                    </div>
-                    <div class="coach-info">
-                        <h3>Coach Alex</h3>
-                        <span class="coach-level">Advanced Class</span>
-                        <p>10+ Years Experience · Certified Coach · National Tournament Champion</p>
-                        <div class="coach-specialty">
-                            <i class="fa-solid fa-star"></i> Specializes in Advanced Techniques
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================================
+        <!-- ========================================
             SECTION 7: STATISTICS
     ======================================== -->
 
@@ -358,6 +186,269 @@
         </div>
 
     </section>
+
+<!-- ======================================
+            OUR FACILITIES
+======================================= -->
+
+<section class="facilities-section">
+
+    <div class="facilities-header">
+
+        <h2>Our Facilities</h2>
+
+        <p>Premium courts designed for the perfect game every time.</p>
+
+    </div>
+
+    <div class="facilities-grid">
+
+        <!-- Left Large -->
+
+        <div class="facility-card large image-card">
+
+            <img src="/images/badminton_courts.jpg" alt="Court">
+
+            <div class="overlay"></div>
+
+            <div class="facility-content white">
+
+                <h3>4 Premium Courts</h3>
+
+                <p>Tournament-grade dimensions</p>
+
+            </div>
+
+        </div>
+
+        <!-- Small Top -->
+
+        <div class="facility-card text-card">
+
+            <h3>Premium Flooring</h3>
+
+            <p>
+                Professional-grade rubber mats for
+                optimal grip and safety.
+            </p>
+
+        </div>
+
+        <!-- Middle Large -->
+
+        <div class="facility-card tall text-card center">
+
+            <h3>LED Lighting</h3>
+
+            <p>
+                LED lighting with no glare and no
+                shadows — just clear visibility
+                for every shot.
+            </p>
+
+        </div>
+
+        <!-- Top Right -->
+
+        <div class="facility-card image-card">
+
+            <img src="/images/locker.jpg" alt="Locker">
+
+            <div class="overlay"></div>
+
+            <div class="facility-content white">
+
+                <h3>Shower & Locker Rooms</h3>
+
+                <p>Freshen up after your games in our amenities.</p>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Left -->
+
+        <div class="facility-card image-card">
+
+            <img src="/images/Climate-Controlled.jpg" alt="AC">
+
+            <div class="overlay"></div>
+
+            <div class="facility-content white">
+
+                <h3>Climate-Controlled</h3>
+
+                <p>Fully air-conditioned for your comfort.</p>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Right -->
+
+        <div class="facility-card text-card">
+
+            <h3>Snacks & Drinks</h3>
+
+            <p>
+                Grab a drink or a snack at our shop.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>    
+
+
+<!-- What We Offer -->
+
+<section class="what-we-offer">
+
+    <div class="owo-top">
+
+        <div class="owo-left">
+            <span class="owo-badge">What We Offer</span>
+            <h2>THE SMASH LAB <br> EXPERIENCE</h2>
+        </div>
+
+        <div class="owo-right">
+            <p>
+                Everything you need for the perfect game. From
+                finding an open court to renting a racket and grabbing
+                a drink. We handle it all.
+            </p>
+
+            <a class="owo-arrow-btn" href="{{ url('/services') }}">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="offer-cards">
+
+        <div class="offer-card court-card">
+            <div class="card-overlay blue-overlay"></div>
+            <div class="card-content">
+                <h3>Premium Courts</h3>
+                <p>
+                    Well-maintained courts with professional
+                    flooring, tournament-grade dimensions,
+                    premium lighting, and real-time online
+                    booking for a seamless playing experience.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card class-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Pro Classes</h3>
+                <p>
+                    Learn from certified coaches — beginners to
+                    advanced.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card gear-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Gears and Snacks</h3>
+                <p>
+                    Gears and snacks available for purchase.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-card booking-card">
+            <div class="card-overlay grey-overlay"></div>
+            <div class="card-content bottom">
+                <h3>Smart Booking</h3>
+                <p>
+                    Book, manage, and track everything from
+                    your dashboard.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Train Like a Pro -->
+
+<section class="train-pro">
+
+    <div class="section-heading">
+        <h2>Train Like a Pro</h2>
+        <p>
+            Book your spot and start training with Smash Lab's certified coaches
+            today.
+        </p>
+    </div>
+
+    <div class="train-cards">
+
+        <div class="train-card beginner-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Beginner Class.</h3>
+                    <p>
+                        Perfect for first-timers. Learn basic
+                        strokes, footwork, and game rules
+                        in a supportive group setting.
+                    </p>
+                </div>
+
+                <a class="learn-more-btn" href="{{ url('/classes/beginner_class') }}">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="train-card intermediate-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Intermediate Class.</h3>
+                    <p>
+                        Refine your techniques and learn
+                        smarter plays. Perfect for players
+                        ready to compete.
+                    </p>
+                </div>
+
+                <a class="learn-more-btn" href="{{ url('/classes/intermediate_class') }}">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="train-card advanced-card">
+            <div class="train-card-img"></div>
+            <div class="train-card-body">
+                <div>
+                    <h3>Advanced Class.</h3>
+                    <p>
+                        Train like a champion. Master the
+                        techniques and tactics used by
+                        professional players.
+                    </p>
+                </div>
+
+                <a class="learn-more-btn" href="{{ url('/classes/advanced_class') }}">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
 
     <!-- ========================================
             SECTION 8: CTA - READY TO PLAY
