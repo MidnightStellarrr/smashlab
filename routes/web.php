@@ -37,6 +37,10 @@ Route::get('/classes/advanced_class', function () {
     return view('user.classes.advanced_class');   
 });
 
+Route::get('/classes/enroll', function () {
+    return view('user.classes.enroll');
+})->name('classes.enroll');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

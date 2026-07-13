@@ -24,7 +24,7 @@
         'subHeading' => 'Learn the fundamentals of badminton in a fun and supportive environment. No experience needed.',
         'classBadge' => 'Beginner',
         'buttonText' => 'Enroll Now',
-        'buttonLink' => url('/enroll/beginner')
+        'buttonLink' => url('/classes/enroll')
     ])
 
     
