@@ -21,7 +21,12 @@
     ======================================== -->
     @include('user.classes.partials.class_hero', [
         'mainHeading' => 'Beginner Class',
-        'subHeading' => 'Learn the fundamentals of badminton in a fun and supportive environment. No experience needed.'
+        'subHeading' => 'Learn the fundamentals of badminton in a fun and supportive environment. No experience needed.',
+        'classBadge' => 'Beginner',
+        'buttonText' => 'Enroll Now',
+        'buttonLink' => url('/enroll/beginner')
     ])
+
+    
 </body>
 </html>

@@ -19,6 +19,13 @@
                 {{ $subHeading ?? 'Sub headline' }}
             </p>
 
+            <!-- Reusable Button -->
+            @if(isset($buttonText))
+                <a href="{{ $buttonLink ?? '#' }}" class="hero-btn">
+                    {{ $buttonText }} <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            @endif
+
         </div>
 
         <!-- Right Image -->
