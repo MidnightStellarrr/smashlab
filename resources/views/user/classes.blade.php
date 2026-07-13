@@ -97,31 +97,9 @@
 
 </section>
 
-
     <!-- ========================================
-            SECTION 8: CTA - READY TO PLAY
+            FOOTER
     ======================================== -->
-
-    <section class="cta-section">
-
-        <div class="cta-overlay"></div>
-
-        <div class="cta-content">
-
-            <h2>Ready to Smash?</h2>
-
-            <p>
-                Join thousands of players who book, train, <br>and
-                play at Smash Lab.
-            </p>
-
-            <a href="{{ url('/book_now') }}" class="cta-btn">
-                Get Started Now
-            </a>
-
-        </div>
-
-    </section>
-
+    @include('user.partials.footer')
 </body>
 </html>

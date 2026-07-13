@@ -25,6 +25,17 @@ Route::get('/classes', function () {
     return view('user.classes');   
 });
 
+Route::get('/classes/beginner_class', function () {
+    return view('user.classes.beginner_class');   
+});
+
+Route::get('/classes/intermediate_class', function () {
+    return view('user.classes.intermediate_class');   
+});
+
+Route::get('/classes/advanced_class', function () {
+    return view('user.classes.advanced_class');   
+});
 
 
 Route::get('/dashboard', function () {
