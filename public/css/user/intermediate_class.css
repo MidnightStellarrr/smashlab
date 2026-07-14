@@ -1,0 +1,838 @@
+/*============================================
+    CLASS OVERVIEW
+============================================*/
+
+.class-overview {
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ── Section Badge ── */
+
+.section-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #1f47d8;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* ── Text ── */
+
+.overview-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.overview-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.overview-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+.feature-item i {
+    color: #22c55e;
+    font-size: 18px;
+}
+
+/* ── Stats ── */
+
+.overview-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.stat-box {
+    background: #173A8D;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f5f6f8;
+    margin-bottom: 6px;
+}
+
+.stat-box p {
+    font-size: 16px;
+    color: #f5f6f8;
+    font-weight: 500;
+}
+
+/*============================================
+    WHAT YOU'LL LEARN
+============================================*/
+
+.learn-section {
+    padding: 80px 8%;
+    background: #f5f6f8;
+}
+
+.learn-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.learn-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.learn-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.learn-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.learn-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.learn-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.learn-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #173A8D;
+    margin-bottom: 12px;
+}
+
+.learn-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.learn-card p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/*============================================
+    COACH SECTION
+============================================*/
+
+.coach-section {
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.coach-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.coach-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.coach-info h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.coach-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.coach-credentials span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    background: #f5f6f8;
+    padding: 6px 16px;
+    border-radius: 40px;
+}
+
+.coach-credentials i {
+    color: #173A8D;
+}
+
+.coach-info p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.coach-info blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+    border-left: 4px solid #173A8D;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* ── Enroll Button ── */
+
+.enroll-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 40px;
+    border-radius: 40px;
+    background: #173A8D;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: #0f2a6b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(23, 58, 141, 0.35);
+}
+
+.enroll-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.enroll-btn:hover i {
+    transform: translateX(4px);
+}
+
+.enroll-btn.secondary {
+    background: #173A8D;
+    color: #fff;
+}
+
+/*============================================
+    PRICING
+============================================*/
+
+.pricing-section {
+    position: relative;
+    padding: 40px 8%;
+    background: url("/images/pricing_bg.jpg") center center/cover no-repeat;
+    overflow: hidden;
+}
+
+/* ── Blur Overlay ── */
+
+.pricing-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.756);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.pricing-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pricing-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.pricing-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-card.popular {
+    border-color: #173A8D;
+    box-shadow: 0 4px 30px rgba(23, 58, 141, 0.15);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #173A8D;
+    color: #fff;
+    padding: 4px 20px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pricing-card-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.pricing-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: #173A8D;
+}
+
+.pricing-card-header p {
+    font-size: 14px;
+    color: #888;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-features i {
+    color: #22c55e;
+}
+
+.pricing-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 40px;
+    background: #173A8D;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+    background: #0f2a6b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(23, 58, 141, 0.3);
+}
+
+/*============================================
+    RESPONSIVE (PRICING)
+============================================*/
+
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .pricing-section {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .pricing-card.popular {
+        order: -1;
+    }
+
+    .pricing-header h2 {
+        font-size: 32px;
+    }
+
+    .pricing-section {
+        padding: 60px 5%;
+    }
+
+    .pricing-bg-overlay {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-section {
+        padding: 50px 4%;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .pricing-price {
+        font-size: 36px;
+    }
+
+    .pricing-bg-overlay {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+/*============================================
+    FAQ
+============================================*/
+
+.faq-section {
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.faq-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.faq-item {
+    background: #f5f6f8;
+    border-radius: 16px;
+    padding: 24px 30px;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background: #e8eaed;
+}
+
+.faq-item h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/*============================================
+    SECTION 7: CTA - READY TO PLAY
+============================================*/
+
+.ready-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url("/images/ready_to_play.jpg") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+
+.ready-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Left Content */
+
+.ready-content {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    margin-left: 9%;
+    color: #fff;
+}
+
+.ready-content h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 28px;
+}
+
+.ready-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 30px;
+}
+
+/* Button */
+
+.ready-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 42px;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.ready-btn:hover {
+    background: #173A8D;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(23, 58, 141, 0.35);
+}
+
+.ready-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.ready-btn:hover i {
+    transform: translateX(4px);
+}
+
+/*============================================
+    RESPONSIVE (CTA)
+============================================*/
+
+@media (max-width: 992px) {
+    .ready-section {
+        height: 420px;
+    }
+
+    .ready-content {
+        margin: 0 40px;
+        max-width: 100%;
+    }
+
+    .ready-content h2 {
+        font-size: 44px;
+    }
+
+    .ready-content p {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ready-section {
+        height: 380px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .ready-content {
+        margin: 0 25px;
+        text-align: center;
+    }
+
+    .ready-content h2 {
+        font-size: 34px;
+    }
+
+    .ready-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .ready-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .ready-section {
+        height: 320px;
+    }
+
+    .ready-content h2 {
+        font-size: 28px;
+    }
+
+    .ready-content p {
+        font-size: 15px;
+    }
+
+    .ready-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+        max-width: 220px;
+    }
+}
+
+/*============================================
+    RESPONSIVE
+============================================*/
+
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .overview-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .overview-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .coach-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .coach-credentials {
+        justify-content: center;
+    }
+
+    .coach-image img {
+        max-width: 100%;
+        height: 350px;
+    }
+
+    .learn-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .overview-text h2 {
+        font-size: 32px;
+    }
+
+    .overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-box h3 {
+        font-size: 28px;
+    }
+
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .pricing-card.popular {
+        order: -1;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .coach-info h2 {
+        font-size: 32px;
+    }
+
+    .learn-header h2 {
+        font-size: 32px;
+    }
+
+    .pricing-header h2 {
+        font-size: 32px;
+    }
+
+    .faq-header h2 {
+        font-size: 32px;
+    }
+
+    .overview-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .class-overview {
+        padding: 60px 5%;
+    }
+
+    .learn-section {
+        padding: 60px 5%;
+    }
+
+    .coach-section {
+        padding: 60px 5%;
+    }
+
+    .pricing-section {
+        padding: 60px 5%;
+    }
+
+    .faq-section {
+        padding: 60px 5%;
+    }
+
+    .overview-text h2 {
+        font-size: 26px;
+    }
+
+    .stat-box h3 {
+        font-size: 24px;
+    }
+
+    .coach-image img {
+        height: 250px;
+    }
+
+    .cta-content h2 {
+        font-size: 26px;
+    }
+
+    .cta-btn {
+        padding: 14px 32px;
+        font-size: 15px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .pricing-price {
+        font-size: 36px;
+    }
+
+    .faq-item {
+        padding: 20px;
+    }
+}
