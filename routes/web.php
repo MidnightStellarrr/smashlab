@@ -25,6 +25,10 @@ Route::get('/classes', function () {
     return view('user.classes');   
 });
 
+Route::get('/book_now', function () {
+    return view('user.book_now');   
+});
+
 Route::get('/classes/beginner_class', function () {
     return view('user.classes.beginner_class');   
 });
