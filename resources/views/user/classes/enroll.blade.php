@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/user/partials/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user/enroll.css') }}">
+
 </head>
 <body>
     @include('user.partials.navbar')
@@ -21,12 +22,29 @@
             HERO SECTION
     ======================================== -->
 
-    <section class="enroll-hero">
-        <div class="enroll-hero-overlay"></div>
-        <div class="enroll-hero-container">
-            <div class="enroll-hero-content">
-                <h1>Enroll Now</h1>
-                <p>Start your badminton journey with us. Fill out the form below to enroll in your chosen class.</p>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <!-- White Diagonal Shape -->
+        <div class="hero-shape"></div>
+        <div class="hero-container">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <h1>{{ $mainHeading ?? 'Main headline' }}</h1>
+                <p>
+                    {{ $subHeading ?? 'Sub headline' }}
+                </p>
+                <!-- Reusable Button -->
+                @if(isset($buttonText))
+                    <a href="{{ $buttonLink ?? '#' }}" class="hero-btn">
+                        {{ $buttonText }} <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                @endif
+            </div>
+            <!-- Right Image -->
+            <div class="hero-image">
+                <img
+                    src="{{ asset('/images/enroll_hero.png') }}"
+                    alt="Badminton Player">
             </div>
         </div>
     </section>
