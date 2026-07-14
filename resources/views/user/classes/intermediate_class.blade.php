@@ -164,7 +164,7 @@
                     players develop the tactical awareness they need to outsmart their
                     opponents and play with confidence."
                 </blockquote>
-                <a href="{{ url('/classes/enroll/intermediate') }}" class="enroll-btn secondary">
+                <a href="{{ url('/classes/enroll') }}" class="enroll-btn secondary">
                     Enroll Now <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

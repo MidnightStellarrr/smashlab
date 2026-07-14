@@ -163,7 +163,7 @@
                     "Competitive badminton demands precision, power, and mental resilience. I train
                     players to compete at their highest level — on and off the court."
                 </blockquote>
-                <a href="{{ url('/classes/enroll/advanced') }}" class="enroll-btn secondary">
+                <a href="{{ url('/classes/enroll') }}" class="enroll-btn secondary">
                     Enroll Now <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

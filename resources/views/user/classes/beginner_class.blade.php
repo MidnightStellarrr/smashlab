@@ -165,7 +165,7 @@
                     Every student has the potential to improve — I'm here to
                     guide them every step of the way."
                 </blockquote>
-                <a href="{{ url('/classes/enroll/beginner') }}" class="enroll-btn secondary">
+                <a href="{{ url('/classes/enroll') }}" class="enroll-btn secondary">
                     Enroll Now <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

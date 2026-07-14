@@ -41,6 +41,10 @@ Route::get('/classes/enroll', function () {
     return view('user.classes.enroll');
 })->name('classes.enroll');
 
+Route::get('/classes/enroll/{class?}', function ($class = null) {
+    return view('user.classes.enroll', compact('class'));
+})->name('classes.enroll');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
