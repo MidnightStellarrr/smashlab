@@ -1,3 +1,5 @@
+<!-- navbar.blade.php -->
+
 <!-- navbar css-->
 <link rel="stylesheet" href="{{ asset('css/user/partials/navbar.css') }}">
 
@@ -24,13 +26,13 @@
             <i class="fa-solid fa-moon"></i>
         </button>
 
-        <button class="login-btn">
+        <a href="{{ route('login') }}" class="login-btn">
             Login
-        </button>
+        </a>
 
-        <button class="signup-btn">
+        <a href="{{ route('register') }}" class="signup-btn">
             Sign up
-        </button>
+        </a>
 
     </div>
 </nav>
