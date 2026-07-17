@@ -141,6 +141,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 130px;
     padding: 0 110px 110px;
 }
 
