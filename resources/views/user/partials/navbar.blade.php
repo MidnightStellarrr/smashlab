@@ -26,13 +26,33 @@
             <i class="fa-solid fa-moon"></i>
         </button>
 
-        <a href="{{ route('login') }}" class="login-btn">
-            Login
-        </a>
+        @auth
+            <!-- ── When Logged In ── -->
+            <a href="{{ url('/cart') }}" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
 
-        <a href="{{ route('register') }}" class="signup-btn">
-            Sign up
-        </a>
+            <a href="{{ route('dashboard') }}" class="dashboard-btn">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+            <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                @csrf
+                <button type="submit" class="logout-btn">
+                    <i class="fa-solid fa-sign-out-alt"></i> Logout
+                </button>
+            </form>
+        @else
+            <!-- ── When Logged Out ── -->
+            <a href="{{ route('login') }}" class="login-btn">
+                Login
+            </a>
+
+            <a href="{{ route('register') }}" class="signup-btn">
+                Sign up
+            </a>
+        @endauth
 
     </div>
 </nav>
