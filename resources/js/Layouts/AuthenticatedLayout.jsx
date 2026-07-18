@@ -1,5 +1,4 @@
 import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
@@ -7,226 +6,117 @@ import { useState } from 'react';
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const navigation = [
+        { name: 'Dashboard', href: route('dashboard'), icon: 'fa-solid fa-chart-pie' },
+        { name: 'Book Now', href: route('book_now'), icon: 'fa-solid fa-calendar-check' },
+        { name: 'My Bookings', href: '#', icon: 'fa-solid fa-bookmark' },
+        { name: 'Classes', href: route('classes'), icon: 'fa-solid fa-chalkboard-user' },
+        { name: 'Shop', href: route('shop'), icon: 'fa-solid fa-store' },
+        { name: 'Profile', href: route('profile.edit'), icon: 'fa-solid fa-user' },
+    ];
 
     return (
-        <div
-            className="min-h-screen"
-            style={{
-                backgroundImage:
-                    "linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #2a3a6a 100%)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
-        >
-            {/* ── Navbar ── */}
-            <nav className="border-b border-white/10 bg-transparent">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex h-16 justify-between items-center">
-                        {/* Left: Logo */}
-                        <div className="flex items-center">
-                            <Link href="/" className="flex items-center">
-                                <img src="/images/logo.png" className="h-10 w-auto" alt="SmashLab" />
+        <div className="flex min-h-screen">
+            {/* ── Sidebar ── */}
+            <aside
+                className={`fixed inset-y-0 left-0 z-50 w-64 transform bg-gradient-to-b from-[#0a1628] to-[#1a2a4a] transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static ${
+                    sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+                }`}
+            >
+                <div className="flex h-full flex-col">
+                    {/* Logo */}
+                    <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
+                        <Link href="/" className="flex items-center gap-2">
+                            <img src="/images/logo.png" className="h-10 w-auto" alt="SmashLab" />
+                            <span className="text-xl font-bold text-white">SmashLab</span>
+                        </Link>
+                    </div>
+
+                    {/* Navigation */}
+                    <nav className="flex-1 space-y-1 px-3 py-4">
+                        {navigation.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
+                                    route().current(item.href)
+                                        ? 'bg-white/10 text-white'
+                                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                                }`}
+                            >
+                                <i className={`${item.icon} w-5 text-center`}></i>
+                                {item.name}
+                            </Link>
+                        ))}
+                    </nav>
+
+                    {/* User Section */}
+                    <div className="border-t border-white/10 p-4">
+                        <div className="flex items-center gap-3">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white">
+                                {user.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-sm font-medium text-white">{user.name}</p>
+                                <p className="text-xs text-gray-400">{user.email}</p>
+                            </div>
+                            <Link
+                                href={route('logout')}
+                                method="post"
+                                as="button"
+                                className="text-gray-400 transition hover:text-white"
+                            >
+                                <i className="fa-solid fa-right-from-bracket"></i>
                             </Link>
                         </div>
-
-                        {/* Center: Nav Links */}
-                        <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <NavLink
-                                href={route('dashboard')}
-                                active={route().current('dashboard')}
-                                className="text-white hover:text-gray-300"
-                            >
-                                Dashboard
-                            </NavLink>
-                            <NavLink
-                                href={route('book_now')}
-                                className="text-white hover:text-gray-300"
-                            >
-                                Book Now
-                            </NavLink>
-                            <NavLink
-                                href={route('classes')}
-                                className="text-white hover:text-gray-300"
-                            >
-                                Classes
-                            </NavLink>
-                            <NavLink
-                                href={route('shop')}
-                                className="text-white hover:text-gray-300"
-                            >
-                                Shop
-                            </NavLink>
-                        </div>
-
-                        {/* Right: User Dropdown */}
-                        <div className="hidden sm:ms-6 sm:flex sm:items-center">
-                            <div className="relative ms-3">
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
-                                            <button
-                                                type="button"
-                                                className="inline-flex items-center rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium leading-4 text-white transition hover:bg-white/20 focus:outline-none"
-                                            >
-                                                {user.name}
-
-                                                <svg
-                                                    className="-me-0.5 ms-2 h-4 w-4"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                >
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clipRule="evenodd"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </Dropdown.Trigger>
-
-                                    <Dropdown.Content>
-                                        <Dropdown.Link
-                                            href={route('profile.edit')}
-                                            className="text-gray-700 hover:text-gray-900"
-                                        >
-                                            Profile
-                                        </Dropdown.Link>
-                                        <Dropdown.Link
-                                            href={route('logout')}
-                                            method="post"
-                                            as="button"
-                                            className="text-red-600 hover:text-red-800"
-                                        >
-                                            Log Out
-                                        </Dropdown.Link>
-                                    </Dropdown.Content>
-                                </Dropdown>
-                            </div>
-                        </div>
-
-                        {/* Mobile Hamburger */}
-                        <div className="-me-2 flex items-center sm:hidden">
-                            <button
-                                onClick={() =>
-                                    setShowingNavigationDropdown(
-                                        (previousState) => !previousState,
-                                    )
-                                }
-                                className="inline-flex items-center justify-center rounded-md p-2 text-white transition hover:bg-white/10 hover:text-gray-300 focus:bg-white/10 focus:text-gray-300 focus:outline-none"
-                            >
-                                <svg
-                                    className="h-6 w-6"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        className={
-                                            !showingNavigationDropdown
-                                                ? 'inline-flex'
-                                                : 'hidden'
-                                        }
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                    <path
-                                        className={
-                                            showingNavigationDropdown
-                                                ? 'inline-flex'
-                                                : 'hidden'
-                                        }
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
                     </div>
                 </div>
+            </aside>
 
-                {/* Mobile Menu */}
-                <div
-                    className={
-                        (showingNavigationDropdown ? 'block' : 'hidden') +
-                        ' sm:hidden border-t border-white/10 bg-white/5 backdrop-blur-lg'
-                    }
-                >
-                    <div className="space-y-1 pb-3 pt-2">
-                        <ResponsiveNavLink
-                            href={route('dashboard')}
-                            active={route().current('dashboard')}
-                            className="text-white hover:bg-white/10"
+            {/* ── Main Content ── */}
+            <div className="flex-1">
+                {/* Mobile Header */}
+                <header className="border-b border-white/10 bg-white/5 backdrop-blur-sm lg:hidden">
+                    <div className="flex h-16 items-center justify-between px-4">
+                        <button
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="text-white transition hover:text-gray-300"
                         >
-                            Dashboard
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('book_now')}
-                            className="text-white hover:bg-white/10"
-                        >
-                            Book Now
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('classes')}
-                            className="text-white hover:bg-white/10"
-                        >
-                            Classes
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('shop')}
-                            className="text-white hover:bg-white/10"
-                        >
-                            Shop
-                        </ResponsiveNavLink>
-                    </div>
-
-                    <div className="border-t border-white/10 pb-1 pt-4">
-                        <div className="px-4">
-                            <div className="text-base font-medium text-white">
-                                {user.name}
-                            </div>
-                            <div className="text-sm font-medium text-gray-300">
-                                {user.email}
-                            </div>
-                        </div>
-
-                        <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink
-                                href={route('profile.edit')}
-                                className="text-white hover:bg-white/10"
-                            >
-                                Profile
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink
-                                method="post"
-                                href={route('logout')}
-                                as="button"
-                                className="text-red-400 hover:bg-white/10"
-                            >
-                                Log Out
-                            </ResponsiveNavLink>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            {/* Header */}
-            {header && (
-                <header className="border-b border-white/10 bg-white/5 backdrop-blur-sm">
-                    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                        <h2 className="text-xl font-semibold text-white">{header}</h2>
+                            <i className="fa-solid fa-bars text-xl"></i>
+                        </button>
+                        <Link href="/" className="flex items-center gap-2">
+                            <img src="/images/logo.png" className="h-8 w-auto" alt="SmashLab" />
+                            <span className="text-lg font-bold text-white">SmashLab</span>
+                        </Link>
+                        <div className="w-8"></div>
                     </div>
                 </header>
-            )}
 
-            {/* Main Content */}
-            <main className="py-8">{children}</main>
+                {/* Page Content */}
+                <main className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1a2a4a]">
+                    {/* Header */}
+                    {header && (
+                        <header className="border-b border-white/10 bg-white/5 backdrop-blur-sm">
+                            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                                <h2 className="text-xl font-semibold text-white">{header}</h2>
+                            </div>
+                        </header>
+                    )}
+
+                    {/* Children */}
+                    <div className="py-8">{children}</div>
+                </main>
+            </div>
+
+            {/* Mobile Overlay */}
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                ></div>
+            )}
         </div>
     );
 }

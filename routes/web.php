@@ -18,16 +18,16 @@ Route::get('/contact', function () {
 });
 
 Route::get('/shop', function () {
-    return view('user.shop');      
-});
+    return view('user.shop');
+})->name('shop');
 
 Route::get('/classes', function () {
-    return view('user.classes');   
-});
+    return view('user.classes');
+})->name('classes');
 
 Route::get('/book_now', function () {
-    return view('user.book_now');   
-});
+    return view('user.book_now');
+})->name('book_now');
 
 Route::get('/classes/beginner_class', function () {
     return view('user.classes.beginner_class');   
