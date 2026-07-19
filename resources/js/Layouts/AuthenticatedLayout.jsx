@@ -51,8 +51,8 @@ export default function AuthenticatedLayout({ header, children }) {
 
     const essentials = [
         { name: 'Homepage', href: '/', icon: 'fa-solid fa-house', isInertia: false },
-        { name: 'Settings', href: '#settings', icon: 'fa-solid fa-gear', isInertia: false },
-        { name: 'Help & Support', href: '#help-support', icon: 'fa-solid fa-circle-question', isInertia: false },
+        { name: 'Settings', href: route('settings'), icon: 'fa-solid fa-gear', isInertia: true },
+        { name: 'Help & Support', href: route('help.support'), icon: 'fa-solid fa-circle-question', isInertia: true },
     ];
 
     return (

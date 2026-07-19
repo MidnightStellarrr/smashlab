@@ -62,6 +62,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/settings', function () {
+        return Inertia::render('Settings');
+    })->name('settings');
+
+    Route::get('/help-support', function () {
+        return Inertia::render('HelpSupport');
+    })->name('help.support');
 });
 
 require __DIR__.'/auth.php';
