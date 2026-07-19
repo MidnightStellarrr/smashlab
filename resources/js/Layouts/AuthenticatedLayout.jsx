@@ -39,6 +39,7 @@ export default function AuthenticatedLayout({ header, children }) {
         setDarkMode(nextDarkMode);
     };
 
+
     const navigation = [
         { name: 'Dashboard', href: route('dashboard'), icon: 'fa-solid fa-chart-pie' },
         { name: 'Book Now', href: route('book_now'), icon: 'fa-solid fa-calendar-check' },
@@ -64,10 +65,10 @@ export default function AuthenticatedLayout({ header, children }) {
             >
                 <div className="flex h-full flex-col">
                     {/* Logo - moved to very left */}
-                    <div className="flex h-16 items-center border-b border-white/10 px-4">
+                    <div className="flex items-center border-b border-white/10 px-4 py-6">
                         <Link href="/" className="flex items-center gap-2">
-                            <img src="/images/logo.png" className="h-10 w-auto" alt="SmashLab" />
-                            <span className="text-xl font-bold text-white">SmashLab</span>
+                            <img src="/images/logo.png" className="h-12 w-auto pt-1" alt="SmashLab" />
+                            <span className="text-[28px] font-bold text-white">SmashLab</span>
                         </Link>
                     </div>
 
