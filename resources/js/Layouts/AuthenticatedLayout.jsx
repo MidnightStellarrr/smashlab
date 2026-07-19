@@ -7,6 +7,7 @@ export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
     const [darkMode, setDarkMode] = useState(() => {
         if (typeof window === 'undefined') {
             return false;
@@ -14,6 +15,11 @@ export default function AuthenticatedLayout({ header, children }) {
 
         return document.documentElement.classList.contains('dark');
     });
+
+    const notifications = [
+        { id: 1, title: 'Booking confirmed', message: 'Court 3 is confirmed for today at 6:00 PM.', time: '2 min ago' },
+        { id: 2, title: 'Class reminder', message: 'Your beginner class starts tomorrow at 6:00 PM.', time: '1 hour ago' },
+    ];
 
     useEffect(() => {
         const root = document.documentElement;
@@ -176,13 +182,54 @@ export default function AuthenticatedLayout({ header, children }) {
                                 </div>
 
                                 <div className="flex items-center gap-3">
-                                    <button
-                                        type="button"
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-white transition hover:border-blue-400 hover:text-blue-300"
-                                        aria-label="Notifications"
-                                    >
-                                        <i className="fa-solid fa-bell text-sm"></i>
-                                    </button>
+                                    <div className="relative">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowNotifications((prev) => !prev)}
+                                            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-white transition hover:border-blue-400 hover:text-blue-300"
+                                            aria-label="Notifications"
+                                        >
+                                            <i className="fa-solid fa-bell text-sm"></i>
+                                        </button>
+
+                                        {showNotifications && (
+                                            <div className="absolute right-0 top-12 z-50 w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-xl dark:border-gray-700 dark:bg-slate-900">
+                                                <div className="mb-2 flex items-center justify-between">
+                                                    <p className="text-sm font-semibold text-gray-800 dark:text-white">Notifications</p>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setShowNotifications(false)}
+                                                        className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-300"
+                                                    >
+                                                        Close
+                                                    </button>
+                                                </div>
+
+                                                <div className="space-y-2">
+                                                    {notifications.map((notification) => (
+                                                        <div
+                                                            key={notification.id}
+                                                            className="rounded-xl bg-gray-50 p-3 dark:bg-slate-800"
+                                                        >
+                                                            <div className="flex items-start justify-between gap-3">
+                                                                <div>
+                                                                    <p className="text-sm font-semibold text-gray-800 dark:text-white">
+                                                                        {notification.title}
+                                                                    </p>
+                                                                    <p className="text-xs text-gray-600 dark:text-gray-300">
+                                                                        {notification.message}
+                                                                    </p>
+                                                                </div>
+                                                                <span className="text-[10px] text-gray-500 dark:text-gray-400">
+                                                                    {notification.time}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
 
                                     <button
                                         type="button"
