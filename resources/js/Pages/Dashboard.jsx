@@ -193,20 +193,6 @@ export default function Dashboard({ auth }) {
                     </div>
                 </div>
 
-                <div id="settings" className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
-                    <h2 className="mb-2 text-lg font-semibold text-gray-800">Settings</h2>
-                    <p className="text-sm text-gray-600">
-                        Manage your preferences, privacy, and account configuration from your dashboard view.
-                    </p>
-                </div>
-
-                <div id="help-support" className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
-                    <h2 className="mb-2 text-lg font-semibold text-gray-800">Help & Support</h2>
-                    <p className="text-sm text-gray-600">
-                        Need help? Reach out to support, browse troubleshooting guides, or check your booking status.
-                    </p>
-                </div>
-
             </div>
         </AuthenticatedLayout>
     );
