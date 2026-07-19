@@ -47,13 +47,13 @@ export default function Dashboard({ auth }) {
                                 href="/book_now"
                                 className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                             >
-                                📅 Book a Court
+                                Book a Court
                             </Link>
                             <Link
                                 href="/classes"
                                 className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
                             >
-                                🏸 Join a Class
+                                Join a Class
                             </Link>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ export default function Dashboard({ auth }) {
                     {/* ── Upcoming Bookings ── */}
                     <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
                         <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-gray-800">📅 Upcoming Bookings</h2>
+                            <h2 className="text-lg font-semibold text-gray-800">Upcoming Bookings</h2>
                             <Link
                                 href="/book_now"
                                 className="text-sm text-blue-600 transition hover:text-blue-800"
@@ -124,7 +124,7 @@ export default function Dashboard({ auth }) {
                     {/* ── Active Classes ── */}
                     <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
                         <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-gray-800">🏸 Active Classes</h2>
+                            <h2 className="text-lg font-semibold text-gray-800">Active Classes</h2>
                             <Link
                                 href="/classes"
                                 className="text-sm text-blue-600 transition hover:text-blue-800"
@@ -164,7 +164,7 @@ export default function Dashboard({ auth }) {
 
                 {/* ── Quick Actions ── */}
                 <div className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
-                    <h2 className="mb-4 text-lg font-semibold text-gray-800">⚡ Quick Actions</h2>
+                    <h2 className="mb-4 text-lg font-semibold text-gray-800">Quick Actions</h2>
                     <div className="flex flex-wrap gap-4">
                         <Link
                             href="/book_now"
