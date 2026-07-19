@@ -41,18 +41,18 @@ export default function AuthenticatedLayout({ header, children }) {
 
 
     const navigation = [
-        { name: 'Dashboard', href: route('dashboard'), icon: 'fa-solid fa-chart-pie' },
-        { name: 'Book Now', href: route('book_now'), icon: 'fa-solid fa-calendar-check' },
-        { name: 'My Bookings', href: '#', icon: 'fa-solid fa-bookmark' },
-        { name: 'Classes', href: route('classes'), icon: 'fa-solid fa-chalkboard-user' },
-        { name: 'Shop', href: route('shop'), icon: 'fa-solid fa-store' },
-        { name: 'Profile', href: route('profile.edit'), icon: 'fa-solid fa-user' },
+        { name: 'Dashboard', href: route('dashboard'), icon: 'fa-solid fa-chart-pie', isInertia: true },
+        { name: 'Book Court', href: route('book_now'), icon: 'fa-solid fa-calendar-check', isInertia: false },
+        { name: 'My Bookings', href: '#', icon: 'fa-solid fa-bookmark', isInertia: false },
+        { name: 'Enroll Class', href: route('classes'), icon: 'fa-solid fa-chalkboard-user', isInertia: false },
+        { name: 'Shop', href: route('shop'), icon: 'fa-solid fa-store', isInertia: false },
+        { name: 'Profile', href: route('profile.edit'), icon: 'fa-solid fa-user', isInertia: true },
     ];
 
     const essentials = [
-        { name: 'Homepage', href: '/', icon: 'fa-solid fa-house' },
-        { name: 'Settings', href: '#', icon: 'fa-solid fa-gear' },
-        { name: 'Help & Support', href: '#', icon: 'fa-solid fa-circle-question' },
+        { name: 'Homepage', href: '/', icon: 'fa-solid fa-house', isInertia: false },
+        { name: 'Settings', href: '#settings', icon: 'fa-solid fa-gear', isInertia: false },
+        { name: 'Help & Support', href: '#help-support', icon: 'fa-solid fa-circle-question', isInertia: false },
     ];
 
     return (
@@ -78,18 +78,29 @@ export default function AuthenticatedLayout({ header, children }) {
                             Main
                         </p>
                         {navigation.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                                    route().current(item.href)
-                                        ? 'bg-white/10 text-white'
-                                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
-                                }`}
-                            >
-                                <i className={`${item.icon} w-5 text-center`}></i>
-                                {item.name}
-                            </Link>
+                            item.isInertia ? (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
+                                        route().current(item.href)
+                                            ? 'bg-white/10 text-white'
+                                            : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                                    }`}
+                                >
+                                    <i className={`${item.icon} w-5 text-center`}></i>
+                                    {item.name}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-white"
+                                >
+                                    <i className={`${item.icon} w-5 text-center`}></i>
+                                    {item.name}
+                                </a>
+                            )
                         ))}
 
                         <div className="my-4 border-t border-white/10 -mx-3"></div>
@@ -99,14 +110,14 @@ export default function AuthenticatedLayout({ header, children }) {
                             Others
                         </p>
                         {essentials.map((item) => (
-                            <Link
+                            <a
                                 key={item.name}
                                 href={item.href}
                                 className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-white"
                             >
                                 <i className={`${item.icon} w-5 text-center`}></i>
                                 {item.name}
-                            </Link>
+                            </a>
                         ))}
                     </nav>
 
