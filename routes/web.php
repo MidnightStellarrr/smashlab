@@ -70,6 +70,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/help-support', function () {
         return Inertia::render('HelpSupport');
     })->name('help.support');
+
+    Route::get('/mybookings', function () {
+        return Inertia::render('MyBookings');
+    })->name('mybookings');
 });
 
 require __DIR__.'/auth.php';
