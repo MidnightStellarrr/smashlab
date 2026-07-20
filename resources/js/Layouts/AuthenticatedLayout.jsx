@@ -50,7 +50,7 @@ export default function AuthenticatedLayout({ header, children }) {
         { name: 'Dashboard', href: route('dashboard'), icon: 'fa-solid fa-chart-pie', isInertia: true },
         { name: 'Book Court', href: route('book_now'), icon: 'fa-solid fa-calendar-check', isInertia: false },
         { name: 'My Bookings', href: route('mybookings'), icon: 'fa-solid fa-bookmark', isInertia: true },
-        { name: 'Enroll Class', href: route('classes'), icon: 'fa-solid fa-chalkboard-user', isInertia: false },
+        { name: 'My Classes', href: route('myclasses'), icon: 'fa-solid fa-chalkboard-user', isInertia: true },
         { name: 'Shop', href: route('shop'), icon: 'fa-solid fa-store', isInertia: false },
         { name: 'Profile', href: route('profile.edit'), icon: 'fa-solid fa-user', isInertia: true },
     ];

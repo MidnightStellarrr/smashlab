@@ -74,6 +74,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/mybookings', function () {
         return Inertia::render('MyBookings');
     })->name('mybookings');
+
+    Route::get('/myclasses', function () {
+        return Inertia::render('MyClasses');
+    })->name('myclasses');
 });
 
 require __DIR__.'/auth.php';

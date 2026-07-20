@@ -87,7 +87,7 @@ export default function Dashboard({ auth }) {
                         <div className="mb-4 flex items-center justify-between">
                             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Upcoming Bookings</h2>
                             <Link
-                                href="/book_now"
+                                href={route('mybookings')}
                                 className="text-sm text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                             >
                                 View All
@@ -126,7 +126,7 @@ export default function Dashboard({ auth }) {
                         <div className="mb-4 flex items-center justify-between">
                             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Active Classes</h2>
                             <Link
-                                href="/classes"
+                                href={route('myclasses')}
                                 className="text-sm text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                             >
                                 View All
