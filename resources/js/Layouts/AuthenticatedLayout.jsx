@@ -62,7 +62,7 @@ export default function AuthenticatedLayout({ header, children }) {
     ];
 
     return (
-        <div className="flex min-h-screen bg-gray-100">
+        <div className="flex min-h-screen bg-gray-100 dark:bg-black">
             {/* ── Sidebar ── */}
             <aside
                 className={`fixed inset-y-0 left-0 z-50 w-64 transform bg-gradient-to-b from-[#0a1628] to-[#1a2a4a] transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static ${
@@ -172,10 +172,10 @@ export default function AuthenticatedLayout({ header, children }) {
                 </header>
 
                 {/* Page Content */}
-                <main className="min-h-screen bg-slate-100 dark:bg-slate-950">
+                <main className="min-h-screen bg-gray-100 dark:bg-black">
                     {/* Header */}
                     {header && (
-                        <header className="border-b border-gray-200 bg-white shadow-sm">
+                        <header className="border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
                             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-8">
                                 <div className="flex items-center gap-3">
                                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white">{header}</h2>
@@ -186,20 +186,20 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <button
                                             type="button"
                                             onClick={() => setShowNotifications((prev) => !prev)}
-                                            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-white transition hover:border-blue-400 hover:text-blue-300"
+                                            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition hover:border-blue-400 hover:text-blue-600 dark:border-[#1a2a4a] dark:bg-[#0a1628] dark:text-[#4a7a9c] dark:hover:border-blue-400 dark:hover:text-blue-400"
                                             aria-label="Notifications"
                                         >
                                             <i className="fa-solid fa-bell text-sm"></i>
                                         </button>
 
                                         {showNotifications && (
-                                            <div className="absolute right-0 top-12 z-50 w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-xl dark:border-gray-700 dark:bg-slate-900">
+                                            <div className="absolute right-0 top-12 z-50 w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-xl dark:border-gray-700 dark:bg-gray-900">
                                                 <div className="mb-2 flex items-center justify-between">
                                                     <p className="text-sm font-semibold text-gray-800 dark:text-white">Notifications</p>
                                                     <button
                                                         type="button"
                                                         onClick={() => setShowNotifications(false)}
-                                                        className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-300"
+                                                        className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400"
                                                     >
                                                         Close
                                                     </button>
@@ -209,7 +209,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                                     {notifications.map((notification) => (
                                                         <div
                                                             key={notification.id}
-                                                            className="rounded-xl bg-gray-50 p-3 dark:bg-slate-800"
+                                                            className="rounded-xl bg-gray-50 p-3 dark:bg-gray-800"
                                                         >
                                                             <div className="flex items-start justify-between gap-3">
                                                                 <div>
@@ -234,7 +234,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                     <button
                                         type="button"
                                         onClick={toggleDarkMode}
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-white transition hover:border-blue-400 hover:text-blue-300"
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 transition hover:border-blue-400 hover:text-blue-600 dark:border-[#1a2a4a] dark:bg-[#0a1628] dark:text-[#4a7a9c] dark:hover:border-blue-400 dark:hover:text-blue-400"
                                         aria-label="Toggle dark mode"
                                     >
                                         <i className={`text-sm ${darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}`}></i>
@@ -242,7 +242,7 @@ export default function AuthenticatedLayout({ header, children }) {
 
                                     <Link
                                         href={route('profile.edit')}
-                                        className="flex items-center gap-3 rounded-full border border-gray-200 bg-white px-2 py-1.5 pr-4 transition hover:border-blue-500 hover:shadow-sm dark:border-gray-700 dark:bg-slate-800"
+                                        className="flex items-center gap-3 rounded-full border border-gray-200 bg-white px-2 py-1.5 pr-4 transition hover:border-blue-500 hover:shadow-sm dark:border-gray-700 dark:bg-gray-800"
                                     >
                                         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
                                             {user.name.charAt(0).toUpperCase()}

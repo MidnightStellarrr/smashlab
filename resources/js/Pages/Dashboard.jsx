@@ -25,20 +25,20 @@ export default function Dashboard({ auth }) {
 
     return (
         <AuthenticatedLayout
-            header={<h2 className="text-xl font-semibold text-gray-800">Dashboard</h2>}
+            header={<h2 className="text-xl font-semibold text-gray-800 dark:text-white">Dashboard</h2>}
         >
             <Head title="Dashboard" />
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                 {/* ── Welcome Section ── */}
-                <div className="mb-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
+                <div className="mb-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                     <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
-                            <h1 className="text-2xl font-bold text-gray-800">
+                            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
                                 Welcome back, {user.name}!
                             </h1>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-gray-600 dark:text-gray-300">
                                 You have {upcomingBookings.length} upcoming bookings and {activeClasses.length} active classes.
                             </p>
                         </div>
@@ -51,7 +51,7 @@ export default function Dashboard({ auth }) {
                             </Link>
                             <Link
                                 href="/classes"
-                                className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                                className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                             >
                                 Join a Class
                             </Link>
@@ -61,21 +61,21 @@ export default function Dashboard({ auth }) {
 
                 {/* ── Quick Stats ── */}
                 <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200">
-                        <p className="text-3xl font-bold text-gray-800">{stats.bookings}</p>
-                        <p className="text-sm text-gray-600">Total Bookings</p>
+                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <p className="text-3xl font-bold text-gray-800 dark:text-white">{stats.bookings}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Total Bookings</p>
                     </div>
-                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200">
-                        <p className="text-3xl font-bold text-gray-800">{stats.classes}</p>
-                        <p className="text-sm text-gray-600">Classes Attended</p>
+                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <p className="text-3xl font-bold text-gray-800 dark:text-white">{stats.classes}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Classes Attended</p>
                     </div>
-                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200">
-                        <p className="text-3xl font-bold text-gray-800">{stats.rating}</p>
-                        <p className="text-sm text-gray-600">Avg. Rating</p>
+                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <p className="text-3xl font-bold text-gray-800 dark:text-white">{stats.rating}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Avg. Rating</p>
                     </div>
-                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200">
-                        <p className="text-3xl font-bold text-gray-800">{stats.members}+</p>
-                        <p className="text-sm text-gray-600">Active Members</p>
+                    <div className="rounded-2xl bg-white shadow-sm p-6 text-center border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <p className="text-3xl font-bold text-gray-800 dark:text-white">{stats.members}+</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Active Members</p>
                     </div>
                 </div>
 
@@ -83,12 +83,12 @@ export default function Dashboard({ auth }) {
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 
                     {/* ── Upcoming Bookings ── */}
-                    <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
+                    <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                         <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-gray-800">Upcoming Bookings</h2>
+                            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Upcoming Bookings</h2>
                             <Link
                                 href="/book_now"
-                                className="text-sm text-blue-600 transition hover:text-blue-800"
+                                className="text-sm text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                             >
                                 View All
                             </Link>
@@ -99,35 +99,35 @@ export default function Dashboard({ auth }) {
                                 {upcomingBookings.map((booking) => (
                                     <div
                                         key={booking.id}
-                                        className="flex items-center justify-between rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100"
+                                        className="flex items-center justify-between rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600"
                                     >
                                         <div>
-                                            <p className="font-medium text-gray-800">{booking.court}</p>
-                                            <p className="text-sm text-gray-600">
+                                            <p className="font-medium text-gray-800 dark:text-white">{booking.court}</p>
+                                            <p className="text-sm text-gray-600 dark:text-gray-300">
                                                 {booking.date} • {booking.time}
                                             </p>
-                                            <p className="text-xs text-gray-500">
+                                            <p className="text-xs text-gray-500 dark:text-gray-400">
                                                 {booking.players} players
                                             </p>
                                         </div>
-                                        <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                                        <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-900 dark:text-green-300">
                                             Confirmed
                                         </span>
                                     </div>
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-center text-gray-500">No upcoming bookings.</p>
+                            <p className="text-center text-gray-500 dark:text-gray-400">No upcoming bookings.</p>
                         )}
                     </div>
 
                     {/* ── Active Classes ── */}
-                    <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
+                    <div className="rounded-2xl bg-white shadow-sm p-6 border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                         <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-gray-800">Active Classes</h2>
+                            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Active Classes</h2>
                             <Link
                                 href="/classes"
-                                className="text-sm text-blue-600 transition hover:text-blue-800"
+                                className="text-sm text-blue-600 transition hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                             >
                                 View All
                             </Link>
@@ -138,33 +138,33 @@ export default function Dashboard({ auth }) {
                                 {activeClasses.map((cls) => (
                                     <div
                                         key={cls.id}
-                                        className="flex items-center justify-between rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100"
+                                        className="flex items-center justify-between rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600"
                                     >
                                         <div>
-                                            <p className="font-medium text-gray-800">{cls.name}</p>
-                                            <p className="text-sm text-gray-600">
+                                            <p className="font-medium text-gray-800 dark:text-white">{cls.name}</p>
+                                            <p className="text-sm text-gray-600 dark:text-gray-300">
                                                 {cls.coach} • {cls.schedule}
                                             </p>
-                                            <p className="text-xs text-gray-500">
+                                            <p className="text-xs text-gray-500 dark:text-gray-400">
                                                 {cls.time}
                                             </p>
                                         </div>
-                                        <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+                                        <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900 dark:text-blue-300">
                                             Active
                                         </span>
                                     </div>
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-center text-gray-500">No active classes.</p>
+                            <p className="text-center text-gray-500 dark:text-gray-400">No active classes.</p>
                         )}
                     </div>
 
                 </div>
 
                 {/* ── Quick Actions ── */}
-                <div className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200">
-                    <h2 className="mb-4 text-lg font-semibold text-gray-800">Quick Actions</h2>
+                <div className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                    <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Quick Actions</h2>
                     <div className="flex flex-wrap gap-4">
                         <Link
                             href="/book_now"
@@ -174,19 +174,19 @@ export default function Dashboard({ auth }) {
                         </Link>
                         <Link
                             href="/classes"
-                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                         >
                             Browse Classes
                         </Link>
                         <Link
                             href="/shop"
-                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                         >
                             Visit Shop
                         </Link>
                         <Link
                             href="/profile"
-                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                         >
                             Edit Profile
                         </Link>
