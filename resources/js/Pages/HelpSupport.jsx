@@ -2,6 +2,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { useState } from 'react';
 
+
+
 export default function HelpSupport() {
     const [activeFaq, setActiveFaq] = useState(null);
     const [activeGuide, setActiveGuide] = useState(null);

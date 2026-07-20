@@ -1,6 +1,8 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
+
+
 export default function Dashboard({ auth }) {
     const user = auth.user;
 
