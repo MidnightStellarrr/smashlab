@@ -43,18 +43,18 @@ export default function Dashboard({ auth }) {
                             </p>
                         </div>
                         <div className="flex gap-3">
-                            <Link
-                                href="/book_now"
+                            <a
+                                href={route('book_now')}
                                 className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                             >
                                 Book a Court
-                            </Link>
-                            <Link
-                                href="/classes"
+                            </a>
+                            <a
+                                href={route('classes')}
                                 className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
                             >
                                 Join a Class
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
