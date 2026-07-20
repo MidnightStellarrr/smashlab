@@ -3,7 +3,7 @@ import { Head, Link } from '@inertiajs/react';
 
 export default function HelpSupport() {
     return (
-        <AuthenticatedLayout header={<h2 className="text-xl font-semibold text-white">Help & Support</h2>}>
+        <AuthenticatedLayout header={<h2 className="text-xl font-semibold text-gray-800">Help & Support</h2>}>
             <Head title="Help & Support" />
 
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

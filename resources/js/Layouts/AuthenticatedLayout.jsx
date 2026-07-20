@@ -172,10 +172,10 @@ export default function AuthenticatedLayout({ header, children }) {
                 </header>
 
                 {/* Page Content */}
-                <main className="min-h-screen">
+                <main className="min-h-screen bg-slate-100 dark:bg-slate-950">
                     {/* Header */}
                     {header && (
-                        <header className="border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-slate-900">
+                        <header className="border-b border-gray-200 bg-white shadow-sm">
                             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-8">
                                 <div className="flex items-center gap-3">
                                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white">{header}</h2>

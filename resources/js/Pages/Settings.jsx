@@ -3,7 +3,7 @@ import { Head } from '@inertiajs/react';
 
 export default function Settings() {
     return (
-        <AuthenticatedLayout header={<h2 className="text-xl font-semibold text-white">Settings</h2>}>
+        <AuthenticatedLayout header={<h2 className="text-xl font-semibold text-gray-800">Settings</h2>}>
             <Head title="Settings" />
 
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
