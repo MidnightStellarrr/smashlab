@@ -22,9 +22,7 @@
 
     <div class="nav-right">
 
-        <button class="theme-btn">
-            <i class="fa-solid fa-moon"></i>
-        </button>
+        
 
         @auth
             <!-- ── When Logged In ── -->
