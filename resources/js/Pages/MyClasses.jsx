@@ -99,12 +99,12 @@ export default function MyClasses({ auth }) {
                                 You are enrolled in {classes.filter(c => c.status === 'active').length} active classes.
                             </p>
                         </div>
-                        <Link
+                        <a
                             href={route('classes')}
                             className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                         >
                             + Enroll in New Class
-                        </Link>
+                        </a>
                     </div>
                 </div>
 
@@ -227,25 +227,6 @@ export default function MyClasses({ auth }) {
                             </Link>
                         </div>
                     )}
-                </div>
-
-                {/* ── Quick Action ── */}
-                <div className="mt-8 rounded-2xl bg-white shadow-sm p-6 border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Looking to Learn More?</h2>
-                    <div className="flex flex-wrap gap-4">
-                        <Link
-                            href="/classes"
-                            className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
-                        >
-                            Browse All Classes
-                        </Link>
-                        <Link
-                            href="/book_now"
-                            className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
-                        >
-                            Book a Court
-                        </Link>
-                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>
