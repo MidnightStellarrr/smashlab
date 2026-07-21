@@ -456,3 +456,92 @@
         font-size: 11px;
     }
 }
+
+/* Add to navbar.css */
+
+/* ── Dark Mode Toggle Button ── */
+.theme-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode styles for navbar */
+.dark .navbar {
+    background: rgba(10, 22, 40, 0.95);
+}
+
+.dark .nav-links a {
+    color: #d1d5db;
+}
+
+.dark .nav-links a:hover {
+    color: #ffffff;
+}
+
+.dark .theme-btn {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .theme-btn:hover {
+    background: #2a3a5a;
+    color: #6a9abc;
+}
+
+.dark .login-btn {
+    border-color: #4a7a9c;
+    color: #4a7a9c;
+}
+
+.dark .login-btn:hover {
+    background: #4a7a9c;
+    color: #0a1628;
+}
+
+.dark .signup-btn {
+    background: #4a7a9c;
+    color: #0a1628;
+}
+
+.dark .signup-btn:hover {
+    background: #5a8aac;
+}
+
+.dark .cart-btn {
+    color: #d1d5db;
+}
+
+.dark .cart-btn:hover {
+    color: #ffffff;
+}
+
+.dark .dashboard-btn {
+    color: #d1d5db;
+}
+
+.dark .dashboard-btn:hover {
+    color: #ffffff;
+}
+
+.dark .logout-btn {
+    color: #d1d5db;
+}
+
+.dark .logout-btn:hover {
+    color: #ffffff;
+}

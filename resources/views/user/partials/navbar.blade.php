@@ -22,7 +22,10 @@
 
     <div class="nav-right">
 
-        
+        <!-- Dark Mode Toggle -->
+        <button id="darkModeToggle" class="theme-btn" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
 
         @auth
             <!-- ── When Logged In ── -->
@@ -54,3 +57,21 @@
 
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const icon = toggleBtn.querySelector('i');
+
+        // Check initial state
+        if (document.documentElement.classList.contains('dark')) {
+            icon.className = 'fa-solid fa-sun';
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('smashlab-theme', isDark ? 'dark' : 'light');
+            icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        });
+    });
+</script>
