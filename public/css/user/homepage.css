@@ -1945,3 +1945,337 @@ th {
     }
 
 }
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+/* ── Body ── */
+.dark body {
+    background: #000000;
+}
+
+/* ── Hero Section ── */
+.dark .hero {
+    background: url("/images/homepage_header.png") center center/cover no-repeat;
+}
+
+.dark .overlay {
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.5),
+            rgba(10, 22, 40, 0.7));
+}
+
+/* ── Announcement Bar ── */
+.dark .announcement-bar {
+    background: #1a2a4a;
+}
+
+.dark .announcement-content span {
+    color: #d1d5db;
+}
+
+.dark .dot {
+    background: #4a7a9c;
+}
+
+/* ── Available Courts Section ── */
+.dark .available-courts {
+    background: #0a1628;
+}
+
+.dark .section-title h2 {
+    color: #ffffff;
+}
+
+.dark .section-title p {
+    color: #9ca3af;
+}
+
+.dark .booking-container {
+    background: #1a2a4a;
+}
+
+.dark .calendar {
+    background: #0a1628;
+}
+
+.dark .month h3 {
+    color: #ffffff;
+}
+
+.dark .month span {
+    color: #6b7280;
+}
+
+.dark .calendar-header select {
+    background: #1a2a4a;
+    color: #d1d5db;
+    border-color: #2a3a5a;
+}
+
+.dark .weekdays span {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+.dark .days div {
+    background: #1a2a4a;
+    color: #d1d5db;
+}
+
+.dark .days div:hover {
+    background: #2a3a5a;
+}
+
+.dark .days .active {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .days .inactive {
+    color: #4b5563;
+}
+
+.dark .court-table {
+    background: #0a1628;
+}
+
+.dark table th {
+    background: #1a2a4a;
+    color: #d1d5db;
+    border-color: #2a3a5a;
+}
+
+.dark table td {
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .available {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .reserved {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+.dark .maintenance {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .legend {
+    background: #0a1628;
+    border-color: #2a3a5a;
+}
+
+.dark .legend div {
+    color: #9ca3af;
+}
+
+.dark .green {
+    background: #34d399;
+}
+
+.dark .red {
+    background: #f87171;
+}
+
+.dark .yellow {
+    background: #fbbf24;
+}
+
+.dark .book-now-btn {
+    background: linear-gradient(90deg, #1f47d8, #1a2a4a);
+}
+
+.dark .book-now-btn:hover {
+    box-shadow: 0 8px 25px rgba(31, 71, 216, 0.4);
+}
+
+/* ── What We Offer ── */
+.dark .what-we-offer {
+    background: linear-gradient(135deg, #050814 0%, #0a1628 30%, #1a2a4a 70%, #1f47d8 100%);
+}
+
+.dark .owo-badge {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .owo-left h2 {
+    color: #ffffff;
+}
+
+.dark .owo-right p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .owo-arrow-btn {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Train Like a Pro ── */
+.dark .train-pro {
+    background: #0a1628;
+}
+
+.dark .train-pro .section-heading h2 {
+    color: #ffffff;
+}
+
+.dark .train-pro .section-heading p {
+    color: #9ca3af;
+}
+
+.dark .train-card {
+    background: #1a2a4a;
+}
+
+.dark .train-card-body h3 {
+    color: #ffffff;
+}
+
+.dark .train-card-body p {
+    color: #9ca3af;
+}
+
+.dark .learn-more-btn {
+    background: #1f47d8;
+}
+
+.dark .learn-more-btn:hover {
+    background: #2a5ae8;
+}
+
+/* ── Statistics ── */
+.dark .stats {
+    background: #1a2a4a;
+}
+
+.dark .stat-item h3 {
+    color: #ffffff;
+}
+
+.dark .stat-item p {
+    color: #9ca3af;
+}
+
+.dark .stat-item:not(:first-child)::before {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Testimonials ── */
+.dark .testimonials {
+    background: #0a1628;
+}
+
+.dark .testimonial-header span {
+    border-color: #1f47d8;
+    color: #4a7a9c;
+}
+
+.dark .testimonial-header h2 {
+    color: #ffffff;
+}
+
+.dark .testimonial-card {
+    background: #1a2a4a;
+    color: #d1d5db;
+}
+
+.dark .testimonialSwiper .swiper-slide-active .testimonial-card {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .testimonialSwiper .swiper-slide-active .author span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dark .testimonialSwiper .swiper-slide-active .quote {
+    color: #ffffff;
+}
+
+.dark .testimonialSwiper .swiper-slide-active .avatar {
+    background: linear-gradient(135deg, #ffffff, #a0b4d8);
+}
+
+.dark .quote {
+    color: #4a7a9c;
+}
+
+.dark .author h4 {
+    color: #ffffff;
+}
+
+.dark .author span {
+    color: #9ca3af;
+}
+
+.dark .avatar {
+    background: linear-gradient(135deg, #2a3a5a, #1a2a4a);
+}
+
+.dark .testimonial-prev,
+.dark .testimonial-next {
+    background: #1a2a4a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .testimonial-prev i,
+.dark .testimonial-next i {
+    color: #4a7a9c;
+}
+
+.dark .testimonial-prev:hover,
+.dark .testimonial-next:hover {
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.3);
+}
+
+.dark .swiper-pagination-bullet {
+    background: #2a3a5a;
+}
+
+.dark .swiper-pagination-bullet-active {
+    background: #1f47d8;
+}
+
+/* ── Ready to Play Section ── */
+.dark .ready-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark .ready-content h2 {
+    color: #ffffff;
+}
+
+.dark .ready-content p {
+    color: #d1d5db;
+}
+
+.dark .ready-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .ready-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 15px 35px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Scrollbar Dark Mode ── */
+.dark .table-wrapper::-webkit-scrollbar-track {
+    background: #1a2a4a;
+}
+
+.dark .table-wrapper::-webkit-scrollbar-thumb {
+    background: #1f47d8;
+}
+
+.dark .table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #2a5ae8;
+}
