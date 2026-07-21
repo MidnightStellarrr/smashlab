@@ -2055,17 +2055,17 @@ th {
 
 .dark .available {
     background: #065f46;
-    color: #34d399;
+    color: #ffffff;
 }
 
 .dark .reserved {
     background: #7f1d1d;
-    color: #f87171;
+    color: #ffffff;
 }
 
 .dark .maintenance {
     background: #78350f;
-    color: #fbbf24;
+    color:#ffffff;
 }
 
 .dark .legend {
