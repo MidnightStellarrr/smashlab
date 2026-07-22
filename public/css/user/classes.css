@@ -267,3 +267,339 @@
     font-size: 17px;
     font-weight: 400;
 }
+
+/* ============================================
+   TRAIN LIKE A PRO SECTION
+   ============================================ */
+
+.train-pro {
+    width: 100%;
+    padding: 100px 90px 110px;
+    background: #fff;
+    text-align: center;
+}
+
+.train-pro .section-heading h2 {
+    font-size: 58px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 14px;
+}
+
+.train-pro .section-heading p {
+    font-size: 18px;
+    color: #555;
+    max-width: 560px;
+    margin: 0 auto 60px;
+    line-height: 1.5;
+}
+
+/* ── Cards Row ── */
+
+.train-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.train-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.train-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.train-card-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.train-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(128, 128, 128, 0.6);
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.train-card-img {
+    filter: blur(0px);
+    transition: filter 0.4s ease;
+}
+
+.train-card:hover .train-card-img::after {
+    opacity: 0;
+}
+
+.train-card:hover .train-card-img {
+    filter: blur(0px);
+}
+
+.train-card-img .bg-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transition: filter 0.4s ease;
+}
+
+.train-card:hover .train-card-img .bg-image {
+    filter: blur(0px);
+}
+
+.beginner-card .train-card-img {
+    background-image: url("/images/beginner_class.jpg");
+}
+
+.intermediate-card .train-card-img {
+    background-image: url("/images/intermediate_class.jpg");
+}
+
+.advanced-card .train-card-img {
+    background-image: url("/images/advance_class.jpg");
+}
+
+.train-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 30px 32px;
+}
+
+.train-card-body h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.train-card-body p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+/* ── Learn More Button ── */
+
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 14px 26px;
+    margin-top: 26px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn i {
+    font-size: 13px;
+}
+
+.learn-more-btn:hover {
+    background: #1f47d8;
+}
+
+.learn-more-btn:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   RESPONSIVE (TRAIN LIKE A PRO)
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .train-pro {
+        padding: 80px 40px 90px;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 44px;
+    }
+
+    .train-card-img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    .train-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .train-pro .section-heading p {
+        font-size: 16px;
+    }
+
+    .train-card-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .train-pro {
+        padding: 60px 20px 70px;
+    }
+
+    .train-pro .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .train-card-body {
+        padding: 22px 22px 26px;
+    }
+
+    .train-card-body h3 {
+        font-size: 22px;
+    }
+
+    .learn-more-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/*============================================
+    SECTION 7: STATISTICS
+============================================*/
+
+.stats-section {
+    width: 100%;
+    background: #16327d;
+    padding: 65px 8%;
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.stat-item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.stat-item h3 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.stat-item p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+/* ── Train Like a Pro Section ── */
+.dark .train-pro {
+    background: #0a1628;
+}
+
+.dark .train-pro .section-heading h2 {
+    color: #ffffff;
+}
+
+.dark .train-pro .section-heading p {
+    color: #9ca3af;
+}
+
+/* ── Train Cards ── */
+.dark .train-card {
+    background: #1a2a4a;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dark .train-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dark .train-card-img::after {
+    background: rgba(10, 22, 40, 0.7);
+}
+
+.dark .train-card-body h3 {
+    color: #ffffff;
+}
+
+.dark .train-card-body p {
+    color: #9ca3af;
+}
+
+/* ── Learn More Button ── */
+.dark .learn-more-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .learn-more-btn:hover {
+    background: #2a5ae8;
+}
+
+/* ── Statistics Section ── */
+.dark .stats-section {
+    background: #1a2a4a;
+}
+
+.dark .stat-item h3 {
+    color: #ffffff;
+}
+
+.dark .stat-item p {
+    color: #9ca3af;
+}
+
+.dark .stat-item:not(:first-child)::before {
+    background: rgba(255, 255, 255, 0.15);
+}
