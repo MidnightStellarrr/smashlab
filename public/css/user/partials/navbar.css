@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 90px;
+    padding: 20px 50px;
     box-sizing: border-box;
     background: transparent;
     transition: all 0.3s ease;
@@ -542,4 +542,215 @@
 
 .dark .logout-btn:hover {
     color: #ffffff;
+}
+
+/* ============================================
+   STICKY NAVBAR - SCROLL BEHAVIOR
+   ============================================ */
+
+/* ── Navbar Base ── */
+.navbar {
+    position: fixed;           /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+/* ── Scrolled State ── */
+.navbar.scrolled {
+    padding: 18px 90px;
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Dark Mode Scrolled State ── */
+.dark .navbar.scrolled {
+    background: rgba(10, 22, 40, 0.92);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Hide on Scroll Down ── */
+.navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* ── Show on Scroll Up ── */
+.navbar:not(.hidden) {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ── Logo size change on scroll ── */
+.navbar.scrolled .logo {
+    width: 38px;
+    height: 38px;
+    transition: all 0.4s ease;
+}
+
+/* ── Nav links color on scroll ── */
+.navbar.scrolled .nav-links a {
+    color: #ffffff;
+}
+
+.navbar.scrolled .nav-links a::after {
+    background: #ffffff;
+}
+
+/* ── Theme button on scroll ── */
+.navbar.scrolled .theme-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar.scrolled .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Login button on scroll ── */
+.navbar.scrolled .login-btn {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+
+.navbar.scrolled .login-btn:hover {
+    background: #ffffff;
+    color: #173A8D;
+}
+
+/* ── Signup button on scroll ── */
+.navbar.scrolled .signup-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.navbar.scrolled .signup-btn:hover {
+    background: #2a5ae8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(31, 71, 216, 0.35);
+}
+
+/* ── Cart button on scroll ── */
+.navbar.scrolled .cart-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.navbar.scrolled .cart-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Dashboard button on scroll ── */
+.navbar.scrolled .dashboard-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.navbar.scrolled .dashboard-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Logout button on scroll ── */
+.navbar.scrolled .logout-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar.scrolled .logout-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* ── Dark Mode scrolled states ── */
+.dark .navbar.scrolled .theme-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #d1d5db;
+}
+
+.dark .navbar.scrolled .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.dark .navbar.scrolled .login-btn {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #d1d5db;
+}
+
+.dark .navbar.scrolled .login-btn:hover {
+    background: #1f47d8;
+    color: #ffffff;
+    border-color: #1f47d8;
+}
+
+.dark .navbar.scrolled .signup-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .navbar.scrolled .signup-btn:hover {
+    background: #2a5ae8;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 30px 40px;
+    }
+    .navbar.scrolled {
+        padding: 15px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 25px 30px;
+    }
+    .navbar.scrolled {
+        padding: 12px 30px;
+    }
+    .navbar.scrolled .logo {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 20px 16px;
+    }
+    .navbar.scrolled {
+        padding: 10px 16px;
+    }
+    .navbar.scrolled .logo {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .navbar {
+        padding: 16px 12px;
+    }
+    .navbar.scrolled {
+        padding: 8px 12px;
+    }
 }

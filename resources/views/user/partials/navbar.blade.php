@@ -3,7 +3,7 @@
 <!-- navbar css-->
 <link rel="stylesheet" href="{{ asset('css/user/partials/navbar.css') }}">
 
-<nav class="navbar">
+<nav class="navbar" id="mainNavbar">
 
     <div class="nav-left">
 
@@ -60,6 +60,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // ── Dark Mode Toggle ──
         const toggleBtn = document.getElementById('darkModeToggle');
         const icon = toggleBtn.querySelector('i');
 
@@ -73,5 +74,44 @@
             localStorage.setItem('smashlab-theme', isDark ? 'dark' : 'light');
             icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
         });
+
+        // ── Sticky Navbar on Scroll ──
+        const navbar = document.getElementById('mainNavbar');
+        let lastScrollY = window.scrollY;
+
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+
+            // Add/remove scrolled class based on scroll position
+            if (currentScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Hide navbar on scroll down, show on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        // Throttle scroll events for better performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Initial check
+        handleScroll();
     });
 </script>
