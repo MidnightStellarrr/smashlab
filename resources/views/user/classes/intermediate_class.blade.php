@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,25 @@
 
     <link rel="stylesheet" href="{{ asset('css/user/partials/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user/intermediate_class.css') }}">
+
+    <!-- Dark Mode Initialization -->
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('smashlab-theme');
+            if (storedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else if (storedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        })();
+    </script>
 </head>
-<body>
+<body class="bg-white dark:bg-black transition-colors duration-300">
     @include('user.partials.navbar')
 
     <!-- ========================================
