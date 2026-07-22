@@ -918,3 +918,255 @@ body{
         padding: 16px 12px;
     }
 }
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Body ── */
+.dark body {
+    background: #0a1628;
+}
+
+/* ── Hero Section ── */
+.dark .hero-section {
+    background: linear-gradient(90deg, #0a1628 0%, #0a1628 45%, #1a2a4a 100%);
+}
+
+.dark .hero-overlay {
+    background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+}
+
+.dark .hero-shape {
+    background: #1a2a4a;
+}
+
+.dark .hero-content h1 {
+    color: #ffffff;
+}
+
+.dark .hero-content p {
+    color: #9ca3af;
+}
+
+.dark .hero-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .hero-btn:hover {
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Enroll Section ── */
+.dark .enroll-section {
+    background: #0a1628;
+}
+
+.dark .enroll-container {
+    background: #1a2a4a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Form Progress ── */
+.dark .step-number {
+    background: #2a3a5a;
+    color: #6b7280;
+}
+
+.dark .progress-step.active .step-number {
+    background: #1f47d8;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(31, 71, 216, 0.3);
+}
+
+.dark .progress-step.completed .step-number {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .step-label {
+    color: #6b7280;
+}
+
+.dark .progress-step.active .step-label {
+    color: #4a7a9c;
+}
+
+.dark .progress-line {
+    background: #2a3a5a;
+}
+
+.dark .progress-line.active {
+    background: #1f47d8;
+}
+
+/* ── Form Header ── */
+.dark .form-header h2 {
+    color: #ffffff;
+}
+
+.dark .form-header p {
+    color: #9ca3af;
+}
+
+/* ── Form Fields ── */
+.dark .form-group label {
+    color: #d1d5db;
+}
+
+.dark .form-group input,
+.dark .form-group select,
+.dark .form-group textarea {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-group input::placeholder,
+.dark .form-group textarea::placeholder {
+    color: #6b7280;
+}
+
+.dark .form-group input:focus,
+.dark .form-group select:focus,
+.dark .form-group textarea:focus {
+    border-color: #1f47d8;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.15);
+}
+
+.dark .form-group input[type="date"] {
+    color-scheme: dark;
+}
+
+.dark .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* ── Guardian Section ── */
+.dark .guardian-section {
+    background: #0a1628;
+}
+
+/* ── Checkbox Group ── */
+.dark .checkbox-group label {
+    color: #d1d5db;
+}
+
+.dark .checkbox-group input[type="checkbox"] {
+    accent-color: #1f47d8;
+}
+
+/* ── Package Options ── */
+.dark .package-option {
+    border-color: #2a3a5a;
+}
+
+.dark .package-option:hover {
+    border-color: #1f47d8;
+}
+
+.dark .package-option .package-content h3 {
+    color: #ffffff;
+}
+
+.dark .package-option .package-price {
+    color: #4a7a9c;
+}
+
+.dark .package-option .package-desc {
+    color: #6b7280;
+}
+
+.dark .package-option:has(input:checked) {
+    border-color: #1f47d8;
+    background: rgba(31, 71, 216, 0.1);
+    box-shadow: 0 4px 20px rgba(31, 71, 216, 0.15);
+}
+
+.dark .package-option.popular-package {
+    border-color: #1f47d8;
+}
+
+.dark .package-badge {
+    background: #1f47d8;
+}
+
+/* ── Payment Methods ── */
+.dark .payment-methods {
+    border-color: #2a3a5a;
+}
+
+.dark .payment-option label {
+    background: #0a1628;
+    color: #9ca3af;
+}
+
+.dark .payment-option label i {
+    color: #4a7a9c;
+}
+
+.dark .payment-option:has(input:checked) label {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .payment-option:has(input:checked) label i {
+    color: #ffffff;
+}
+
+/* ── Waiver Group ── */
+.dark .waiver-group {
+    background: #0a1628;
+}
+
+.dark .checkbox-label {
+    color: #9ca3af;
+}
+
+.dark .checkbox-label input[type="checkbox"] {
+    accent-color: #1f47d8;
+}
+
+.dark .checkbox-label a {
+    color: #4a7a9c;
+}
+
+/* ── Form Actions ── */
+.dark .form-actions {
+    border-color: #2a3a5a;
+}
+
+.dark .btn-prev {
+    background: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .btn-prev:hover {
+    background: #3a4a6a;
+}
+
+.dark .btn-next {
+    background: #1f47d8;
+}
+
+.dark .btn-next:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 25px rgba(31, 71, 216, 0.4);
+}
+
+.dark .btn-submit {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .btn-submit:hover {
+    background: #0a7a5a;
+    box-shadow: 0 8px 25px rgba(6, 95, 70, 0.4);
+}
+
+/* ── Select Option Dark Mode ── */
+.dark .form-group select option {
+    background: #1a2a4a;
+    color: #d1d5db;
+}
