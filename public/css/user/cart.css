@@ -481,3 +481,145 @@
         padding: 10px 18px;
     }
 }
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Cart Section ── */
+.dark .cart-section {
+    background: #0a1628;
+}
+
+/* ── Cart Header ── */
+.dark .cart-header {
+    border-bottom-color: #2a3a5a;
+}
+
+.dark .cart-header h2 {
+    color: #ffffff;
+}
+
+.dark .cart-item-count {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+/* ── Cart Items ── */
+.dark .cart-item {
+    border-bottom-color: #2a3a5a;
+}
+
+.dark .cart-item-image {
+    background: #1a2a4a;
+}
+
+.dark .cart-item-details h3 {
+    color: #ffffff;
+}
+
+.dark .item-description {
+    color: #9ca3af;
+}
+
+/* ── Quantity Control ── */
+.dark .quantity-control {
+    border-color: #2a3a5a;
+}
+
+.dark .qty-btn {
+    background: #1a2a4a;
+    color: #d1d5db;
+}
+
+.dark .qty-btn:hover {
+    background: #2a3a5a;
+}
+
+.dark .qty-number {
+    color: #d1d5db;
+}
+
+/* ── Remove Button ── */
+.dark .remove-btn {
+    color: #6b7280;
+}
+
+.dark .remove-btn:hover {
+    color: #f87171;
+}
+
+/* ── Item Price ── */
+.dark .item-price {
+    color: #6b7280;
+}
+
+.dark .item-subtotal {
+    color: #4a7a9c;
+}
+
+/* ── Cart Summary ── */
+.dark .cart-summary {
+    background: #1a2a4a;
+}
+
+.dark .summary-header h3 {
+    color: #ffffff;
+    border-bottom-color: #2a3a5a;
+}
+
+.dark .summary-row {
+    color: #9ca3af;
+}
+
+.dark .summary-divider {
+    border-top-color: #2a3a5a;
+}
+
+.dark .summary-row.total {
+    color: #ffffff;
+}
+
+.dark .summary-row.total .summary-amount {
+    color: #4a7a9c;
+}
+
+/* ── Summary Actions ── */
+.dark .btn-continue {
+    border-color: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .btn-continue:hover {
+    background: #2a3a5a;
+}
+
+.dark .btn-checkout {
+    background: linear-gradient(90deg, #1f47d8, #1a2a4a);
+}
+
+.dark .btn-checkout:hover {
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Empty Cart ── */
+.dark .empty-cart-icon {
+    color: #4b5563;
+}
+
+.dark .empty-cart h3 {
+    color: #ffffff;
+}
+
+.dark .empty-cart p {
+    color: #9ca3af;
+}
+
+.dark .btn-shop {
+    background: #1f47d8;
+}
+
+.dark .btn-shop:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
