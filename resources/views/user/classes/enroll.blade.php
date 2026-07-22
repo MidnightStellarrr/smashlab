@@ -262,19 +262,19 @@
                             <div class="payment-option">
                                 <input type="radio" name="payment_method" id="payment-gcash" value="gcash">
                                 <label for="payment-gcash">
-                                    <i class="fa-brands fa-google-pay"></i> GCash
+                                    GCash
                                 </label>
                             </div>
                             <div class="payment-option">
                                 <input type="radio" name="payment_method" id="payment-maya" value="maya">
                                 <label for="payment-maya">
-                                    <i class="fa-solid fa-wallet"></i> Maya
+                                    Maya
                                 </label>
                             </div>
                             <div class="payment-option">
                                 <input type="radio" name="payment_method" id="payment-frontdesk" value="frontdesk">
                                 <label for="payment-frontdesk">
-                                    <i class="fa-solid fa-building"></i> Front Desk
+                                    Front Desk
                                 </label>
                             </div>
                         </div>
