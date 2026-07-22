@@ -2,18 +2,21 @@
     PROGRESS WRAPPER
 ============================================*/
 
+/* Remove max-width and center margin */
 .progress-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%;  /* Full width */
     padding: 30px 8% 10px;
     background: #fff;
+    /* Remove: max-width: 1400px; */
+    /* Remove: margin: 0 auto; */
 }
 
+/* Keep the form-progress centered with max-width */
 .form-progress {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 0 auto;  /* Center the content */
     padding: 0 10px;
     max-width: 700px;
     width: 100%;
@@ -878,4 +881,288 @@
     .confirmation-content h2 {
         font-size: 22px;
     }
+}
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Progress Wrapper (Fixed) ── */
+.dark .progress-wrapper {
+    background: #0a1628;
+    padding: 30px 8% 10px;
+}
+
+.dark .form-progress {
+    background: transparent;
+}
+
+.dark .step-number {
+    background: #1a2a4a;
+    color: #6b7280;
+}
+
+.dark .progress-step.active .step-number {
+    background: #1f47d8;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(31, 71, 216, 0.3);
+}
+
+.dark .progress-step.completed .step-number {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .step-label {
+    color: #6b7280;
+}
+
+.dark .progress-step.active .step-label {
+    color: #4a7a9c;
+}
+
+.dark .progress-line {
+    background: #1a2a4a;
+}
+
+.dark .progress-line.active {
+    background: #1f47d8;
+}
+
+/* ── Booking Section ── */
+.dark .booking-section {
+    background: #0a1628;
+}
+
+/* ── Schedule Card ── */
+.dark .schedule-card {
+    background: #1a2a4a;
+}
+
+.dark .schedule-date {
+    background: #0a1628;
+    color: #d1d5db;
+}
+
+.dark .schedule-date i {
+    color: #4a7a9c;
+}
+
+.dark .schedule-table-wrapper {
+    background: #0a1628;
+}
+
+.dark .schedule-table-wrapper::-webkit-scrollbar-track {
+    background: #1a2a4a;
+}
+
+.dark .schedule-table-wrapper::-webkit-scrollbar-thumb {
+    background: #1f47d8;
+}
+
+.dark .schedule-table th {
+    background: #1a2a4a;
+    color: #d1d5db;
+    border-color: #2a3a5a;
+}
+
+.dark .schedule-table td {
+    color: #9ca3af;
+    background: #0a1628;
+    border-color: #2a3a5a;
+}
+
+.dark .schedule-table thead {
+    background: #1a2a4a;
+}
+
+/* ── Status Badges Dark Mode ── */
+.dark .available {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .reserved {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+.dark .maintenance {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+/* ── Legend Dark Mode ── */
+.dark .legend {
+    color: #9ca3af;
+}
+
+.dark .circle.green {
+    background: #34d399;
+}
+
+.dark .circle.red {
+    background: #f87171;
+}
+
+.dark .circle.yellow {
+    background: #fbbf24;
+}
+
+/* ── Booking Form Dark Mode ── */
+.dark .booking-form {
+    background: #1a2a4a;
+}
+
+.dark .form-header h2 {
+    color: #ffffff;
+}
+
+.dark .form-header p {
+    color: #9ca3af;
+}
+
+.dark .booking-form hr {
+    border-color: #2a3a5a;
+}
+
+.dark .form-group label {
+    color: #d1d5db;
+}
+
+.dark .form-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-input:focus {
+    border-color: #1f47d8;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.15);
+}
+
+.dark .form-input option {
+    background: #0a1628;
+    color: #d1d5db;
+}
+
+.dark .form-input[type="date"] {
+    color-scheme: dark;
+}
+
+/* ── Buttons Dark Mode ── */
+.dark .btn-prev {
+    background: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .btn-prev:hover {
+    background: #3a4a6a;
+}
+
+.dark .btn-next {
+    background: #1f47d8;
+}
+
+.dark .btn-next:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 25px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Booking Summary Dark Mode ── */
+.dark .booking-summary {
+    background: #0a1628;
+}
+
+.dark .summary-row {
+    color: #d1d5db;
+    border-color: #2a3a5a;
+}
+
+.dark .summary-row.total {
+    border-color: #1f47d8;
+}
+
+.dark .summary-row.total span:last-child {
+    color: #4a7a9c;
+}
+
+/* ── Payment Options Dark Mode ── */
+.dark .payment-options {
+    border-color: #2a3a5a;
+}
+
+.dark .payment-option {
+    background: #0a1628;
+    color: #9ca3af;
+}
+
+.dark .payment-option i {
+    color: #4a7a9c;
+}
+
+.dark .payment-option:has(input:checked) {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .payment-option:has(input:checked) i {
+    color: #ffffff;
+}
+
+/* ── Confirmation Dark Mode ── */
+.dark .confirmation-icon {
+    color: #34d399;
+}
+
+.dark .confirmation-content h2 {
+    color: #ffffff;
+}
+
+.dark .confirmation-content > p {
+    color: #9ca3af;
+}
+
+.dark .booking-details {
+    background: #0a1628;
+}
+
+.dark .detail-row {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .detail-row strong {
+    color: #ffffff;
+}
+
+.dark .confirmation-note {
+    color: #6b7280;
+}
+
+.dark .confirmation-note i {
+    color: #4a7a9c;
+}
+
+.dark .btn-done {
+    background: #1f47d8;
+}
+
+.dark .btn-done:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Scrollbar Dark Mode ── */
+.dark .schedule-table-wrapper::-webkit-scrollbar-track {
+    background: #1a2a4a;
+}
+
+.dark .schedule-table-wrapper::-webkit-scrollbar-thumb {
+    background: #1f47d8;
+    border-radius: 10px;
+}
+
+.dark .schedule-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #2a5ae8;
 }
