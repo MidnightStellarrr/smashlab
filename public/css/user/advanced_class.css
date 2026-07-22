@@ -837,3 +837,227 @@
         padding: 20px;
     }
 }
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Class Overview ── */
+.dark .class-overview {
+    background: #0a1628;
+}
+
+.dark .overview-text h2 {
+    color: #ffffff;
+}
+
+.dark .overview-text p {
+    color: #9ca3af;
+}
+
+.dark .feature-item {
+    color: #d1d5db;
+}
+
+.dark .section-badge {
+    background: #1f47d8;
+}
+
+/* ── Stats Boxes ── */
+.dark .stat-box {
+    background: #1a2a4a;
+}
+
+.dark .stat-box h3 {
+    color: #ffffff;
+}
+
+.dark .stat-box p {
+    color: #9ca3af;
+}
+
+/* ── Learn Section ── */
+.dark .learn-section {
+    background: #0a1628;
+}
+
+.dark .learn-header h2 {
+    color: #ffffff;
+}
+
+.dark .learn-header p {
+    color: #9ca3af;
+}
+
+.dark .learn-card {
+    background: #1a2a4a;
+    border-color: #2a3a5a;
+}
+
+.dark .learn-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark .learn-number {
+    color: #4a7a9c;
+}
+
+.dark .learn-card h3 {
+    color: #ffffff;
+}
+
+.dark .learn-card p {
+    color: #9ca3af;
+}
+
+/* ── Coach Section ── */
+.dark .coach-section {
+    background: #0a1628;
+}
+
+.dark .coach-info h2 {
+    color: #ffffff;
+}
+
+.dark .coach-credentials span {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+.dark .coach-credentials i {
+    color: #4a7a9c;
+}
+
+.dark .coach-info p {
+    color: #9ca3af;
+}
+
+.dark .coach-info blockquote {
+    color: #d1d5db;
+    border-left-color: #1f47d8;
+}
+
+/* ── Enroll Button ── */
+.dark .enroll-btn {
+    background: #1f47d8;
+}
+
+.dark .enroll-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Pricing Section ── */
+.dark .pricing-section {
+    background: url("/images/pricing_bg.jpg") center center/cover no-repeat;
+}
+
+.dark .pricing-bg-overlay {
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dark .pricing-header h2 {
+    color: #ffffff;
+}
+
+.dark .pricing-header p {
+    color: #9ca3af;
+}
+
+.dark .pricing-card {
+    background: #1a2a4a;
+    border-color: #2a3a5a;
+}
+
+.dark .pricing-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark .pricing-card.popular {
+    border-color: #1f47d8;
+    box-shadow: 0 4px 30px rgba(31, 71, 216, 0.2);
+}
+
+.dark .popular-badge {
+    background: #1f47d8;
+}
+
+.dark .pricing-card-header h3 {
+    color: #ffffff;
+}
+
+.dark .pricing-price {
+    color: #4a7a9c;
+}
+
+.dark .pricing-card-header p {
+    color: #6b7280;
+}
+
+.dark .pricing-features li {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .pricing-features i {
+    color: #34d399;
+}
+
+.dark .pricing-btn {
+    background: #1f47d8;
+}
+
+.dark .pricing-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 25px rgba(31, 71, 216, 0.4);
+}
+
+/* ── FAQ Section ── */
+.dark .faq-section {
+    background: #0a1628;
+}
+
+.dark .faq-header h2 {
+    color: #ffffff;
+}
+
+.dark .faq-item {
+    background: #1a2a4a;
+}
+
+.dark .faq-item:hover {
+    background: #2a3a5a;
+}
+
+.dark .faq-item h3 {
+    color: #ffffff;
+}
+
+.dark .faq-item p {
+    color: #9ca3af;
+}
+
+/* ── CTA - Ready to Play ── */
+.dark .ready-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark .ready-content h2 {
+    color: #ffffff;
+}
+
+.dark .ready-content p {
+    color: #d1d5db;
+}
+
+.dark .ready-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .ready-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 15px 35px rgba(31, 71, 216, 0.4);
+}
