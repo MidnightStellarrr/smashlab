@@ -412,3 +412,162 @@
         align-items: stretch;
     }
 }
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Shop Section ── */
+.dark .shop-section {
+    background: #0a1628;
+}
+
+.dark .shop-header h2 {
+    color: #ffffff;
+}
+
+.dark .shop-header p {
+    color: #9ca3af;
+}
+
+/* ── Shop Controls ── */
+.dark .shop-controls {
+    background: #1a2a4a;
+}
+
+.dark .search-bar {
+    background: #0a1628;
+    border-color: #2a3a5a;
+}
+
+.dark .search-bar:focus-within {
+    border-color: #1f47d8;
+}
+
+.dark .search-bar i {
+    color: #6b7280;
+}
+
+.dark .search-bar input {
+    color: #d1d5db;
+}
+
+.dark .search-bar input::placeholder {
+    color: #6b7280;
+}
+
+/* ── Categories ── */
+.dark .category-btn {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .category-btn:hover {
+    border-color: #1f47d8;
+    color: #4a7a9c;
+}
+
+.dark .category-btn.active {
+    background: #1f47d8;
+    border-color: #1f47d8;
+    color: #ffffff;
+}
+
+/* ── Sort ── */
+.dark .sort-container label {
+    color: #9ca3af;
+}
+
+.dark .sort-container select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .sort-container select:focus {
+    border-color: #1f47d8;
+}
+
+.dark .sort-container select option {
+    background: #1a2a4a;
+    color: #d1d5db;
+}
+
+/* ── Product Card ── */
+.dark .product-card {
+    background: #1a2a4a;
+    border-color: #2a3a5a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark .product-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark .product-image {
+    background: #0a1628;
+}
+
+.dark .product-badge {
+    background: #1f47d8;
+}
+
+.dark .product-badge.sale {
+    background: #dc2626;
+}
+
+.dark .product-badge.new {
+    background: #16a34a;
+}
+
+/* ── Product Info ── */
+.dark .product-info h3 {
+    color: #ffffff;
+}
+
+.dark .product-info p {
+    color: #9ca3af;
+}
+
+.dark .product-rating i.fa-regular {
+    color: #4b5563;
+}
+
+.dark .product-rating span {
+    color: #6b7280;
+}
+
+/* ── Product Footer ── */
+.dark .product-price {
+    color: #ffffff;
+}
+
+.dark .product-price .old-price {
+    color: #6b7280;
+}
+
+.dark .add-to-cart {
+    background: #1f47d8;
+}
+
+.dark .add-to-cart:hover {
+    background: #2a5ae8;
+}
+
+/* ── No Results ── */
+.dark .no-results {
+    background: #1a2a4a;
+}
+
+.dark .no-results i {
+    color: #4b5563;
+}
+
+.dark .no-results h3 {
+    color: #d1d5db;
+}
+
+.dark .no-results p {
+    color: #6b7280;
+}
