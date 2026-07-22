@@ -321,14 +321,12 @@
 ======================================*/
 
 .map-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
     background: #fff;
 }
 
 .map-container {
     width: 100%;
-    max-width: 100%;
     margin: 0;
     padding: 0;
 }
