@@ -355,3 +355,104 @@
         height: 240px;
     }
 }
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Contact Section ── */
+.dark .contact-section {
+    background: #0a1628;
+}
+
+/* ── Form Card ── */
+.dark .contact-form-card {
+    background: rgba(26, 42, 74, 0.8);
+}
+
+.dark .form-header h2 {
+    color: #ffffff;
+}
+
+.dark .form-header p {
+    color: #9ca3af;
+}
+
+.dark .form-group label {
+    color: #d1d5db;
+}
+
+.dark .form-group input,
+.dark .form-group textarea {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-group input::placeholder,
+.dark .form-group textarea::placeholder {
+    color: #6b7280;
+}
+
+.dark .form-group input:focus,
+.dark .form-group textarea:focus {
+    border-color: #1f47d8;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.15);
+}
+
+/* ── Contact Button ── */
+.dark .contact-btn {
+    background: #1f47d8;
+}
+
+.dark .contact-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 8px 30px rgba(31, 71, 216, 0.4);
+}
+
+/* ── Right Side Info ── */
+.dark .contact-info h2 {
+    color: #ffffff;
+}
+
+.dark .contact-description {
+    color: #9ca3af;
+}
+
+/* ── Info Cards ── */
+.dark .info-card {
+    border-bottom-color: #2a3a5a;
+}
+
+.dark .info-card:last-child,
+.dark .info-card:nth-last-child(2) {
+    border-bottom: none;
+}
+
+.dark .info-icon {
+    background: rgba(31, 71, 216, 0.15);
+}
+
+.dark .info-icon i {
+    color: #4a7a9c;
+}
+
+.dark .info-card h3 {
+    color: #6b7280;
+}
+
+.dark .info-card p {
+    color: #d1d5db;
+}
+
+/* ── Map Section ── */
+.dark .map-section {
+    background: #0a1628;
+}
+
+.dark .map-container {
+    background: #0a1628;
+}
+
+.dark .map-container iframe {
+    filter: brightness(0.8) contrast(1.2) saturate(0.5);
+}

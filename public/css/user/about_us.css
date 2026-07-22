@@ -1335,3 +1335,208 @@
         padding: 28px;
     }
 }
+
+/*============================================
+    DARK MODE STYLES
+============================================*/
+
+/* ── Our Story ── */
+.dark .our-story {
+    background: #0a1628;
+}
+
+.dark .story-side p {
+    color: #9ca3af;
+}
+
+.dark .story-content h2 {
+    color: #ffffff;
+}
+
+.dark .story-content p {
+    color: #d1d5db;
+}
+
+/* ── Mission & Vision ── */
+.dark .mission-vision {
+    background: #0a1628;
+}
+
+.dark .mission-text h2,
+.dark .vision-text h2 {
+    color: #ffffff;
+}
+
+.dark .mission-text p,
+.dark .vision-text p {
+    color: #d1d5db;
+}
+
+/* ── Statistics ── */
+.dark .stats-section {
+    background: #1a2a4a;
+}
+
+.dark .stat-item h3 {
+    color: #ffffff;
+}
+
+.dark .stat-item p {
+    color: #9ca3af;
+}
+
+.dark .stat-item:not(:first-child)::before {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Facilities Section ── */
+.dark .facilities-section {
+    background: #0a1628;
+}
+
+.dark .facilities-header h2 {
+    color: #ffffff;
+}
+
+.dark .facilities-header p {
+    color: #9ca3af;
+}
+
+.dark .facility-card {
+    background: #1a2a4a;
+}
+
+.dark .facility-card.text-card {
+    background: #1a2a4a;
+}
+
+.dark .facility-card.text-card h3 {
+    color: #ffffff;
+}
+
+.dark .facility-card.text-card p {
+    color: #9ca3af;
+}
+
+.dark .facility-card .overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .facility-content.white h3 {
+    color: #ffffff;
+}
+
+.dark .facility-content.white p {
+    color: #d1d5db;
+}
+
+/* ── What We Offer ── */
+.dark .what-we-offer {
+    background: linear-gradient(135deg, #050814 0%, #0a1628 30%, #1a2a4a 70%, #1f47d8 100%);
+}
+
+.dark .owo-badge {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #d1d5db;
+}
+
+.dark .owo-left h2 {
+    color: #ffffff;
+}
+
+.dark .owo-right p {
+    color: #9ca3af;
+}
+
+.dark .owo-arrow-btn {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #d1d5db;
+}
+
+.dark .owo-arrow-btn:hover {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+/* ── Offer Cards ── */
+.dark .offer-card .card-overlay.blue-overlay {
+    background: rgba(31, 71, 216, 0.5);
+}
+
+.dark .offer-card .card-overlay.grey-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dark .offer-card .card-content h3 {
+    color: #ffffff;
+}
+
+.dark .offer-card .card-content p {
+    color: #d1d5db;
+}
+
+/* ── Train Like a Pro ── */
+.dark .train-pro {
+    background: #0a1628;
+}
+
+.dark .train-pro .section-heading h2 {
+    color: #ffffff;
+}
+
+.dark .train-pro .section-heading p {
+    color: #9ca3af;
+}
+
+.dark .train-card {
+    background: #1a2a4a;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dark .train-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dark .train-card-img::after {
+    background: rgba(10, 22, 40, 0.7);
+}
+
+.dark .train-card-body h3 {
+    color: #ffffff;
+}
+
+.dark .train-card-body p {
+    color: #9ca3af;
+}
+
+.dark .learn-more-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .learn-more-btn:hover {
+    background: #2a5ae8;
+}
+
+/* ── CTA Section ── */
+.dark .cta-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.dark .cta-content h2 {
+    color: #ffffff;
+}
+
+.dark .cta-content p {
+    color: #d1d5db;
+}
+
+.dark .cta-btn {
+    background: #1f47d8;
+    color: #ffffff;
+}
+
+.dark .cta-btn:hover {
+    background: #2a5ae8;
+    box-shadow: 0 15px 35px rgba(31, 71, 216, 0.4);
+}
