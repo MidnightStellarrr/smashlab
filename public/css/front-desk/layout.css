@@ -1,0 +1,295 @@
+/* ============================================
+   FRONT DESK LAYOUT
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f2f5;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logo img {
+    height: 45px;
+    width: auto;
+}
+
+.sidebar-logo span {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    margin-top: 8px;
+}
+
+.sidebar-logo .subtitle {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu .menu-label {
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px 10px;
+    font-weight: 600;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border-left-color: #1f47d8;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-menu a .badge {
+    margin-left: auto;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+/* ── Sidebar Footer ── */
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-footer .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar-footer .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1f47d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sidebar-footer .user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar-footer .user-role {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+}
+
+.sidebar-footer .logout-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-footer .logout-btn:hover {
+    background: #ef4444;
+}
+
+/* ── Main Content ── */
+.main-content {
+    margin-left: 250px;
+    min-height: 100vh;
+}
+
+/* ── Top Bar ── */
+.topbar {
+    background: white;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-left .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #374151;
+}
+
+.topbar-left h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-right .datetime {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.topbar-right .notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-size: 18px;
+    color: #374151;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.topbar-right .notification-btn:hover {
+    background: #e5e7eb;
+}
+
+.topbar-right .notification-btn .dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+}
+
+/* ── Page Content ── */
+.page-content {
+    padding: 24px 30px;
+}
+
+/* ── Scrollbar ── */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .topbar-left .menu-toggle {
+        display: block;
+    }
+
+    .topbar-left h1 {
+        font-size: 17px;
+    }
+
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .page-content {
+        padding: 16px;
+    }
+
+    .topbar-right .datetime {
+        display: none;
+    }
+}
