@@ -80,4 +80,33 @@ Route::middleware('auth')->group(function () {
     })->name('myclasses');
 });
 
+// Front Desk Routes
+Route::prefix('frontdesk')->name('frontdesk.')->group(function () {
+    // Login
+    Route::get('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [App\Http\Controllers\Frontdesk\AuthController::class, 'logout'])->name('logout');
+
+    // Protected Routes
+    Route::middleware('auth:frontdesk')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Frontdesk\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/bookings', [App\Http\Controllers\Frontdesk\BookingController::class, 'index'])->name('bookings');
+        Route::get('/customers', [App\Http\Controllers\Frontdesk\CustomerController::class, 'index'])->name('customers');
+        Route::get('/shop', [App\Http\Controllers\Frontdesk\ShopController::class, 'index'])->name('shop');
+        Route::get('/classes', [App\Http\Controllers\Frontdesk\ClassController::class, 'index'])->name('classes');
+    });
+});
+
+// Front Desk Routes (separate from user routes)
+Route::prefix('frontdesk')->name('frontdesk.')->group(function () {
+    Route::get('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [App\Http\Controllers\Frontdesk\AuthController::class, 'logout'])->name('logout');
+
+    Route::middleware('auth:frontdesk')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Frontdesk\DashboardController::class, 'index'])->name('dashboard');
+        // ... other routes
+    });
+});
+
 require __DIR__.'/auth.php';
