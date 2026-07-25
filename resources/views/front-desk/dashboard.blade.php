@@ -10,6 +10,14 @@
 
 @section('content')
 
+<!-- ── Quick Search ── -->
+<div class="quick-search-wrapper">
+    <div class="quick-search-bar">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" placeholder="Search by name, phone, or court..." id="globalSearch">
+    </div>
+</div>
+
 <!-- ── Stats Cards ── -->
 <div class="stats-grid">
 
@@ -19,27 +27,21 @@
                 <p class="stat-label">Today's Revenue</p>
                 <p class="stat-value">₱{{ number_format($todayRevenue ?? 0, 2) }}</p>
             </div>
-            <div class="stat-icon blue">
-                <i class="fa-solid fa-credit-card"></i>
-            </div>
         </div>
         <div class="stat-change positive">
             <i class="fa-solid fa-arrow-up trend-icon"></i> 12% from yesterday
         </div>
     </div>
 
-    <div class="stat-card green">
+    <div class="stat-card">
         <div class="stat-header">
             <div>
                 <p class="stat-label">Total Check-ins</p>
-                <p class="stat-value">{{ $totalCheckins ?? 0 }}</p>
-            </div>
-            <div class="stat-icon green">
-                <i class="fa-solid fa-user-check"></i>
+                <p class="stat-value" style="color: #000000;">{{ $totalCheckins ?? 0 }}</p>
             </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-users trend-icon"></i> {{ $totalCheckins ?? 0 }} total customers
+            {{ $totalCheckins ?? 0 }} total customers
         </div>
     </div>
 
@@ -49,12 +51,9 @@
                 <p class="stat-label">Courts Occupied</p>
                 <p class="stat-value">{{ $occupiedCourts ?? 0 }}/4</p>
             </div>
-            <div class="stat-icon yellow">
-                <i class="fa-solid fa-person-playing"></i>
-            </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-clock trend-icon"></i> {{ $occupiedCourts ?? 0 }} courts currently in use
+            {{ $occupiedCourts ?? 0 }} courts currently in use
         </div>
     </div>
 
@@ -64,12 +63,9 @@
                 <p class="stat-label">Today's Bookings</p>
                 <p class="stat-value">{{ $bookings->count() ?? 0 }}</p>
             </div>
-            <div class="stat-icon red">
-                <i class="fa-regular fa-calendar"></i>
-            </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-check-circle trend-icon" style="color: #22c55e;"></i> {{ $bookings->where('status', 'confirmed')->count() }} confirmed
+            {{ $bookings->where('status', 'confirmed')->count() }} confirmed
         </div>
     </div>
 
@@ -93,28 +89,28 @@
             </div>
 
             <div class="court-grid">
-                <div class="court-card available">
+                <div class="court-card available blue-bg">
                     <div class="court-number">Court 1</div>
                     <div class="court-status"><i class="fa-solid fa-check-circle"></i> Available</div>
                     <div class="court-time">10:00 AM - 12:00 PM</div>
                     <span class="court-badge">Book Now</span>
                 </div>
 
-                <div class="court-card reserved">
+                <div class="court-card reserved gray-bg">
                     <div class="court-number">Court 2</div>
                     <div class="court-status"><i class="fa-solid fa-circle"></i> Reserved</div>
                     <div class="court-time">2:00 PM - 4:00 PM</div>
                     <span class="court-badge">John D.</span>
                 </div>
 
-                <div class="court-card class">
+                <div class="court-card class blue-bg">
                     <div class="court-number">Court 3</div>
                     <div class="court-status"><i class="fa-solid fa-chalkboard-user"></i> Class</div>
                     <div class="court-time">3:00 PM - 5:00 PM</div>
                     <span class="court-badge">Beginner</span>
                 </div>
 
-                <div class="court-card walkin">
+                <div class="court-card walkin gray-bg">
                     <div class="court-number">Court 4</div>
                     <div class="court-status"><i class="fa-solid fa-user-plus"></i> Walk-in</div>
                     <div class="court-time">5:00 PM - 7:00 PM</div>
@@ -180,15 +176,6 @@
 
     <!-- ── Right Column ── -->
     <div>
-
-        <!-- ── Quick Search ── -->
-        <div class="widget">
-            <h3 class="widget-title"><i class="fa-solid fa-search"></i> Quick Search</h3>
-            <div class="search-bar">
-                <i class="fa-solid fa-search"></i>
-                <input type="text" placeholder="Search by name, phone, or court..." id="globalSearch">
-            </div>
-        </div>
 
         <!-- ── Quick Stats ── -->
         <div class="widget">
