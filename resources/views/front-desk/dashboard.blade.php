@@ -196,17 +196,6 @@
             </div>
         </div>
 
-        <!-- ── Quick Actions ── -->
-        <div class="widget">
-            <h3 class="widget-title"><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
-            <div class="quick-actions">
-                <a href="#" class="action-btn primary"><i class="fa-solid fa-user-plus"></i> Walk-in</a>
-                <a href="#" class="action-btn success"><i class="fa-solid fa-check"></i> Check-in</a>
-                <a href="#" class="action-btn warning"><i class="fa-solid fa-clock"></i> Extend</a>
-                <a href="#" class="action-btn outline"><i class="fa-solid fa-cart-shopping"></i> Shop</a>
-            </div>
-        </div>
-
         <!-- ── Recent Activity ── -->
         <div class="widget">
             <h3 class="widget-title"><i class="fa-solid fa-clock-rotate-left"></i> Recent Activity</h3>
@@ -236,6 +225,24 @@
 
     </div>
 
+</div>
+
+<!-- ── Quick Actions (FULL WIDTH) ── -->
+<div class="section-card full-width-actions">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fa-solid fa-bolt"></i> Quick Actions
+        </h2>
+    </div>
+
+    <div class="quick-actions-full">
+        <a href="#" class="action-btn primary"><i class="fa-solid fa-user-plus"></i> Walk-in</a>
+        <a href="#" class="action-btn success"><i class="fa-solid fa-check"></i> Check-in</a>
+        <a href="#" class="action-btn warning"><i class="fa-solid fa-clock"></i> Extend</a>
+        <a href="#" class="action-btn outline"><i class="fa-solid fa-cart-shopping"></i> Shop</a>
+        <a href="#" class="action-btn primary"><i class="fa-solid fa-calendar-plus"></i> New Booking</a>
+        <a href="#" class="action-btn success"><i class="fa-solid fa-rotate"></i> Reschedule</a>
+    </div>
 </div>
 
 <!-- ── Court Details Modal ── -->
