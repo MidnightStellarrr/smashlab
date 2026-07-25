@@ -37,7 +37,7 @@
         <div class="stat-header">
             <div>
                 <p class="stat-label">Total Check-ins</p>
-                <p class="stat-value" style="color: #000000;">{{ $totalCheckins ?? 0 }}</p>
+                <p class="stat-value">{{ $totalCheckins ?? 0 }}</p>
             </div>
         </div>
         <div class="stat-change neutral">
@@ -107,8 +107,8 @@
                     <div class="court-time">3:00 PM - 5:00 PM</div>
                 </div>
 
-                <div class="court-card walkin gradient-bg">
-                    <div class="court-status">Walk-in</div>
+                <div class="court-card maintenance gradient-bg">
+                    <div class="court-status">Under Maintenance</div>
                     <div class="court-number">Court 4</div>
                     <div class="court-time">5:00 PM - 7:00 PM</div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="legend-item"><span class="dot green"></span> Available</div>
                 <div class="legend-item"><span class="dot red"></span> Reserved</div>
                 <div class="legend-item"><span class="dot blue"></span> Class</div>
-                <div class="legend-item"><span class="dot orange"></span> Walk-in</div>
+                <div class="legend-item"><span class="dot orange"></span> Under Maintenance</div>
             </div>
         </div>
 
