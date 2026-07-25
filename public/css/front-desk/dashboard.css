@@ -204,6 +204,7 @@
     font-size: 12px;
     color: #22c55e;
     font-weight: 500;
+    margin-right: 8px;
 }
 
 .live-indicator .pulse {
@@ -255,19 +256,24 @@
 }
 
 .court-card .court-number {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 700;
 }
 
 .court-card .court-status {
-    font-size: 12px;
+    display: inline-block;
+    padding: 3px 14px;
+    border-radius: 20px;
+    border: 2px solid currentColor;
+    font-size: 10px;
     font-weight: 500;
-    margin-top: 4px;
+    margin-top: 8px;
+    margin-bottom: 6px;
 }
 
 .court-card .court-time {
     font-size: 11px;
-    color: #6b7280;
+    color: rgba(255, 255, 255, 0.6);
     margin-top: 4px;
 }
 
@@ -280,28 +286,37 @@
     margin-top: 6px;
 }
 
+/* ── Court Card Gradient Background ── */
+.court-card.gradient-bg {
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+    border-color: #1a2a4a;
+}
+
+/* ── Court Card Text Colors ── */
+.court-card.gradient-bg .court-number {
+    color: #ffffff;
+}
+
+.court-card.gradient-bg .court-time {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 /* ── Court Card Status Colors ── */
-.court-card.available .court-number { color: #22c55e; }
-.court-card.available .court-status { color: #16a34a; }
-.court-card.available .court-badge { background: #22c55e; color: white; }
+.court-card.available .court-status {
+    color: #22c55e;  /* Green for Available */
+}
 
-.court-card.reserved .court-number { color: #dc2626; }
-.court-card.reserved .court-status { color: #dc2626; }
-.court-card.reserved .court-badge { background: #ef4444; color: white; }
+.court-card.reserved .court-status {
+    color: #f87171;  /* Red for Reserved */
+}
 
-.court-card.class .court-number { color: #1f47d8; }
-.court-card.class .court-status { color: #1f47d8; }
-.court-card.class .court-badge { background: #1f47d8; color: white; }
+.court-card.class .court-status {
+    color: #60a5fa;  /* Blue for Class */
+}
 
-.court-card.walkin .court-number { color: #d97706; }
-.court-card.walkin .court-status { color: #d97706; }
-.court-card.walkin .court-badge { background: #f59e0b; color: white; }
-
-/* ── Court Card Backgrounds ── */
-.court-card.available { background: #dcfce7; border-color: #22c55e; }
-.court-card.reserved { background: #fef2f2; border-color: #ef4444; }
-.court-card.class { background: #dbeafe; border-color: #1f47d8; }
-.court-card.walkin { background: #fef3c7; border-color: #f59e0b; }
+.court-card.walkin .court-status {
+    color: #fbbf24;  /* Yellow/Orange for Walk-in */
+}
 
 /* ── Legend ── */
 .legend {
@@ -829,45 +844,34 @@
 }
 
 /* ── Court Cards Dark Mode ── */
-.dark .court-card.available {
-    background: #065f46;
-    border-color: #34d399;
+.dark .court-card.gradient-bg {
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+    border-color: #1a2a4a;
 }
 
-.dark .court-card.available .court-number { color: #34d399; }
-.dark .court-card.available .court-status { color: #34d399; }
-.dark .court-card.available .court-time { color: #6b7280; }
-.dark .court-card.available .court-badge { background: #34d399; color: #0a1628; }
-
-.dark .court-card.reserved {
-    background: #7f1d1d;
-    border-color: #f87171;
+.dark .court-card.gradient-bg .court-number {
+    color: #ffffff;
 }
 
-.dark .court-card.reserved .court-number { color: #f87171; }
-.dark .court-card.reserved .court-status { color: #f87171; }
-.dark .court-card.reserved .court-time { color: #6b7280; }
-.dark .court-card.reserved .court-badge { background: #f87171; color: #0a1628; }
-
-.dark .court-card.class {
-    background: #1a2a4a;
-    border-color: #4a7a9c;
+.dark .court-card.gradient-bg .court-time {
+    color: rgba(255, 255, 255, 0.5);
 }
 
-.dark .court-card.class .court-number { color: #4a7a9c; }
-.dark .court-card.class .court-status { color: #4a7a9c; }
-.dark .court-card.class .court-time { color: #6b7280; }
-.dark .court-card.class .court-badge { background: #4a7a9c; color: #0a1628; }
-
-.dark .court-card.walkin {
-    background: #78350f;
-    border-color: #fbbf24;
+.dark .court-card.available .court-status {
+    color: #34d399;
 }
 
-.dark .court-card.walkin .court-number { color: #fbbf24; }
-.dark .court-card.walkin .court-status { color: #fbbf24; }
-.dark .court-card.walkin .court-time { color: #6b7280; }
-.dark .court-card.walkin .court-badge { background: #fbbf24; color: #0a1628; }
+.dark .court-card.reserved .court-status {
+    color: #f87171;
+}
+
+.dark .court-card.class .court-status {
+    color: #4a7a9c;
+}
+
+.dark .court-card.walkin .court-status {
+    color: #fbbf24;
+}
 
 /* ── Legend Dark Mode ── */
 .dark .legend {
