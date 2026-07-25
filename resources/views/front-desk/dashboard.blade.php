@@ -174,7 +174,7 @@
     <div>
 
         <!-- ── Quick Stats ── -->
-        <div class="widget">
+        <div class="widget quick-stats">
             <h3 class="widget-title"><i class="fa-solid fa-chart-simple"></i> Quick Stats</h3>
             <div class="quick-stats">
                 <div class="stat-row">
