@@ -33,7 +33,7 @@
 
     @stack('styles')
 </head>
-<body class="bg-gray-100 dark:bg-black transition-colors duration-300">
+<body class="bg-gray-100 dark:bg-[#111827] transition-colors duration-300">
 
     <!-- ── Sidebar ── -->
     <aside class="sidebar" id="sidebar">
@@ -100,7 +100,7 @@
             </div>
             <div class="topbar-right">
                 <span class="datetime" id="currentDateTime"></span>
-                <button class="notification-btn">
+                <button class="notification-btn" id="notificationToggle">
                     <i class="fa-regular fa-bell"></i>
                     <span class="dot"></span>
                 </button>
@@ -116,6 +116,112 @@
             @yield('content')
         </div>
 
+    </div>
+
+    <!-- ── Notification Modal ── -->
+    <div class="notification-modal" id="notificationModal">
+        <div class="notification-overlay" id="notificationOverlay"></div>
+        <div class="notification-panel">
+            <div class="notification-header">
+                <h3><i class="fa-regular fa-bell"></i> Notifications</h3>
+                <div>
+                    <button class="mark-all-btn" id="markAllBtn">Mark all as read</button>
+                    <button class="close-notification" id="closeNotification">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="notification-body">
+                <!-- Notification Item 1 -->
+                <div class="notification-item unread">
+                    <div class="notification-icon blue">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>New Booking</strong> - Court 2 reserved by John Doe for today at 2:00 PM</p>
+                        <span class="notification-time">2 min ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="1">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Notification Item 2 -->
+                <div class="notification-item unread">
+                    <div class="notification-icon green">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>Check-in</strong> - Maria Santos checked in for Beginner Class on Court 1</p>
+                        <span class="notification-time">15 min ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="2">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Notification Item 3 -->
+                <div class="notification-item unread">
+                    <div class="notification-icon orange">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>Rental Due</strong> - Racket #3 rental is due in 30 minutes</p>
+                        <span class="notification-time">45 min ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="3">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Notification Item 4 -->
+                <div class="notification-item">
+                    <div class="notification-icon red">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>Alert</strong> - Court 4 maintenance scheduled for tomorrow</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="4">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Notification Item 5 -->
+                <div class="notification-item">
+                    <div class="notification-icon purple">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>Class Reminder</strong> - Intermediate Class starts in 2 hours on Court 3</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="5">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Notification Item 6 -->
+                <div class="notification-item">
+                    <div class="notification-icon teal">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p class="notification-text"><strong>Shop Order</strong> - New order #ORD-2026-042 placed for premium racket</p>
+                        <span class="notification-time">3 hours ago</span>
+                    </div>
+                    <button class="notification-dismiss" data-id="6">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="notification-footer">
+                <a href="#" class="view-all-link">View all notifications →</a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -145,7 +251,6 @@
         const toggleBtn = document.getElementById('darkModeToggle');
         const icon = document.getElementById('darkModeIcon');
 
-        // Check initial state
         if (document.documentElement.classList.contains('dark')) {
             icon.className = 'fa-solid fa-sun';
         }
@@ -154,6 +259,86 @@
             const isDark = document.documentElement.classList.toggle('dark');
             localStorage.setItem('smashlab-theme', isDark ? 'dark' : 'light');
             icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        });
+
+        // ── Notification Modal ──
+        const notificationToggle = document.getElementById('notificationToggle');
+        const notificationModal = document.getElementById('notificationModal');
+        const notificationOverlay = document.getElementById('notificationOverlay');
+        const closeNotification = document.getElementById('closeNotification');
+
+        function openNotification() {
+            notificationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNotificationModal() {
+            notificationModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        notificationToggle?.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openNotification();
+        });
+
+        notificationOverlay?.addEventListener('click', closeNotificationModal);
+        closeNotification?.addEventListener('click', closeNotificationModal);
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && notificationModal.classList.contains('active')) {
+                closeNotificationModal();
+            }
+        });
+
+        // ── Mark All as Read ──
+        document.getElementById('markAllBtn')?.addEventListener('click', function() {
+            document.querySelectorAll('.notification-item').forEach(item => {
+                item.classList.remove('unread');
+            });
+            // Update dot
+            document.querySelector('.dot').style.display = 'none';
+            // Show feedback
+            this.textContent = '✓ All marked as read';
+            setTimeout(() => {
+                this.textContent = 'Mark all as read';
+            }, 2000);
+        });
+
+        // ── Dismiss Individual Notification ──
+        document.querySelectorAll('.notification-dismiss').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const item = this.closest('.notification-item');
+                item.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => {
+                    item.remove();
+                    // Update count
+                    const remaining = document.querySelectorAll('.notification-item').length;
+                    if (remaining === 0) {
+                        document.querySelector('.notification-body').innerHTML = `
+                            <div class="empty-notifications">
+                                <i class="fa-regular fa-bell-slash"></i>
+                                <p>No notifications</p>
+                                <span>You're all caught up!</span>
+                            </div>
+                        `;
+                        document.querySelector('.dot').style.display = 'none';
+                    }
+                }, 300);
+            });
+        });
+
+        // ── Click outside to close (panel) ──
+        document.addEventListener('click', function(e) {
+            const panel = document.querySelector('.notification-panel');
+            const toggle = document.getElementById('notificationToggle');
+            if (notificationModal.classList.contains('active') && 
+                !panel.contains(e.target) && 
+                !toggle.contains(e.target)) {
+                closeNotificationModal();
+            }
         });
     </script>
 
