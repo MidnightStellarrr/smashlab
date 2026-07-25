@@ -747,3 +747,338 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   DARK MODE STYLES - DASHBOARD
+   ============================================ */
+
+/* ── Stats Cards ── */
+.dark .stat-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .stat-card .stat-label {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-value {
+    color: #ffffff;
+}
+
+.dark .stat-card .stat-change.neutral {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-icon.blue {
+    background: #0a1628;
+    color: #4a7a9c;
+}
+
+.dark .stat-card .stat-icon.green {
+    background: #0a1628;
+    color: #34d399;
+}
+
+.dark .stat-card .stat-icon.yellow {
+    background: #0a1628;
+    color: #fbbf24;
+}
+
+.dark .stat-card .stat-icon.red {
+    background: #0a1628;
+    color: #f87171;
+}
+
+.dark .stat-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Section Cards ── */
+.dark .section-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .section-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.dark .section-card .section-title {
+    color: #ffffff;
+}
+
+.dark .section-card .section-subtitle {
+    color: #9ca3af;
+}
+
+.dark .section-card .section-link {
+    color: #4a7a9c;
+}
+
+.dark .section-card .section-link:hover {
+    background: #0a1628;
+}
+
+/* ── Court Cards ── */
+.dark .court-card.available {
+    background: #065f46;
+    border-color: #34d399;
+}
+
+.dark .court-card.available .court-number {
+    color: #34d399;
+}
+
+.dark .court-card.available .court-status {
+    color: #34d399;
+}
+
+.dark .court-card.available .court-time {
+    color: #6b7280;
+}
+
+.dark .court-card.reserved {
+    background: #7f1d1d;
+    border-color: #f87171;
+}
+
+.dark .court-card.reserved .court-number {
+    color: #f87171;
+}
+
+.dark .court-card.reserved .court-status {
+    color: #f87171;
+}
+
+.dark .court-card.reserved .court-time {
+    color: #6b7280;
+}
+
+.dark .court-card.class {
+    background: #1a2a4a;
+    border-color: #4a7a9c;
+}
+
+.dark .court-card.class .court-number {
+    color: #4a7a9c;
+}
+
+.dark .court-card.class .court-status {
+    color: #4a7a9c;
+}
+
+.dark .court-card.class .court-time {
+    color: #6b7280;
+}
+
+.dark .court-card.walkin {
+    background: #78350f;
+    border-color: #fbbf24;
+}
+
+.dark .court-card.walkin .court-number {
+    color: #fbbf24;
+}
+
+.dark .court-card.walkin .court-status {
+    color: #fbbf24;
+}
+
+.dark .court-card.walkin .court-time {
+    color: #6b7280;
+}
+
+/* ── Legend ── */
+.dark .legend {
+    border-color: #2a3a5a;
+}
+
+.dark .legend-item {
+    color: #9ca3af;
+}
+
+.dark .legend-item:hover {
+    background: #0a1628;
+}
+
+/* ── Class Cards ── */
+.dark .class-card {
+    background: #0a1628;
+    border-color: #212b40;
+}
+
+.dark .class-card .class-name {
+    color: #ffffff;
+}
+
+.dark .class-card .class-coach {
+    color: #9ca3af;
+}
+
+.dark .class-card .class-meta {
+    color: #9ca3af;
+}
+
+.dark .class-card .class-progress {
+    background: #2a3a5a;
+}
+
+.dark .class-card .class-badge.live {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .class-card .class-badge.upcoming {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .class-card .class-badge.ended {
+    background: #374151;
+    color: #9ca3af;
+}
+
+/* ── Widgets ── */
+.dark .widget {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .widget:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.dark .widget .widget-title {
+    color: #ffffff;
+}
+
+.dark .widget .widget-title i {
+    color: #4a7a9c;
+}
+
+/* ── Search Bar ── */
+.dark .search-bar input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .search-bar input:focus {
+    border-color: #4a7a9c;
+    background: #0a1628;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .search-bar input::placeholder {
+    color: #6b7280;
+}
+
+.dark .search-bar i {
+    color: #6b7280;
+}
+
+/* ── Quick Stats ── */
+.dark .quick-stats .stat-row {
+    border-color: #2a3a5a;
+}
+
+.dark .quick-stats .stat-row:hover {
+    background: #0a1628;
+}
+
+.dark .quick-stats .stat-label {
+    color: #9ca3af;
+}
+
+.dark .quick-stats .stat-value {
+    color: #ffffff;
+}
+
+.dark .quick-stats .stat-value .highlight {
+    color: #4a7a9c;
+}
+
+/* ── Quick Actions ── */
+.dark .quick-actions .action-btn.primary {
+    background: #1f47d8;
+}
+
+.dark .quick-actions .action-btn.primary:hover {
+    background: #2a5ae8;
+}
+
+.dark .quick-actions .action-btn.success {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .quick-actions .action-btn.success:hover {
+    background: #0a7a5a;
+}
+
+.dark .quick-actions .action-btn.warning {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .quick-actions .action-btn.warning:hover {
+    background: #92400e;
+}
+
+.dark .quick-actions .action-btn.outline {
+    background: transparent;
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .quick-actions .action-btn.outline:hover {
+    background: #0a1628;
+}
+
+/* ── Recent Activity ── */
+.dark .recent-activity .activity-item {
+    border-color: #2a3a5a;
+}
+
+.dark .recent-activity .activity-text {
+    color: #9ca3af;
+}
+
+.dark .recent-activity .activity-text strong {
+    color: #ffffff;
+}
+
+.dark .recent-activity .activity-time {
+    color: #6b7280;
+}
+
+/* ── Live Indicator ── */
+.dark .live-indicator {
+    color: #34d399;
+}
+
+.dark .live-indicator .pulse {
+    background: #34d399;
+}
+
+/* ── Court Badges ── */
+.dark .court-card.available .court-badge {
+    background: #34d399;
+    color: #0a1628;
+}
+
+.dark .court-card.reserved .court-badge {
+    background: #f87171;
+    color: #0a1628;
+}
+
+.dark .court-card.class .court-badge {
+    background: #4a7a9c;
+    color: #0a1628;
+}
+
+.dark .court-card.walkin .court-badge {
+    background: #fbbf24;
+    color: #0a1628;
+}

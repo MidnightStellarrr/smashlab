@@ -35,30 +35,25 @@ body {
 .sidebar-logo .flex {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* ← Aligns everything to the left */
-    gap: 0;  /* Remove gap between items */
+    justify-content: flex-start;
+    gap: 0;
 }
 
-/* Logo image - control separately */
 .sidebar-logo img {
     height: 45px;
     width: auto;
     margin-top: 27px;
     margin-left: 15px;
-    /* Add any logo-specific styles here */
 }
 
-/* SmashLab text - control separately */
 .sidebar-logo .text-xl {
     color: white;
     font-size: 28px;
     font-weight: 700;
     margin-top: 30px;
-    margin-left: 10px;  /* ← Adjust this to move text */
-    /* OR use transform */
+    margin-left: 10px;
 }
 
-/* Subtitle */
 .sidebar-logo .subtitle {
     display: block;
     margin-top: 4px;
@@ -181,7 +176,7 @@ body {
 
 /* ── Main Content ── */
 .main-content {
-    margin-left: 250px;
+    margin-left: 256px;
     min-height: 100vh;
 }
 
@@ -196,6 +191,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .topbar-left {
@@ -217,6 +213,7 @@ body {
     font-size: 20px;
     font-weight: 700;
     color: #111827;
+    transition: color 0.3s ease;
 }
 
 .topbar-right {
@@ -228,6 +225,7 @@ body {
 .topbar-right .datetime {
     color: #6b7280;
     font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .topbar-right .notification-btn {
@@ -257,6 +255,27 @@ body {
     border-radius: 50%;
 }
 
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-size: 18px;
+    color: #374151;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: #e5e7eb;
+    transform: scale(1.05);
+}
+
 /* ── Page Content ── */
 .page-content {
     padding: 24px 30px;
@@ -276,7 +295,67 @@ body {
     border-radius: 10px;
 }
 
-/* ── Responsive ── */
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+/* ── Dark Mode Body ── */
+.dark body {
+    background: #070707;
+}
+
+/* ── Dark Mode Top Bar ── */
+.dark .topbar {
+    background: #111827;
+    border-bottom-color: #212b40;
+}
+
+.dark .topbar-left h1 {
+    color: #ffffff;
+}
+
+.dark .topbar-right .datetime {
+    color: #9ca3af;
+}
+
+.dark .topbar-right .notification-btn {
+    background: #0a1628;
+    color: #4a7a9c;
+}
+
+.dark .topbar-right .notification-btn:hover {
+    background: #2a3a5a;
+    color: #6a9abc;
+}
+
+.dark .theme-toggle {
+    background: #0a1628;
+    color: #4a7a9c;
+}
+
+.dark .theme-toggle:hover {
+    background: #2a3a5a;
+    color: #6a9abc;
+}
+
+/* ── Dark Mode Sidebar (already dark, but ensure consistency) ── */
+.dark .sidebar {
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+}
+
+.dark .sidebar-menu a {
+    color: rgba(255,255,255,0.6);
+}
+
+.dark .sidebar-menu a:hover {
+    color: white;
+}
+
+.dark .sidebar-menu a.active {
+    color: white;
+}
+
+/* ── Dark Mode Responsive ── */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);

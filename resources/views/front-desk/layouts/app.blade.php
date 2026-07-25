@@ -14,9 +14,26 @@
     <!-- Front Desk Layout CSS -->
     <link rel="stylesheet" href="{{ asset('css/front-desk/layout.css') }}">
 
+    <!-- Dark Mode Initialization -->
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('smashlab-theme');
+            if (storedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else if (storedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        })();
+    </script>
+
     @stack('styles')
 </head>
-<body>
+<body class="bg-gray-100 dark:bg-black transition-colors duration-300">
 
     <!-- ── Sidebar ── -->
     <aside class="sidebar" id="sidebar">
@@ -87,6 +104,10 @@
                     <i class="fa-regular fa-bell"></i>
                     <span class="dot"></span>
                 </button>
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="darkModeToggle">
+                    <i class="fa-solid fa-moon" id="darkModeIcon"></i>
+                </button>
             </div>
         </header>
 
@@ -119,6 +140,21 @@
         }
         updateDateTime();
         setInterval(updateDateTime, 1000);
+
+        // ── Dark Mode Toggle ──
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const icon = document.getElementById('darkModeIcon');
+
+        // Check initial state
+        if (document.documentElement.classList.contains('dark')) {
+            icon.className = 'fa-solid fa-sun';
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('smashlab-theme', isDark ? 'dark' : 'light');
+            icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        });
     </script>
 
     @stack('scripts')
