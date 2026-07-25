@@ -89,25 +89,25 @@
             </div>
 
             <div class="court-grid">
-                <div class="court-card available gradient-bg">
+                <div class="court-card available gradient-bg" data-court="1" data-status="available" data-time="10:00 AM - 12:00 PM">
                     <div class="court-status">Available</div>
                     <div class="court-number">Court 1</div>
                     <div class="court-time">10:00 AM - 12:00 PM</div>
                 </div>
 
-                <div class="court-card reserved gradient-bg">
+                <div class="court-card reserved gradient-bg" data-court="2" data-status="reserved" data-time="2:00 PM - 4:00 PM">
                     <div class="court-status">Reserved</div>
                     <div class="court-number">Court 2</div>
                     <div class="court-time">2:00 PM - 4:00 PM</div>
                 </div>
 
-                <div class="court-card class gradient-bg">
+                <div class="court-card class gradient-bg" data-court="3" data-status="class" data-time="3:00 PM - 5:00 PM">
                     <div class="court-status">Class</div>
                     <div class="court-number">Court 3</div>
                     <div class="court-time">3:00 PM - 5:00 PM</div>
                 </div>
 
-                <div class="court-card maintenance gradient-bg">
+                <div class="court-card maintenance gradient-bg" data-court="4" data-status="maintenance" data-time="5:00 PM - 7:00 PM">
                     <div class="court-status">Under Maintenance</div>
                     <div class="court-number">Court 4</div>
                     <div class="court-time">5:00 PM - 7:00 PM</div>
@@ -238,6 +238,45 @@
 
 </div>
 
+<!-- ── Court Details Modal ── -->
+<div id="courtModal" class="court-modal" style="display: none;">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2 id="modalCourtTitle">Court Details</h2>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+
+        <div class="modal-body">
+            <div class="modal-image">
+                <img src="{{ asset('images/badminton_courts.jpg') }}" alt="Court">
+            </div>
+
+            <div class="modal-info">
+                <div class="modal-row">
+                    <span class="modal-label">Court</span>
+                    <span class="modal-value" id="modalCourt">Court 1</span>
+                </div>
+                <div class="modal-row">
+                    <span class="modal-label">Status</span>
+                    <span class="modal-value" id="modalStatus">Available</span>
+                </div>
+                <div class="modal-row">
+                    <span class="modal-label">Time Slot</span>
+                    <span class="modal-value" id="modalTime">10:00 AM - 12:00 PM</span>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="modal-btn primary" id="modalBookBtn">
+                    <i class="fa-solid fa-calendar-plus"></i> Book This Court
+                </button>
+                <button class="modal-btn outline" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @push('scripts')
@@ -252,9 +291,54 @@
     // ── Court card click handler ──
     document.querySelectorAll('.court-card').forEach(card => {
         card.addEventListener('click', function() {
-            const court = this.querySelector('.court-number')?.textContent || 'Court';
-            alert(`Selected ${court} - Opening booking details...`);
+            const court = this.dataset.court;
+            const status = this.dataset.status;
+            const time = this.dataset.time;
+            
+            // Set modal content
+            document.getElementById('modalCourt').textContent = `Court ${court}`;
+            document.getElementById('modalCourtTitle').textContent = `Court ${court} Details`;
+            document.getElementById('modalTime').textContent = time;
+            
+            // Set status with badge
+            const statusMap = {
+                available: { text: 'Available', class: 'available' },
+                reserved: { text: 'Reserved', class: 'reserved' },
+                class: { text: 'Class', class: 'class' },
+                maintenance: { text: 'Under Maintenance', class: 'maintenance' }
+            };
+            const statusInfo = statusMap[status] || statusMap.available;
+            document.getElementById('modalStatus').innerHTML = `<span class="status-badge ${statusInfo.class}">${statusInfo.text}</span>`;
+            
+            // Show/hide book button based on status
+            const bookBtn = document.getElementById('modalBookBtn');
+            if (status === 'available') {
+                bookBtn.style.display = 'flex';
+            } else {
+                bookBtn.style.display = 'none';
+            }
+            
+            // Show modal
+            document.getElementById('courtModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         });
+    });
+
+    // ── Close modal ──
+    function closeModal() {
+        document.getElementById('courtModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalClose')?.addEventListener('click', closeModal);
+    document.getElementById('modalCloseBtn')?.addEventListener('click', closeModal);
+    document.getElementById('modalOverlay')?.addEventListener('click', closeModal);
+
+    // ── Book button click ──
+    document.getElementById('modalBookBtn')?.addEventListener('click', function() {
+        const court = document.getElementById('modalCourt').textContent;
+        alert(`Booking ${court} - Redirecting to booking page...`);
+        // window.location.href = '/book_now';
     });
 
     // ── Quick action buttons ──
