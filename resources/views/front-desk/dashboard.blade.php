@@ -1,7 +1,7 @@
 @extends('front-desk.layouts.app')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/frontdesk/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front-desk/dashboard.css') }}">
 @endpush
 
 @section('title', 'Dashboard - Front Desk')
@@ -13,7 +13,7 @@
 <!-- ── Stats Cards ── -->
 <div class="stats-grid">
 
-    <div class="stat-card">
+    <div class="stat-card blue">
         <div class="stat-header">
             <div>
                 <p class="stat-label">Today's Revenue</p>
@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="stat-change positive">
-            <i class="fa-solid fa-arrow-up"></i> 12% from yesterday
+            <i class="fa-solid fa-arrow-up trend-icon"></i> 12% from yesterday
         </div>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-card green">
         <div class="stat-header">
             <div>
                 <p class="stat-label">Total Check-ins</p>
@@ -39,11 +39,11 @@
             </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-users"></i> {{ $totalCheckins ?? 0 }} total customers
+            <i class="fa-solid fa-users trend-icon"></i> {{ $totalCheckins ?? 0 }} total customers
         </div>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-card yellow">
         <div class="stat-header">
             <div>
                 <p class="stat-label">Courts Occupied</p>
@@ -54,11 +54,11 @@
             </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-clock"></i> {{ $occupiedCourts ?? 0 }} courts currently in use
+            <i class="fa-solid fa-clock trend-icon"></i> {{ $occupiedCourts ?? 0 }} courts currently in use
         </div>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-card red">
         <div class="stat-header">
             <div>
                 <p class="stat-label">Today's Bookings</p>
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="stat-change neutral">
-            <i class="fa-solid fa-check-circle" style="color: #22c55e;"></i> {{ $bookings->where('status', 'confirmed')->count() }} confirmed
+            <i class="fa-solid fa-check-circle trend-icon" style="color: #22c55e;"></i> {{ $bookings->where('status', 'confirmed')->count() }} confirmed
         </div>
     </div>
 
@@ -87,9 +87,9 @@
                 <h2 class="section-title">
                     <i class="fa-solid fa-grid-2"></i> Live Court Grid
                 </h2>
-                <span style="font-size: 13px; color: #6b7280;">
-                    <i class="fa-regular fa-clock"></i> Updated just now
-                </span>
+                <div class="live-indicator">
+                    <span class="pulse"></span> Live
+                </div>
             </div>
 
             <div class="court-grid">
@@ -97,24 +97,28 @@
                     <div class="court-number">Court 1</div>
                     <div class="court-status"><i class="fa-solid fa-check-circle"></i> Available</div>
                     <div class="court-time">10:00 AM - 12:00 PM</div>
+                    <span class="court-badge">Book Now</span>
                 </div>
 
                 <div class="court-card reserved">
                     <div class="court-number">Court 2</div>
                     <div class="court-status"><i class="fa-solid fa-circle"></i> Reserved</div>
                     <div class="court-time">2:00 PM - 4:00 PM</div>
+                    <span class="court-badge">John D.</span>
                 </div>
 
                 <div class="court-card class">
                     <div class="court-number">Court 3</div>
                     <div class="court-status"><i class="fa-solid fa-chalkboard-user"></i> Class</div>
                     <div class="court-time">3:00 PM - 5:00 PM</div>
+                    <span class="court-badge">Beginner</span>
                 </div>
 
                 <div class="court-card walkin">
                     <div class="court-number">Court 4</div>
                     <div class="court-status"><i class="fa-solid fa-user-plus"></i> Walk-in</div>
                     <div class="court-time">5:00 PM - 7:00 PM</div>
+                    <span class="court-badge">Maria S.</span>
                 </div>
             </div>
 
@@ -182,7 +186,7 @@
             <h3 class="widget-title"><i class="fa-solid fa-search"></i> Quick Search</h3>
             <div class="search-bar">
                 <i class="fa-solid fa-search"></i>
-                <input type="text" placeholder="Search by name, phone, or court...">
+                <input type="text" placeholder="Search by name, phone, or court..." id="globalSearch">
             </div>
         </div>
 
@@ -192,7 +196,7 @@
             <div class="quick-stats">
                 <div class="stat-row">
                     <span class="stat-label">Most Rented Court Today</span>
-                    <span class="stat-value">Court 2</span>
+                    <span class="stat-value"><span class="highlight">Court 2</span></span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Peak Hour</span>
@@ -220,8 +224,63 @@
             </div>
         </div>
 
+        <!-- ── Recent Activity ── -->
+        <div class="widget">
+            <h3 class="widget-title"><i class="fa-solid fa-clock-rotate-left"></i> Recent Activity</h3>
+            <div class="recent-activity">
+                <div class="activity-item">
+                    <span class="activity-dot green"></span>
+                    <span class="activity-text"><strong>Court 2</strong> reserved by John Doe</span>
+                    <span class="activity-time">2 min ago</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-dot blue"></span>
+                    <span class="activity-text"><strong>Beginner Class</strong> started on Court 1</span>
+                    <span class="activity-time">15 min ago</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-dot orange"></span>
+                    <span class="activity-text"><strong>Walk-in</strong> checked in - Maria Santos</span>
+                    <span class="activity-time">32 min ago</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-dot red"></span>
+                    <span class="activity-text"><strong>Gear Rental</strong> returned - Racket #3</span>
+                    <span class="activity-time">1 hour ago</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+    // ── Search functionality ──
+    document.getElementById('globalSearch')?.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        console.log('Searching for:', query);
+        // Implement search logic here
+    });
+
+    // ── Court card click handler ──
+    document.querySelectorAll('.court-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const court = this.querySelector('.court-number')?.textContent || 'Court';
+            alert(`Selected ${court} - Opening booking details...`);
+        });
+    });
+
+    // ── Quick action buttons ──
+    document.querySelectorAll('.action-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const action = this.textContent.trim();
+            alert(`Action: ${action} - Opening ${action.toLowerCase()} form...`);
+        });
+    });
+</script>
+@endpush

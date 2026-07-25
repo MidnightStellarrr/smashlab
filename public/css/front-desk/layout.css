@@ -18,7 +18,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 256px;
     height: 100vh;
     background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
     z-index: 1000;
@@ -26,33 +26,51 @@ body {
     overflow-y: auto;
 }
 
+/* ── Sidebar Logo ── */
 .sidebar-logo {
-    padding: 20px;
-    text-align: center;
+    padding: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+.sidebar-logo .flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* ← Aligns everything to the left */
+    gap: 0;  /* Remove gap between items */
+}
+
+/* Logo image - control separately */
 .sidebar-logo img {
     height: 45px;
     width: auto;
+    margin-top: 27px;
+    margin-left: 15px;
+    /* Add any logo-specific styles here */
 }
 
-.sidebar-logo span {
+/* SmashLab text - control separately */
+.sidebar-logo .text-xl {
     color: white;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 700;
-    display: block;
-    margin-top: 8px;
+    margin-top: 30px;
+    margin-left: 10px;  /* ← Adjust this to move text */
+    /* OR use transform */
 }
 
+/* Subtitle */
 .sidebar-logo .subtitle {
+    display: block;
+    margin-top: 4px;
+    padding-bottom: 12px;
     font-size: 11px;
     color: rgba(255,255,255,0.4);
-    font-weight: 400;
+    text-align: center;
 }
 
+/* ── Sidebar Menu ── */
 .sidebar-menu {
-    padding: 20px 0;
+    padding: 16px 0;
 }
 
 .sidebar-menu .menu-label {
@@ -61,20 +79,19 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 0 20px 10px;
-    font-weight: 600;
 }
 
 .sidebar-menu a {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 12px 20px;
+    padding: 8px 20px;
     color: rgba(255,255,255,0.7);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 14px;
-    font-weight: 500;
     border-left: 3px solid transparent;
+    border-radius: 8px;
 }
 
 .sidebar-menu a:hover {
@@ -119,17 +136,17 @@ body {
     gap: 12px;
 }
 
-.sidebar-footer .avatar {
-    width: 36px;
-    height: 36px;
+.sidebar-footer .user-info .h-8 {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: #1f47d8;
+    background: rgba(255,255,255,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .sidebar-footer .user-name {
@@ -143,10 +160,10 @@ body {
     font-size: 12px;
 }
 
-.sidebar-footer .logout-btn {
-    margin-top: 10px;
+.sidebar-footer form button {
+    margin-top: 8px;
     width: 100%;
-    padding: 8px;
+    padding: 6px 12px;
     border: none;
     border-radius: 8px;
     background: rgba(255,255,255,0.1);
@@ -158,7 +175,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.sidebar-footer .logout-btn:hover {
+.sidebar-footer form button:hover {
     background: #ef4444;
 }
 

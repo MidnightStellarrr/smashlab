@@ -1,5 +1,5 @@
 /* ============================================
-   FRONT DESK DASHBOARD
+   FRONT DESK DASHBOARD - IMPROVED
    ============================================ */
 
 /* ── Stats Grid ── */
@@ -16,7 +16,30 @@
     padding: 20px 24px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     border: 1px solid #e5e7eb;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.stat-card.blue::before { background: #1f47d8; }
+.stat-card.green::before { background: #22c55e; }
+.stat-card.yellow::before { background: #f59e0b; }
+.stat-card.red::before { background: #ef4444; }
 
 .stat-card .stat-header {
     display: flex;
@@ -26,12 +49,14 @@
 
 .stat-card .stat-label {
     color: #6b7280;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .stat-card .stat-value {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     color: #111827;
     margin-top: 4px;
@@ -45,6 +70,11 @@
     align-items: center;
     justify-content: center;
     font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.05) rotate(-5deg);
 }
 
 .stat-card .stat-icon.blue {
@@ -70,6 +100,9 @@
 .stat-card .stat-change {
     margin-top: 12px;
     font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .stat-card .stat-change.positive {
@@ -78,6 +111,10 @@
 
 .stat-card .stat-change.neutral {
     color: #6b7280;
+}
+
+.stat-card .stat-change .trend-icon {
+    font-size: 12px;
 }
 
 /* ── Two Column Layout ── */
@@ -94,6 +131,11 @@
     padding: 20px 24px;
     border: 1px solid #e5e7eb;
     margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
 .section-card .section-header {
@@ -119,10 +161,45 @@
     color: #1f47d8;
     text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 4px 12px;
+    border-radius: 20px;
 }
 
 .section-card .section-link:hover {
-    text-decoration: underline;
+    background: #dbeafe;
+    text-decoration: none;
+}
+
+.section-card .section-subtitle {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── Live Indicator ── */
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 500;
+}
+
+.live-indicator .pulse {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 /* ── Court Grid ── */
@@ -137,10 +214,31 @@
     padding: 16px;
     text-align: center;
     border: 2px solid;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.court-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: all 0.3s ease;
+}
+
+.court-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.court-card:hover::after {
+    background: rgba(255,255,255,0.1);
 }
 
 .court-card .court-number {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
 }
 
@@ -156,6 +254,15 @@
     margin-top: 4px;
 }
 
+.court-card .court-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
 .court-card.available {
     background: #dcfce7;
     border-color: #22c55e;
@@ -167,6 +274,11 @@
 
 .court-card.available .court-status {
     color: #16a34a;
+}
+
+.court-card.available .court-badge {
+    background: #22c55e;
+    color: white;
 }
 
 .court-card.reserved {
@@ -182,6 +294,11 @@
     color: #dc2626;
 }
 
+.court-card.reserved .court-badge {
+    background: #ef4444;
+    color: white;
+}
+
 .court-card.class {
     background: #dbeafe;
     border-color: #1f47d8;
@@ -193,6 +310,11 @@
 
 .court-card.class .court-status {
     color: #1f47d8;
+}
+
+.court-card.class .court-badge {
+    background: #1f47d8;
+    color: white;
 }
 
 .court-card.walkin {
@@ -208,6 +330,11 @@
     color: #d97706;
 }
 
+.court-card.walkin .court-badge {
+    background: #f59e0b;
+    color: white;
+}
+
 /* ── Legend ── */
 .legend {
     display: flex;
@@ -215,6 +342,7 @@
     margin-top: 14px;
     padding-top: 14px;
     border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
 }
 
 .legend-item {
@@ -223,6 +351,14 @@
     gap: 6px;
     font-size: 12px;
     color: #6b7280;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.legend-item:hover {
+    background: #f3f4f6;
 }
 
 .legend-item .dot {
@@ -231,21 +367,10 @@
     border-radius: 4px;
 }
 
-.legend-item .dot.green {
-    background: #22c55e;
-}
-
-.legend-item .dot.red {
-    background: #ef4444;
-}
-
-.legend-item .dot.blue {
-    background: #1f47d8;
-}
-
-.legend-item .dot.orange {
-    background: #f59e0b;
-}
+.legend-item .dot.green { background: #22c55e; }
+.legend-item .dot.red { background: #ef4444; }
+.legend-item .dot.blue { background: #1f47d8; }
+.legend-item .dot.orange { background: #f59e0b; }
 
 /* ── Class Cards ── */
 .class-grid {
@@ -259,6 +384,12 @@
     border-radius: 12px;
     padding: 16px;
     border: 1px solid #e5e7eb;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.class-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
 .class-card .class-header {
@@ -283,6 +414,7 @@
     padding: 2px 10px;
     border-radius: 12px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .class-card .class-badge.live {
@@ -308,6 +440,12 @@
     color: #6b7280;
 }
 
+.class-card .class-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .class-card .class-progress {
     margin-top: 8px;
     background: #e5e7eb;
@@ -319,15 +457,15 @@
 .class-card .class-progress .progress-bar {
     height: 100%;
     border-radius: 20px;
-    transition: width 0.3s ease;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .class-card .class-progress .progress-bar.green {
-    background: #22c55e;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
 }
 
 .class-card .class-progress .progress-bar.blue {
-    background: #1f47d8;
+    background: linear-gradient(90deg, #1f47d8, #60a5fa);
 }
 
 /* ── Right Sidebar Widgets ── */
@@ -337,6 +475,11 @@
     padding: 20px 24px;
     border: 1px solid #e5e7eb;
     margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.widget:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
 .widget .widget-title {
@@ -374,6 +517,10 @@
     box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.1);
 }
 
+.search-bar input::placeholder {
+    color: #9ca3af;
+}
+
 .search-bar i {
     position: absolute;
     left: 14px;
@@ -387,9 +534,17 @@
 .quick-stats .stat-row {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #f3f4f6;
     font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.quick-stats .stat-row:hover {
+    background: #f9fafb;
+    margin: 0 -12px;
+    padding: 10px 12px;
+    border-radius: 8px;
 }
 
 .quick-stats .stat-row:last-child {
@@ -403,6 +558,10 @@
 .quick-stats .stat-value {
     font-weight: 600;
     color: #111827;
+}
+
+.quick-stats .stat-value .highlight {
+    color: #1f47d8;
 }
 
 /* ── Quick Actions ── */
@@ -420,13 +579,26 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.quick-actions .action-btn i {
+    font-size: 15px;
 }
 
 .quick-actions .action-btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.quick-actions .action-btn:active {
+    transform: scale(0.96);
 }
 
 .quick-actions .action-btn.primary {
@@ -467,6 +639,51 @@
 
 .quick-actions .action-btn.outline:hover {
     background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+/* ── Recent Activity ── */
+.recent-activity {
+    margin-top: 16px;
+}
+
+.recent-activity .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.recent-activity .activity-item:last-child {
+    border-bottom: none;
+}
+
+.recent-activity .activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.recent-activity .activity-dot.blue { background: #1f47d8; }
+.recent-activity .activity-dot.green { background: #22c55e; }
+.recent-activity .activity-dot.orange { background: #f59e0b; }
+.recent-activity .activity-dot.red { background: #ef4444; }
+
+.recent-activity .activity-text {
+    font-size: 13px;
+    color: #374151;
+    flex: 1;
+}
+
+.recent-activity .activity-text strong {
+    color: #111827;
+}
+
+.recent-activity .activity-time {
+    font-size: 12px;
+    color: #9ca3af;
 }
 
 /* ── Responsive ── */
@@ -518,6 +735,10 @@
 
     .widget {
         padding: 16px 18px;
+    }
+
+    .stat-card .stat-value {
+        font-size: 24px;
     }
 }
 

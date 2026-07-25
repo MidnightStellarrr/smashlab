@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Front Desk Layout CSS -->
-    <link rel="stylesheet" href="{{ asset('css/frontdesk/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front-desk/layout.css') }}">
 
     @stack('styles')
 </head>
@@ -21,35 +21,41 @@
     <!-- ── Sidebar ── -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-logo">
-            <img src="{{ asset('images/logo.png') }}" alt="SmashLab">
-            <span>SmashLab</span>
-            <span class="subtitle">Front Desk</span>
+            <div class="flex items-center border-b border-white/10 px-4 py-4">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="{{ asset('images/logo.png') }}" class="h-10 w-auto" alt="SmashLab">
+                </a>
+                <span class="text-xl font-bold text-white ml-2">SmashLab</span>
+            </div>
+            <span class="subtitle" style="display: block; margin-top: 4px; font-size: 11px; color: rgba(255,255,255,0.4); text-align: center;">Front Desk</span>
         </div>
 
         <nav class="sidebar-menu">
             <div class="menu-label">Main</div>
-            <a href="{{ route('frontdesk.dashboard') }}" class="{{ request()->routeIs('frontdesk.dashboard') ? 'active' : '' }}">
-                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            <a href="{{ route('frontdesk.dashboard') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs('frontdesk.dashboard') ? 'active' : '' }}">
+                <i class="fa-solid fa-chart-pie w-5 text-center"></i> Dashboard
             </a>
-            <a href="{{ route('frontdesk.bookings') }}" class="{{ request()->routeIs('frontdesk.bookings') ? 'active' : '' }}">
-                <i class="fa-solid fa-calendar-check"></i> Bookings
+            <a href="{{ route('frontdesk.bookings') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs('frontdesk.bookings') ? 'active' : '' }}">
+                <i class="fa-solid fa-calendar-check w-5 text-center"></i> Bookings
                 <span class="badge">12</span>
             </a>
-            <a href="{{ route('frontdesk.customers') }}" class="{{ request()->routeIs('frontdesk.customers') ? 'active' : '' }}">
-                <i class="fa-solid fa-users"></i> Customers
+            <a href="{{ route('frontdesk.customers') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs('frontdesk.customers') ? 'active' : '' }}">
+                <i class="fa-solid fa-users w-5 text-center"></i> Customers
             </a>
-            <a href="{{ route('frontdesk.classes') }}" class="{{ request()->routeIs('frontdesk.classes') ? 'active' : '' }}">
-                <i class="fa-solid fa-chalkboard-user"></i> Classes
+            <a href="{{ route('frontdesk.classes') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs('frontdesk.classes') ? 'active' : '' }}">
+                <i class="fa-solid fa-chalkboard-user w-5 text-center"></i> Classes
                 <span class="badge">3</span>
             </a>
-            <a href="{{ route('frontdesk.shop') }}" class="{{ request()->routeIs('frontdesk.shop') ? 'active' : '' }}">
-                <i class="fa-solid fa-store"></i> Shop
+            <a href="{{ route('frontdesk.shop') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs('frontdesk.shop') ? 'active' : '' }}">
+                <i class="fa-solid fa-store w-5 text-center"></i> Shop
             </a>
         </nav>
 
         <div class="sidebar-footer">
             <div class="user-info">
-                <div class="avatar">{{ auth()->guard('frontdesk')->user()->name[0] ?? 'A' }}</div>
+                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white text-sm">
+                    {{ auth()->guard('frontdesk')->user()->name[0] ?? 'A' }}
+                </div>
                 <div>
                     <div class="user-name">{{ auth()->guard('frontdesk')->user()->name ?? 'Admin' }}</div>
                     <div class="user-role">Front Desk Staff</div>
@@ -57,7 +63,7 @@
             </div>
             <form method="POST" action="{{ route('frontdesk.logout') }}">
                 @csrf
-                <button type="submit" class="logout-btn">
+                <button type="submit" class="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-white/20">
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </button>
             </form>
