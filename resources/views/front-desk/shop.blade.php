@@ -1,0 +1,710 @@
+@extends('front-desk.layouts.app')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/front-desk/shop.css') }}">
+@endpush
+
+@section('title', 'Shop - Front Desk')
+
+@section('header', 'Shop')
+
+@section('content')
+
+<!-- ── Stats Cards ── -->
+<div class="stats-grid">
+    <div class="stat-card blue">
+        <div class="stat-header">
+            <div>
+                <p class="stat-label">Today's Sales</p>
+                <p class="stat-value">₱2,450.00</p>
+            </div>
+            <div class="stat-icon">
+                <i class="fa-solid fa-cash-register"></i>
+            </div>
+        </div>
+        <div class="stat-change positive">
+            <i class="fa-solid fa-arrow-up trend-icon"></i> 15% from yesterday
+        </div>
+    </div>
+
+    <div class="stat-card green">
+        <div class="stat-header">
+            <div>
+                <p class="stat-label">Items Sold</p>
+                <p class="stat-value">28</p>
+            </div>
+            <div class="stat-icon">
+                <i class="fa-solid fa-box"></i>
+            </div>
+        </div>
+        <div class="stat-change positive">
+            <i class="fa-solid fa-arrow-up trend-icon"></i> 8 new today
+        </div>
+    </div>
+
+    <div class="stat-card yellow">
+        <div class="stat-header">
+            <div>
+                <p class="stat-label">Active Rentals</p>
+                <p class="stat-value">6</p>
+            </div>
+            <div class="stat-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+        </div>
+        <div class="stat-change neutral">
+            3 due today
+        </div>
+    </div>
+
+    <div class="stat-card red">
+        <div class="stat-header">
+            <div>
+                <p class="stat-label">Low Stock Items</p>
+                <p class="stat-value">4</p>
+            </div>
+            <div class="stat-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+        </div>
+        <div class="stat-change neutral">
+            Needs restocking
+        </div>
+    </div>
+</div>
+
+<!-- ── Tabs ── -->
+<div class="shop-tabs">
+    <button class="shop-tab active" data-tab="products">Products</button>
+    <button class="shop-tab" data-tab="rentals">Gear Rentals</button>
+</div>
+
+<!-- ============================================ -->
+<!-- PRODUCTS TAB -->
+<!-- ============================================ -->
+<div class="shop-tab-content active" id="tab-products">
+    
+    <!-- ── Products Filters ── -->
+    <div class="shop-actions">
+        <div class="filters">
+            <div class="filter-group">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" class="filter-input" placeholder="Search products...">
+            </div>
+            <div class="filter-group">
+                <i class="fa-solid fa-filter"></i>
+                <select class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="gear">Gear</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="drinks">Drinks</option>
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn-primary" id="addProductBtn">
+                <i class="fa-solid fa-plus"></i> Add Product
+            </button>
+        </div>
+    </div>
+
+    <!-- ── Products Table ── -->
+    <div class="shop-table-wrapper">
+        <table class="shop-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product 1 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <div class="product-icon">🏸</div>
+                            <div>
+                                <div class="product-name">Premium Racket</div>
+                                <div class="product-sku">SKU: RKT-001</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="category-badge gear">Gear</span></td>
+                    <td>₱150.00</td>
+                    <td>
+                        <span class="stock-badge in-stock">12</span>
+                    </td>
+                    <td><span class="status-badge in-stock">In Stock</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Product 2 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <div class="product-icon">🏸</div>
+                            <div>
+                                <div class="product-name">Shuttlecocks Tube</div>
+                                <div class="product-sku">SKU: SHL-002</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="category-badge gear">Gear</span></td>
+                    <td>₱80.00</td>
+                    <td>
+                        <span class="stock-badge low-stock">3</span>
+                    </td>
+                    <td><span class="status-badge low-stock">Low Stock</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Product 3 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <div class="product-icon">🥤</div>
+                            <div>
+                                <div class="product-name">Sports Drink</div>
+                                <div class="product-sku">SKU: DRK-003</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="category-badge drinks">Drinks</span></td>
+                    <td>₱60.00</td>
+                    <td>
+                        <span class="stock-badge in-stock">25</span>
+                    </td>
+                    <td><span class="status-badge in-stock">In Stock</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Product 4 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <div class="product-icon">🍫</div>
+                            <div>
+                                <div class="product-name">Energy Bar</div>
+                                <div class="product-sku">SKU: SNK-004</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="category-badge snacks">Snacks</span></td>
+                    <td>₱50.00</td>
+                    <td>
+                        <span class="stock-badge out-of-stock">0</span>
+                    </td>
+                    <td><span class="status-badge out-of-stock">Out of Stock</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Product 5 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <div class="product-icon">💧</div>
+                            <div>
+                                <div class="product-name">Water Bottle</div>
+                                <div class="product-sku">SKU: DRK-005</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="category-badge drinks">Drinks</span></td>
+                    <td>₱30.00</td>
+                    <td>
+                        <span class="stock-badge in-stock">30</span>
+                    </td>
+                    <td><span class="status-badge in-stock">In Stock</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- RENTALS TAB -->
+<!-- ============================================ -->
+<div class="shop-tab-content" id="tab-rentals">
+    
+    <!-- ── Rentals Filters ── -->
+    <div class="shop-actions">
+        <div class="filters">
+            <div class="filter-group">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" class="filter-input" placeholder="Search rentals...">
+            </div>
+            <div class="filter-group">
+                <i class="fa-solid fa-filter"></i>
+                <select class="filter-select">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="overdue">Overdue</option>
+                    <option value="returned">Returned</option>
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn-primary" id="addRentalBtn">
+                <i class="fa-solid fa-plus"></i> New Rental
+            </button>
+        </div>
+    </div>
+
+    <!-- ── Rentals Table ── -->
+    <div class="shop-table-wrapper">
+        <table class="shop-table">
+            <thead>
+                <tr>
+                    <th>Rental ID</th>
+                    <th>Customer</th>
+                    <th>Gear</th>
+                    <th>Rental Time</th>
+                    <th>Return Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rental 1 - Active -->
+                <tr>
+                    <td><span class="rental-ref">#RNT-001</span></td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Juan Dela Cruz</span>
+                            <span class="customer-phone">+63 912 345 6789</span>
+                        </div>
+                    </td>
+                    <td><span class="gear-badge">Racket</span></td>
+                    <td>July 20, 2026 6:00 PM</td>
+                    <td>July 20, 2026 8:00 PM</td>
+                    <td><span class="rental-status active">Active</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon return" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="btn-icon view" title="View"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Rental 2 - Overdue -->
+                <tr>
+                    <td><span class="rental-ref">#RNT-002</span></td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Maria Santos</span>
+                            <span class="customer-phone">+63 923 456 7890</span>
+                        </div>
+                    </td>
+                    <td><span class="gear-badge">Shuttlecocks</span></td>
+                    <td>July 20, 2026 4:00 PM</td>
+                    <td>July 20, 2026 6:00 PM</td>
+                    <td><span class="rental-status overdue">Overdue</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon return" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="btn-icon view" title="View"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Rental 3 - Active -->
+                <tr>
+                    <td><span class="rental-ref">#RNT-003</span></td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">John Doe</span>
+                            <span class="customer-phone">+63 934 567 8901</span>
+                        </div>
+                    </td>
+                    <td><span class="gear-badge">Racket + Shuttlecocks</span></td>
+                    <td>July 20, 2026 2:00 PM</td>
+                    <td>July 20, 2026 4:00 PM</td>
+                    <td><span class="rental-status active">Active</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon return" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="btn-icon view" title="View"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Rental 4 - Returned -->
+                <tr>
+                    <td><span class="rental-ref">#RNT-004</span></td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Anna Reyes</span>
+                            <span class="customer-phone">+63 945 678 9012</span>
+                        </div>
+                    </td>
+                    <td><span class="gear-badge">Racket</span></td>
+                    <td>July 19, 2026 5:00 PM</td>
+                    <td>July 19, 2026 7:00 PM</td>
+                    <td><span class="rental-status returned">Returned</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon view" title="View"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Rental 5 - Overdue -->
+                <tr>
+                    <td><span class="rental-ref">#RNT-005</span></td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Carlos Villanueva</span>
+                            <span class="customer-phone">+63 956 789 0123</span>
+                        </div>
+                    </td>
+                    <td><span class="gear-badge">Racket</span></td>
+                    <td>July 20, 2026 3:00 PM</td>
+                    <td>July 20, 2026 5:00 PM</td>
+                    <td><span class="rental-status overdue">Overdue</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-icon return" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="btn-icon view" title="View"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ── No Results ── -->
+<div id="noResults" class="no-results" style="display: none;">
+    <i class="fa-solid fa-box-open"></i>
+    <h3>No items found</h3>
+    <p>Try adjusting your search or filter.</p>
+</div>
+
+<!-- ── Add Product Modal ── -->
+<div id="addProductModal" class="shop-modal" style="display: none;">
+    <div class="modal-overlay" id="addProductOverlay"></div>
+    <div class="modal-container" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Add Product</h2>
+            <button class="modal-close" id="addProductClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label>Product Name <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label>Category <span class="required">*</span></label>
+                    <select class="form-select" required>
+                        <option value="">Select Category</option>
+                        <option value="gear">Gear</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price <span class="required">*</span></label>
+                        <input type="number" class="form-input" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock <span class="required">*</span></label>
+                        <input type="number" class="form-input" placeholder="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>SKU (Optional)</label>
+                    <input type="text" class="form-input" placeholder="Enter SKU">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn outline" id="addProductCancel">Cancel</button>
+                    <button type="submit" class="modal-btn primary">
+                        <i class="fa-solid fa-plus"></i> Add Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ── Add Rental Modal ── -->
+<div id="addRentalModal" class="shop-modal" style="display: none;">
+    <div class="modal-overlay" id="addRentalOverlay"></div>
+    <div class="modal-container" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>New Rental</h2>
+            <button class="modal-close" id="addRentalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addRentalForm">
+                <div class="form-group">
+                    <label>Customer <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Search or enter customer name" required>
+                </div>
+                <div class="form-group">
+                    <label>Gear <span class="required">*</span></label>
+                    <select class="form-select" required>
+                        <option value="">Select Gear</option>
+                        <option value="racket">Racket</option>
+                        <option value="shuttlecocks">Shuttlecocks</option>
+                        <option value="both">Racket + Shuttlecocks</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Rental Time <span class="required">*</span></label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Return Time <span class="required">*</span></label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <textarea class="form-input" rows="2" placeholder="Any notes about this rental..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn outline" id="addRentalCancel">Cancel</button>
+                    <button type="submit" class="modal-btn primary">
+                        <i class="fa-solid fa-plus"></i> Create Rental
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ── View Rental Modal ── -->
+<div id="viewRentalModal" class="shop-modal" style="display: none;">
+    <div class="modal-overlay" id="viewRentalOverlay"></div>
+    <div class="modal-container" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Rental Details</h2>
+            <button class="modal-close" id="viewRentalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="rental-details">
+                <div class="detail-row">
+                    <span class="detail-label">Rental ID</span>
+                    <span class="detail-value">#RNT-001</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Customer</span>
+                    <span class="detail-value">Juan Dela Cruz</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Gear</span>
+                    <span class="detail-value">Racket</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Rental Time</span>
+                    <span class="detail-value">July 20, 2026 6:00 PM</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Return Time</span>
+                    <span class="detail-value">July 20, 2026 8:00 PM</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value"><span class="rental-status active">Active</span></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Notes</span>
+                    <span class="detail-value">-</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn outline" id="viewRentalCloseBtn">Close</button>
+                <button class="modal-btn primary" id="returnRentalBtn">
+                    <i class="fa-solid fa-rotate-left"></i> Return Gear
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
+@push('scripts')
+<script>
+    // ── Tab switching ──
+    document.querySelectorAll('.shop-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.shop-tab-content').forEach(c => c.classList.remove('active'));
+            
+            this.classList.add('active');
+            const tabId = this.dataset.tab;
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+        });
+    });
+
+    // ── Add Product Modal ──
+    document.getElementById('addProductBtn').addEventListener('click', function() {
+        document.getElementById('addProductModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeAddProduct() {
+        document.getElementById('addProductModal').style.display = 'none';
+        document.body.style.overflow = '';
+        document.getElementById('addProductForm').reset();
+    }
+
+    document.getElementById('addProductClose').addEventListener('click', closeAddProduct);
+    document.getElementById('addProductOverlay').addEventListener('click', closeAddProduct);
+    document.getElementById('addProductCancel').addEventListener('click', closeAddProduct);
+
+    document.getElementById('addProductForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Product added successfully!');
+        closeAddProduct();
+    });
+
+    // ── Add Rental Modal ──
+    document.getElementById('addRentalBtn').addEventListener('click', function() {
+        document.getElementById('addRentalModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeAddRental() {
+        document.getElementById('addRentalModal').style.display = 'none';
+        document.body.style.overflow = '';
+        document.getElementById('addRentalForm').reset();
+    }
+
+    document.getElementById('addRentalClose').addEventListener('click', closeAddRental);
+    document.getElementById('addRentalOverlay').addEventListener('click', closeAddRental);
+    document.getElementById('addRentalCancel').addEventListener('click', closeAddRental);
+
+    document.getElementById('addRentalForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Rental created successfully!');
+        closeAddRental();
+    });
+
+    // ── View Rental Modal ──
+    document.querySelectorAll('.btn-icon.view').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('viewRentalModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeViewRental() {
+        document.getElementById('viewRentalModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('viewRentalClose').addEventListener('click', closeViewRental);
+    document.getElementById('viewRentalOverlay').addEventListener('click', closeViewRental);
+    document.getElementById('viewRentalCloseBtn').addEventListener('click', closeViewRental);
+
+    document.getElementById('returnRentalBtn').addEventListener('click', function() {
+        if (confirm('Return this gear?')) {
+            alert('Gear returned successfully!');
+            closeViewRental();
+        }
+    });
+
+    // ── Return rental (from table) ──
+    document.querySelectorAll('.btn-icon.return').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (confirm('Return this gear?')) {
+                const row = this.closest('tr');
+                const statusBadge = row.querySelector('.rental-status');
+                statusBadge.className = 'rental-status returned';
+                statusBadge.textContent = 'Returned';
+                alert('Gear returned successfully!');
+            }
+        });
+    });
+
+    // ── Edit product ──
+    document.querySelectorAll('.btn-icon.edit').forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Edit product form would open here.');
+        });
+    });
+
+    // ── Delete product ──
+    document.querySelectorAll('.btn-icon.delete').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (confirm('Delete this product?')) {
+                this.closest('tr').remove();
+                alert('Product deleted!');
+            }
+        });
+    });
+
+    // ── Filter functionality ──
+    const filters = document.querySelectorAll('.filter-input, .filter-select');
+    const noResults = document.getElementById('noResults');
+
+    function filterTables() {
+        const activeTab = document.querySelector('.shop-tab-content.active');
+        const rows = activeTab.querySelectorAll('tbody tr');
+        const search = activeTab.querySelector('.filter-input')?.value.toLowerCase().trim() || '';
+        const status = activeTab.querySelector('.filter-select')?.value || 'all';
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            let show = true;
+            
+            if (search && !text.includes(search)) {
+                show = false;
+            }
+            
+            if (show) {
+                row.style.display = '';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    document.querySelectorAll('.filter-input, .filter-select').forEach(input => {
+        input.addEventListener('input', filterTables);
+        input.addEventListener('change', filterTables);
+    });
+
+    // ── Initial filter ──
+    setTimeout(filterTables, 100);
+</script>
+@endpush

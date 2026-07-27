@@ -77,10 +77,6 @@
 <div class="customers-actions">
     <div class="filters">
         <div class="filter-group">
-            <i class="fa-solid fa-search"></i>
-            <input type="text" class="filter-input" id="searchFilter" placeholder="Search by name, phone, or email...">
-        </div>
-        <div class="filter-group">
             <i class="fa-solid fa-filter"></i>
             <select class="filter-select" id="statusFilter">
                 <option value="all">All Customers</option>
@@ -96,6 +92,10 @@
                 <option value="week">This Week</option>
                 <option value="month">This Month</option>
             </select>
+        </div>
+        <div class="filter-group">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" class="filter-input" id="searchFilter" placeholder="Search by name, phone, or email...">
         </div>
     </div>
 </div>
