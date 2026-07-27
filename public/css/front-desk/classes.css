@@ -1,0 +1,797 @@
+/* ============================================
+   CLASSES PAGE
+   ============================================ */
+
+/* ── Stats Grid ── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.stat-card .stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stat-card .stat-label {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card .stat-value {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 4px;
+}
+
+.stat-card .stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    background: transparent;
+}
+
+.stat-card.blue .stat-icon { border-color: #1f47d8; color: #1f47d8; }
+.stat-card.green .stat-icon { border-color: #22c55e; color: #22c55e; }
+.stat-card.yellow .stat-icon { border-color: #f59e0b; color: #f59e0b; }
+.stat-card.red .stat-icon { border-color: #ef4444; color: #ef4444; }
+
+.stat-card .stat-change {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.stat-card .stat-change.positive { color: #22c55e; }
+.stat-card .stat-change.neutral { color: #6b7280; }
+
+/* ── Classes Actions ── */
+.classes-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-group i {
+    position: absolute;
+    left: 12px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.filter-input {
+    padding: 8px 12px 8px 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: #f9fafb;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+
+.filter-group:has(.fa-search) .filter-input {
+    min-width: 810px;  /* Change this value to your desired width */
+}
+
+.filter-input:focus {
+    border-color: #1f47d8;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.08);
+}
+
+.filter-select {
+    padding: 8px 12px 8px 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: #f9fafb;
+    outline: none;
+    cursor: pointer;
+    min-width: 140px;
+    appearance: none;
+}
+
+.filter-select:focus {
+    border-color: #1f47d8;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.08);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: transparent;
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #f3f4f6;
+}
+
+/* ── Classes Grid ── */
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+/* ── Class Card ── */
+/* ── Class Card ── */
+.class-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.class-card:hover {
+    box-shadow: 0 12px 40px rgba(10, 22, 40, 0.3);
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+    border-color: #1f47d8;
+}
+
+/* ── Hover Effects for all text elements inside class card ── */
+.class-card:hover .class-card-body h3 {
+    color: #ffffff;
+}
+
+.class-card:hover .class-meta {
+    color: #b0c4e8;
+}
+
+.class-card:hover .class-meta i {
+    color: #60a5fa;
+}
+
+.class-card:hover .attendance-header {
+    color: #b0c4e8;
+}
+
+.class-card:hover .attendance-count {
+    color: #ffffff;
+}
+
+.class-card:hover .class-time {
+    color: #b0c4e8;
+}
+
+.class-card:hover .class-status {
+    color: #60a5fa;
+}
+
+.class-card:hover .student-avatar {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.class-card:hover .student-avatar.checked-in {
+    background: rgba(34, 197, 94, 0.25);
+    color: #4ade80;
+}
+
+.class-card:hover .student-avatar.not-checked {
+    background: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+}
+
+.class-card:hover .class-reminder {
+    color: #fbbf24;
+}
+
+.class-card:hover .class-completed-badge {
+    color: #4ade80;
+}
+
+.class-card:hover .progress-bar {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.class-card:hover .progress-fill {
+    background: linear-gradient(90deg, #60a5fa, #93c5fd);
+}
+
+/* ── Keep the header border but make it subtle on hover ── */
+.class-card:hover .class-card-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Check-in button on hover ── */
+.class-card:hover .btn-checkin {
+    background: #3b82f6;
+}
+
+.class-card:hover .btn-checkin:hover {
+    background: #2563eb;
+}
+
+/* ── Live/Upcoming/Completed status colors on hover ── */
+.class-card:hover.live .class-status { color: #4ade80; }
+.class-card:hover.upcoming .class-status { color: #fbbf24; }
+.class-card:hover.completed .class-status { color: #94a3b8; }
+
+.class-card:hover .live-dot {
+    background: #4ade80;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.class-card:hover .upcoming-dot {
+    background: #fbbf24;
+}
+
+.class-card:hover .completed-dot {
+    background: #94a3b8;
+}
+
+.class-card .class-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.class-card .class-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.class-card .class-time {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.class-card.live .class-status { color: #22c55e; }
+.class-card.upcoming .class-status { color: #f59e0b; }
+.class-card.completed .class-status { color: #6b7280; }
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.upcoming-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f59e0b;
+    display: inline-block;
+}
+
+.completed-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6b7280;
+    display: inline-block;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.class-card .class-card-body {
+    padding: 18px;
+}
+
+.class-card .class-card-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.class-card .class-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 14px;
+}
+
+.class-card .class-meta i {
+    width: 16px;
+}
+
+.class-card .class-attendance {
+    margin-bottom: 14px;
+}
+
+.class-card .attendance-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.class-card .attendance-count {
+    font-weight: 600;
+    color: #111827;
+}
+
+.class-card .progress-bar {
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.class-card .progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #1f47d8, #60a5fa);
+    transition: width 0.6s ease;
+}
+
+.class-card .class-students {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-card .student-avatars {
+    display: flex;
+    gap: 4px;
+}
+
+.class-card .student-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.class-card .student-avatar.checked-in {
+    background: #dbeafe;
+    color: #1f47d8;
+}
+
+.class-card .student-avatar.not-checked {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.class-card .btn-checkin {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #1f47d8;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.class-card .btn-checkin:hover {
+    background: #1a3ab8;
+}
+
+.class-card .class-reminder {
+    font-size: 12px;
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.class-card .class-completed-badge {
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 500;
+}
+
+.class-card .class-completed-badge i {
+    margin-right: 4px;
+}
+
+/* ── No Results ── */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    grid-column: 1 / -1;
+}
+
+.no-results i {
+    font-size: 48px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+.no-results h3 {
+    font-size: 20px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.no-results p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ── Class Modal ── */
+.class-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-container {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    z-index: 1;
+    animation: modalSlideUp 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.modal-close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-btn.primary {
+    background: #1f47d8;
+    color: white;
+}
+
+.modal-btn.primary:hover {
+    background: #1a3ab8;
+}
+
+.modal-btn.outline {
+    background: transparent;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
+
+.modal-btn.outline:hover {
+    background: #f3f4f6;
+}
+
+/* ── Check-in Modal ── */
+.checkin-info {
+    margin-bottom: 20px;
+}
+
+.checkin-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.checkin-info p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.checkin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.checkin-item {
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checkin-item:hover {
+    background: #f3f4f6;
+}
+
+.checkin-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+}
+
+.checkin-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1f47d8;
+    cursor: pointer;
+}
+
+/* ── View Class Modal ── */
+.class-detail-header {
+    margin-bottom: 20px;
+}
+
+.class-detail-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.class-detail-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.class-detail-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.class-detail-meta i {
+    width: 16px;
+}
+
+.class-detail-attendance {
+    margin-bottom: 20px;
+}
+
+.class-detail-attendance h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.attendance-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.attendance-stat {
+    text-align: center;
+}
+
+.attendance-stat .stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.attendance-stat .stat-label {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.class-detail-students h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.student-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.student-list-item:last-child {
+    border-bottom: none;
+}
+
+.student-status {
+    font-size: 16px;
+}
+
+.student-status.checked-in {
+    color: #22c55e;
+}
+
+.student-status.not-checked {
+    color: #9ca3af;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(30px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+    .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .classes-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filters {
+        flex-wrap: wrap;
+    }
+    .actions {
+        justify-content: stretch;
+    }
+    .btn-secondary {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+    .class-card .class-students {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
