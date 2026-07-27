@@ -569,7 +569,6 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -584,10 +583,6 @@
 
 .quick-actions .action-btn:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.quick-actions .action-btn:active {
-    transform: scale(0.96);
 }
 
 .quick-actions .action-btn.primary {
@@ -646,7 +641,6 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -660,7 +654,6 @@
 }
 
 .quick-actions-full .action-btn:hover {
-    transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
