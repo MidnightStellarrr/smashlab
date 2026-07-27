@@ -31,7 +31,7 @@
         <div class="stat-header">
             <div>
                 <p class="stat-label">Pending</p>
-                <p class="stat-value">6</p>
+                <p class="stat-value" id="pendingCount">6</p>
             </div>
             <div class="stat-icon">
                 <i class="fa-solid fa-clock"></i>
@@ -46,7 +46,7 @@
         <div class="stat-header">
             <div>
                 <p class="stat-label">Confirmed</p>
-                <p class="stat-value">14</p>
+                <p class="stat-value" id="confirmedCount">14</p>
             </div>
             <div class="stat-icon">
                 <i class="fa-solid fa-check-circle"></i>
@@ -61,7 +61,7 @@
         <div class="stat-header">
             <div>
                 <p class="stat-label">Cancelled</p>
-                <p class="stat-value">4</p>
+                <p class="stat-value" id="cancelledCount">4</p>
             </div>
             <div class="stat-icon">
                 <i class="fa-solid fa-xmark-circle"></i>
@@ -78,21 +78,22 @@
     <div class="filters">
         <div class="filter-group">
             <i class="fa-solid fa-calendar"></i>
-            <input type="date" class="filter-input" value="{{ date('Y-m-d') }}">
+            <input type="date" class="filter-input" id="dateFilter" value="{{ date('Y-m-d') }}">
         </div>
         <div class="filter-group">
             <i class="fa-solid fa-filter"></i>
-            <select class="filter-select">
+            <select class="filter-select" id="statusFilter">
                 <option value="all">All Status</option>
                 <option value="pending">Pending</option>
                 <option value="confirmed">Confirmed</option>
+                <option value="active">Active</option>
                 <option value="completed">Completed</option>
                 <option value="cancelled">Cancelled</option>
             </select>
         </div>
         <div class="filter-group">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" class="filter-input" placeholder="Search by name, court, or reference...">
+            <input type="text" class="filter-input" id="searchFilter" placeholder="Search by name, court, or reference...">
         </div>
     </div>
     <div class="actions">
@@ -120,9 +121,9 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="bookingsTableBody">
             <!-- Booking 1 - Pending (Front desk CANNOT confirm) -->
-            <tr>
+            <tr data-status="pending">
                 <td><span class="booking-ref">#BK-2026-001</span></td>
                 <td>
                     <div class="customer-info">
@@ -144,7 +145,7 @@
             </tr>
 
             <!-- Booking 2 - Confirmed (Front desk can check-in) -->
-            <tr>
+            <tr data-status="confirmed">
                 <td><span class="booking-ref">#BK-2026-002</span></td>
                 <td>
                     <div class="customer-info">
@@ -167,7 +168,7 @@
             </tr>
 
             <!-- Booking 3 - Confirmed with extend option -->
-            <tr>
+            <tr data-status="confirmed">
                 <td><span class="booking-ref">#BK-2026-003</span></td>
                 <td>
                     <div class="customer-info">
@@ -191,7 +192,7 @@
             </tr>
 
             <!-- Booking 4 - Completed -->
-            <tr>
+            <tr data-status="completed">
                 <td><span class="booking-ref">#BK-2026-004</span></td>
                 <td>
                     <div class="customer-info">
@@ -212,7 +213,7 @@
             </tr>
 
             <!-- Booking 5 - Cancelled -->
-            <tr>
+            <tr data-status="cancelled">
                 <td><span class="booking-ref">#BK-2026-005</span></td>
                 <td>
                     <div class="customer-info">
@@ -233,7 +234,7 @@
             </tr>
 
             <!-- Booking 6 - Active/Checked-in -->
-            <tr>
+            <tr data-status="active">
                 <td><span class="booking-ref">#BK-2026-006</span></td>
                 <td>
                     <div class="customer-info">
@@ -258,10 +259,17 @@
     </table>
 </div>
 
+<!-- ── No Results Message ── -->
+<div id="noResults" class="no-results" style="display: none;">
+    <i class="fa-solid fa-search"></i>
+    <h3>No bookings found</h3>
+    <p>Try adjusting your search or filter.</p>
+</div>
+
 <!-- ── Pagination ── -->
 <div class="pagination">
     <div class="pagination-info">
-        Showing 1-6 of 24 bookings
+        Showing <span id="showingCount">1-6</span> of <span id="totalCount">24</span> bookings
     </div>
     <div class="pagination-buttons">
         <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
@@ -393,6 +401,77 @@
 
 @push('scripts')
 <script>
+    // ── Filter functionality ──
+    const statusFilter = document.getElementById('statusFilter');
+    const searchFilter = document.getElementById('searchFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const tableBody = document.getElementById('bookingsTableBody');
+    const noResults = document.getElementById('noResults');
+    const showingCount = document.getElementById('showingCount');
+    const totalCount = document.getElementById('totalCount');
+
+    function filterTable() {
+        const status = statusFilter.value;
+        const search = searchFilter.value.toLowerCase().trim();
+        const rows = tableBody.querySelectorAll('tr');
+        let visibleCount = 0;
+        let statusCounts = {
+            pending: 0,
+            confirmed: 0,
+            active: 0,
+            completed: 0,
+            cancelled: 0
+        };
+
+        rows.forEach(row => {
+            const rowStatus = row.dataset.status;
+            const text = row.textContent.toLowerCase();
+            
+            let show = true;
+            
+            // Status filter
+            if (status !== 'all' && rowStatus !== status) {
+                show = false;
+            }
+            
+            // Search filter
+            if (search && !text.includes(search)) {
+                show = false;
+            }
+            
+            if (show) {
+                row.style.display = '';
+                visibleCount++;
+                if (rowStatus in statusCounts) {
+                    statusCounts[rowStatus]++;
+                }
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        // Update counts
+        document.getElementById('pendingCount').textContent = statusCounts.pending;
+        document.getElementById('confirmedCount').textContent = statusCounts.confirmed + statusCounts.active;
+        document.getElementById('cancelledCount').textContent = statusCounts.cancelled;
+
+        // Show/hide no results
+        if (visibleCount === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+
+        // Update showing count
+        showingCount.textContent = `1-${Math.min(visibleCount, 6)}`;
+        totalCount.textContent = visibleCount;
+    }
+
+    // ── Event listeners ──
+    statusFilter.addEventListener('change', filterTable);
+    searchFilter.addEventListener('input', filterTable);
+    dateFilter.addEventListener('change', filterTable);
+
     // ── View booking details ──
     document.querySelectorAll('.btn-icon.view').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -443,12 +522,13 @@
                 const statusBadge = row.querySelector('.status-badge');
                 statusBadge.className = 'status-badge cancelled';
                 statusBadge.textContent = 'Cancelled';
-                // Remove action buttons except view
+                row.dataset.status = 'cancelled';
                 const actions = row.querySelector('.action-buttons');
                 actions.innerHTML = `
                     <button class="btn-icon view" title="View Details"><i class="fa-regular fa-eye"></i></button>
                 `;
                 alert('Booking cancelled! Customer has been notified.');
+                filterTable();
             }
         });
     });
@@ -461,7 +541,9 @@
                 const statusBadge = row.querySelector('.status-badge');
                 statusBadge.className = 'status-badge active';
                 statusBadge.textContent = 'Active';
+                row.dataset.status = 'active';
                 alert('Customer checked in successfully!');
+                filterTable();
             }
         });
     });
@@ -474,7 +556,9 @@
                 const statusBadge = row.querySelector('.status-badge');
                 statusBadge.className = 'status-badge completed';
                 statusBadge.textContent = 'Completed';
+                row.dataset.status = 'completed';
                 alert('Booking marked as completed!');
+                filterTable();
             }
         });
     });
@@ -486,5 +570,8 @@
             this.classList.add('active');
         });
     });
+
+    // ── Initial filter ──
+    filterTable();
 </script>
 @endpush

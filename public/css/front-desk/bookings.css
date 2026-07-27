@@ -632,3 +632,30 @@
 .btn-icon.complete:hover {
     background: #c7d2fe;
 }
+
+/* ── No Results ── */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.no-results i {
+    font-size: 48px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+.no-results h3 {
+    font-size: 20px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.no-results p {
+    font-size: 14px;
+    color: #6b7280;
+}
