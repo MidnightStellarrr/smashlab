@@ -123,7 +123,7 @@
         </div>
 
         <!-- ── Today's Classes ── -->
-        <div class="section-card">
+        <div class="section-card class">
             <div class="section-header">
                 <h2 class="section-title">
                     <i class="fa-solid fa-chalkboard-user"></i> Today's Classes
