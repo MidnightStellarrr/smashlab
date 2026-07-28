@@ -177,7 +177,6 @@
 }
 
 /* ── Class Card ── */
-/* ── Class Card ── */
 .class-card {
     background: white;
     border-radius: 16px;
@@ -254,12 +253,10 @@
     background: linear-gradient(90deg, #60a5fa, #93c5fd);
 }
 
-/* ── Keep the header border but make it subtle on hover ── */
 .class-card:hover .class-card-header {
     border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ── Check-in button on hover ── */
 .class-card:hover .btn-checkin {
     background: #3b82f6;
 }
@@ -268,7 +265,6 @@
     background: #2563eb;
 }
 
-/* ── Live/Upcoming/Completed status colors on hover ── */
 .class-card:hover.live .class-status { color: #4ade80; }
 .class-card:hover.upcoming .class-status { color: #fbbf24; }
 .class-card:hover.completed .class-status { color: #94a3b8; }
@@ -794,4 +790,403 @@
         gap: 10px;
         align-items: flex-start;
     }
+}
+
+/* ============================================
+   DARK MODE STYLES - CLASSES
+   ============================================ */
+
+/* ── Stats Cards Dark Mode ── */
+.dark .stat-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .stat-card .stat-value {
+    color: #ffffff;
+}
+
+.dark .stat-card .stat-change.neutral {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-label {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-icon {
+    border-color: #4b5563;
+    color: #9ca3af;
+}
+
+.dark .stat-card.blue .stat-icon { border-color: #4a7a9c; color: #4a7a9c; }
+.dark .stat-card.green .stat-icon { border-color: #34d399; color: #34d399; }
+.dark .stat-card.yellow .stat-icon { border-color: #fbbf24; color: #fbbf24; }
+.dark .stat-card.red .stat-icon { border-color: #f87171; color: #f87171; }
+
+.dark .stat-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Classes Actions Dark Mode ── */
+.dark .classes-actions {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .filter-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-input:focus {
+    border-color: #4a7a9c;
+    background: #0a1628;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-input::placeholder {
+    color: #6b7280;
+}
+
+.dark .filter-select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-select:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-group i {
+    color: #6b7280;
+}
+
+.dark .btn-secondary {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .btn-secondary:hover {
+    background: #0a1628;
+}
+
+/* ── Class Cards Dark Mode ── */
+.dark .class-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .class-card .class-card-header {
+    border-bottom-color: #2a3a5a;
+}
+
+.dark .class-card .class-status {
+    color: #9ca3af;
+}
+
+.dark .class-card .class-time {
+    color: #6b7280;
+}
+
+.dark .class-card .class-card-body h3 {
+    color: #ffffff;
+}
+
+.dark .class-card .class-meta {
+    color: #9ca3af;
+}
+
+.dark .class-card .class-meta i {
+    color: #6b7280;
+}
+
+.dark .class-card .attendance-header {
+    color: #9ca3af;
+}
+
+.dark .class-card .attendance-count {
+    color: #ffffff;
+}
+
+.dark .class-card .progress-bar {
+    background: #2a3a5a;
+}
+
+.dark .class-card .student-avatar {
+    background: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .class-card .student-avatar.checked-in {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .class-card .student-avatar.not-checked {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+.dark .class-card .btn-checkin {
+    background: #1f47d8;
+}
+
+.dark .class-card .btn-checkin:hover {
+    background: #2a5ae8;
+}
+
+.dark .class-card .class-reminder {
+    color: #fbbf24;
+}
+
+.dark .class-card .class-completed-badge {
+    color: #34d399;
+}
+
+/* ── Class Card Status Colors Dark Mode ── */
+.dark .class-card.live .class-status { color: #34d399; }
+.dark .class-card.upcoming .class-status { color: #fbbf24; }
+.dark .class-card.completed .class-status { color: #6b7280; }
+
+.dark .class-card .live-dot {
+    background: #34d399;
+}
+
+.dark .class-card .upcoming-dot {
+    background: #fbbf24;
+}
+
+.dark .class-card .completed-dot {
+    background: #6b7280;
+}
+
+/* ── Class Card Hover Dark Mode ── */
+.dark .class-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 100%);
+    border-color: #4a7a9c;
+}
+
+.dark .class-card:hover .class-card-body h3 {
+    color: #ffffff;
+}
+
+.dark .class-card:hover .class-meta {
+    color: #b0c4e8;
+}
+
+.dark .class-card:hover .class-meta i {
+    color: #60a5fa;
+}
+
+.dark .class-card:hover .attendance-header {
+    color: #b0c4e8;
+}
+
+.dark .class-card:hover .attendance-count {
+    color: #ffffff;
+}
+
+.dark .class-card:hover .class-time {
+    color: #b0c4e8;
+}
+
+.dark .class-card:hover .class-status {
+    color: #60a5fa;
+}
+
+.dark .class-card:hover .student-avatar {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.dark .class-card:hover .student-avatar.checked-in {
+    background: rgba(34, 197, 94, 0.25);
+    color: #4ade80;
+}
+
+.dark .class-card:hover .student-avatar.not-checked {
+    background: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+}
+
+.dark .class-card:hover .class-reminder {
+    color: #fbbf24;
+}
+
+.dark .class-card:hover .class-completed-badge {
+    color: #4ade80;
+}
+
+.dark .class-card:hover .progress-bar {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dark .class-card:hover .progress-fill {
+    background: linear-gradient(90deg, #60a5fa, #93c5fd);
+}
+
+.dark .class-card:hover .class-card-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .class-card:hover .btn-checkin {
+    background: #3b82f6;
+}
+
+.dark .class-card:hover .btn-checkin:hover {
+    background: #2563eb;
+}
+
+.dark .class-card:hover.live .class-status { color: #4ade80; }
+.dark .class-card:hover.upcoming .class-status { color: #fbbf24; }
+.dark .class-card:hover.completed .class-status { color: #94a3b8; }
+
+.dark .class-card:hover .live-dot {
+    background: #4ade80;
+}
+
+.dark .class-card:hover .upcoming-dot {
+    background: #fbbf24;
+}
+
+.dark .class-card:hover .completed-dot {
+    background: #94a3b8;
+}
+
+/* ── No Results Dark Mode ── */
+.dark .no-results {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .no-results h3 {
+    color: #ffffff;
+}
+
+.dark .no-results p {
+    color: #9ca3af;
+}
+
+.dark .no-results i {
+    color: #4b5563;
+}
+
+/* ── Modal Dark Mode ── */
+.dark .modal-container {
+    background: #111827;
+}
+
+.dark .modal-header {
+    border-color: #2a3a5a;
+}
+
+.dark .modal-header h2 {
+    color: #ffffff;
+}
+
+.dark .modal-close {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+.dark .modal-close:hover {
+    background: #2a3a5a;
+    color: #ffffff;
+}
+
+.dark .modal-actions {
+    border-color: #2a3a5a;
+}
+
+.dark .modal-btn.outline {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .modal-btn.outline:hover {
+    background: #0a1628;
+}
+
+.dark .modal-btn.primary {
+    background: #1f47d8;
+}
+
+.dark .modal-btn.primary:hover {
+    background: #2a5ae8;
+}
+
+/* ── Check-in Modal Dark Mode ── */
+.dark .checkin-info h3 {
+    color: #ffffff;
+}
+
+.dark .checkin-info p {
+    color: #9ca3af;
+}
+
+.dark .checkin-item {
+    background: #0a1628;
+}
+
+.dark .checkin-item:hover {
+    background: #1a2a4a;
+}
+
+.dark .checkin-label {
+    color: #d1d5db;
+}
+
+.dark .checkin-label input[type="checkbox"] {
+    accent-color: #4a7a9c;
+}
+
+/* ── View Class Modal Dark Mode ── */
+.dark .class-detail-status {
+    color: #9ca3af;
+}
+
+.dark .class-detail-header h3 {
+    color: #ffffff;
+}
+
+.dark .class-detail-meta {
+    color: #9ca3af;
+}
+
+.dark .class-detail-meta i {
+    color: #6b7280;
+}
+
+.dark .class-detail-attendance h4 {
+    color: #ffffff;
+}
+
+.dark .attendance-stat .stat-number {
+    color: #ffffff;
+}
+
+.dark .attendance-stat .stat-label {
+    color: #9ca3af;
+}
+
+.dark .class-detail-students h4 {
+    color: #ffffff;
+}
+
+.dark .student-list-item {
+    border-bottom-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .student-status.checked-in {
+    color: #34d399;
+}
+
+.dark .student-status.not-checked {
+    color: #6b7280;
 }
