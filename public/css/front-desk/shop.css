@@ -674,7 +674,6 @@ textarea.form-input {
     border-top: 1px solid #e5e7eb;
     background: white;
     border-radius: 0 0 20px 20px;
-    /* Remove position: sticky and bottom: 0 */
 }
 
 .modal-btn {
@@ -716,7 +715,7 @@ textarea.form-input {
 #rentalTime,
 #returnTime {
     width: 100%;
-    min-width: 100px; /* ← CHANGE THIS VALUE (e.g., 150px, 250px, 300px) */
+    min-width: 100px;
     padding: 10px 14px;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
@@ -738,12 +737,12 @@ textarea.form-input {
 
 #addRentalForm .form-row .form-group {
     width: 100%;
-    min-width: 0; /* Allow the group to shrink */
+    min-width: 0;
 }
 
 #addRentalForm .form-row .form-group input[type="datetime-local"] {
     width: 100%;
-    min-width: 0; /* Override the min-width to prevent overflow */
+    min-width: 0;
     max-width: 100%;
 }
 
@@ -828,6 +827,409 @@ textarea.form-input {
     }
     #rentalTime,
     #returnTime {
-        min-width: 100%; /* Full width on mobile */
+        min-width: 100%;
     }
+}
+
+/* ============================================
+   DARK MODE STYLES - SHOP
+   ============================================ */
+
+/* ── Stats Cards Dark Mode ── */
+.dark .stat-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .stat-card .stat-value {
+    color: #ffffff;
+}
+
+.dark .stat-card .stat-change.neutral {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-label {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-icon {
+    border-color: #4b5563;
+    color: #9ca3af;
+}
+
+.dark .stat-card.blue .stat-icon { border-color: #4a7a9c; color: #4a7a9c; }
+.dark .stat-card.green .stat-icon { border-color: #34d399; color: #34d399; }
+.dark .stat-card.yellow .stat-icon { border-color: #fbbf24; color: #fbbf24; }
+.dark .stat-card.red .stat-icon { border-color: #f87171; color: #f87171; }
+
+.dark .stat-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Shop Tabs Dark Mode ── */
+.dark .shop-tabs {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .shop-tab {
+    color: #9ca3af;
+}
+
+.dark .shop-tab:hover {
+    background: #0a1628;
+    color: #d1d5db;
+}
+
+.dark .shop-tab.active {
+    background: #1f47d8;
+    color: white;
+}
+
+/* ── Shop Actions Dark Mode ── */
+.dark .shop-actions {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .filter-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-input:focus {
+    border-color: #4a7a9c;
+    background: #0a1628;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-input::placeholder {
+    color: #6b7280;
+}
+
+.dark .filter-select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-select:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-group i {
+    color: #6b7280;
+}
+
+.dark .btn-primary {
+    background: #1f47d8;
+}
+
+.dark .btn-primary:hover {
+    background: #2a5ae8;
+}
+
+/* ── Shop Table Dark Mode ── */
+.dark .shop-table-wrapper {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .shop-table thead {
+    background: #0a1628;
+}
+
+.dark .shop-table th {
+    color: #9ca3af;
+}
+
+.dark .shop-table td {
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .shop-table tbody tr:hover {
+    background: #0a1628;
+}
+
+/* ── Product Info Dark Mode ── */
+.dark .product-name {
+    color: #ffffff;
+}
+
+.dark .product-sku {
+    color: #9ca3af;
+}
+
+.dark .product-image {
+    background: #0a1628;
+    border-color: #2a3a5a;
+}
+
+/* ── Category Badges Dark Mode ── */
+.dark .category-badge.gear {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .category-badge.snacks {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .category-badge.drinks {
+    background: #065f46;
+    color: #34d399;
+}
+
+/* ── Stock Badges Dark Mode ── */
+.dark .stock-badge.in-stock {
+    color: #34d399;
+}
+
+.dark .stock-badge.low-stock {
+    color: #fbbf24;
+}
+
+.dark .stock-badge.out-of-stock {
+    color: #f87171;
+}
+
+/* ── Status Badges Dark Mode ── */
+.dark .status-badge.in-stock {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .status-badge.low-stock {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .status-badge.out-of-stock {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+/* ── Gear Badge Dark Mode ── */
+.dark .gear-badge {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+/* ── Rental Status Dark Mode ── */
+.dark .rental-status.active {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .rental-status.overdue {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+.dark .rental-status.returned {
+    background: #065f46;
+    color: #34d399;
+}
+
+/* ── Rental Ref Dark Mode ── */
+.dark .rental-ref {
+    color: #4a7a9c;
+}
+
+/* ── Customer Info Dark Mode ── */
+.dark .customer-name {
+    color: #ffffff;
+}
+
+.dark .customer-phone {
+    color: #9ca3af;
+}
+
+/* ── Action Buttons Dark Mode ── */
+.dark .btn-icon.edit {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .btn-icon.edit:hover {
+    background: #92400e;
+}
+
+.dark .btn-icon.delete {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+.dark .btn-icon.delete:hover {
+    background: #991b1b;
+}
+
+.dark .btn-icon.view {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .btn-icon.view:hover {
+    background: #2a3a5a;
+}
+
+.dark .btn-icon.return {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .btn-icon.return:hover {
+    background: #0a7a5a;
+}
+
+/* ── No Results Dark Mode ── */
+.dark .no-results {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .no-results h3 {
+    color: #ffffff;
+}
+
+.dark .no-results p {
+    color: #9ca3af;
+}
+
+.dark .no-results i {
+    color: #4b5563;
+}
+
+/* ── Modal Dark Mode ── */
+.dark .modal-container {
+    background: #111827;
+}
+
+.dark .modal-header {
+    border-color: #2a3a5a;
+    background: #111827;
+}
+
+.dark .modal-header h2 {
+    color: #ffffff;
+}
+
+.dark .modal-close {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+.dark .modal-close:hover {
+    background: #2a3a5a;
+    color: #ffffff;
+}
+
+.dark .modal-body {
+    background: #111827;
+}
+
+.dark .modal-body::-webkit-scrollbar-track {
+    background: #1a2a4a;
+}
+
+.dark .modal-body::-webkit-scrollbar-thumb {
+    background: #2a3a5a;
+}
+
+.dark .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #3a4a6a;
+}
+
+.dark .modal-actions {
+    border-color: #2a3a5a;
+    background: #111827;
+}
+
+.dark .modal-btn.outline {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .modal-btn.outline:hover {
+    background: #0a1628;
+}
+
+.dark .modal-btn.primary {
+    background: #1f47d8;
+}
+
+.dark .modal-btn.primary:hover {
+    background: #2a5ae8;
+}
+
+/* ── Form Elements Dark Mode ── */
+.dark .form-group label {
+    color: #9ca3af;
+}
+
+.dark .form-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-input:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .form-input::placeholder {
+    color: #6b7280;
+}
+
+.dark .form-select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-select:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .form-select option {
+    background: #0a1628;
+}
+
+/* ── Rental Details Dark Mode ── */
+.dark .rental-details .detail-row {
+    border-color: #2a3a5a;
+}
+
+.dark .detail-label {
+    color: #9ca3af;
+}
+
+.dark .detail-value {
+    color: #ffffff;
+}
+
+/* ── Rental Time & Return Time Dark Mode ── */
+.dark #rentalTime,
+.dark #returnTime {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark #rentalTime:focus,
+.dark #returnTime:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark #rentalTime::-webkit-calendar-picker-indicator,
+.dark #returnTime::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
