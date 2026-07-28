@@ -897,3 +897,392 @@ textarea.form-input {
         width: 100%;
     }
 }
+
+/* ============================================
+   DARK MODE STYLES - CUSTOMERS
+   ============================================ */
+
+/* ── Stats Cards Dark Mode ── */
+.dark .stat-card {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .stat-card .stat-value {
+    color: #ffffff;
+}
+
+.dark .stat-card .stat-change.neutral {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-label {
+    color: #9ca3af;
+}
+
+.dark .stat-card .stat-icon {
+    border-color: #4b5563;
+    color: #9ca3af;
+}
+
+.dark .stat-card.blue .stat-icon { border-color: #4a7a9c; color: #4a7a9c; }
+.dark .stat-card.green .stat-icon { border-color: #34d399; color: #34d399; }
+.dark .stat-card.yellow .stat-icon { border-color: #fbbf24; color: #fbbf24; }
+.dark .stat-card.red .stat-icon { border-color: #f87171; color: #f87171; }
+
+.dark .stat-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Customers Actions Dark Mode ── */
+.dark .customers-actions {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .filter-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-input:focus {
+    border-color: #4a7a9c;
+    background: #0a1628;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-input::placeholder {
+    color: #6b7280;
+}
+
+.dark .filter-select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .filter-select:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .filter-group i {
+    color: #6b7280;
+}
+
+/* ── Customers Table Dark Mode ── */
+.dark .customers-table-wrapper {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .customers-table thead {
+    background: #0a1628;
+}
+
+.dark .customers-table th {
+    color: #9ca3af;
+}
+
+.dark .customers-table td {
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .customers-table tbody tr:hover {
+    background: #0a1628;
+}
+
+/* ── Customer Info Dark Mode ── */
+.dark .customer-avatar {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .customer-name {
+    color: #ffffff;
+}
+
+.dark .customer-since {
+    color: #9ca3af;
+}
+
+.dark .contact-info {
+    color: #d1d5db;
+}
+
+.dark .contact-info i {
+    color: #6b7280;
+}
+
+.dark .booking-count {
+    color: #4a7a9c;
+}
+
+/* ── Status Badges Dark Mode ── */
+.dark .status-badge.active {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .status-badge.inactive {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+/* ── Action Buttons Dark Mode ── */
+.dark .btn-icon.view {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .btn-icon.view:hover {
+    background: #2a3a5a;
+}
+
+.dark .btn-icon.edit {
+    background: #78350f;
+    color: #fbbf24;
+}
+
+.dark .btn-icon.edit:hover {
+    background: #92400e;
+}
+
+.dark .btn-icon.history {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .btn-icon.history:hover {
+    background: #2a3a5a;
+}
+
+/* ── Pagination Dark Mode ── */
+.dark .pagination-info {
+    color: #9ca3af;
+}
+
+.dark .page-btn {
+    background: #111827;
+    border-color: #2a3a5a;
+    color: #9ca3af;
+}
+
+.dark .page-btn:hover {
+    background: #0a1628;
+}
+
+.dark .page-btn.active {
+    background: #1f47d8;
+    color: white;
+    border-color: #1f47d8;
+}
+
+/* ── No Results Dark Mode ── */
+.dark .no-results {
+    background: #111827;
+    border-color: #212b40;
+}
+
+.dark .no-results h3 {
+    color: #ffffff;
+}
+
+.dark .no-results p {
+    color: #9ca3af;
+}
+
+.dark .no-results i {
+    color: #4b5563;
+}
+
+/* ── Modal Dark Mode ── */
+.dark .modal-container {
+    background: #111827;
+}
+
+.dark .modal-header {
+    border-color: #2a3a5a;
+}
+
+.dark .modal-header h2 {
+    color: #ffffff;
+}
+
+.dark .modal-close {
+    background: #1a2a4a;
+    color: #9ca3af;
+}
+
+.dark .modal-close:hover {
+    background: #2a3a5a;
+    color: #ffffff;
+}
+
+.dark .modal-actions {
+    border-color: #2a3a5a;
+}
+
+.dark .modal-btn.outline {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .modal-btn.outline:hover {
+    background: #0a1628;
+}
+
+.dark .modal-btn.primary {
+    background: #1f47d8;
+}
+
+.dark .modal-btn.primary:hover {
+    background: #2a5ae8;
+}
+
+/* ── Profile Dark Mode ── */
+.dark .profile-header {
+    border-color: #2a3a5a;
+}
+
+.dark .profile-avatar {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .profile-info h3 {
+    color: #ffffff;
+}
+
+.dark .profile-info p {
+    color: #9ca3af;
+}
+
+.dark .profile-details .detail-row {
+    border-color: #2a3a5a;
+}
+
+.dark .detail-label {
+    color: #9ca3af;
+}
+
+.dark .detail-value {
+    color: #ffffff;
+}
+
+/* ── History Dark Mode ── */
+.dark .history-customer {
+    border-color: #2a3a5a;
+}
+
+.dark .history-customer strong {
+    color: #ffffff;
+}
+
+.dark .history-count {
+    color: #9ca3af;
+}
+
+.dark .history-item {
+    background: #0a1628;
+}
+
+.dark .history-item:hover {
+    background: #1a2a4a;
+}
+
+.dark .history-title {
+    color: #ffffff;
+}
+
+.dark .history-meta {
+    color: #9ca3af;
+}
+
+.dark .history-status-text.confirmed {
+    background: #065f46;
+    color: #34d399;
+}
+
+.dark .history-status-text.completed {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .history-status-text.cancelled {
+    background: #7f1d1d;
+    color: #f87171;
+}
+
+/* ── Edit Modal Dark Mode ── */
+.dark .edit-avatar-section {
+    background: #0a1628;
+    border-color: #2a3a5a;
+}
+
+.dark .edit-avatar-preview {
+    background: #1a2a4a;
+    color: #4a7a9c;
+}
+
+.dark .edit-avatar-label {
+    color: #ffffff;
+}
+
+.dark .edit-avatar-hint {
+    color: #9ca3af;
+}
+
+.dark .modal-subtitle {
+    color: #9ca3af;
+}
+
+.dark .form-group label {
+    color: #9ca3af;
+}
+
+.dark .form-hint {
+    color: #6b7280;
+}
+
+.dark .form-input {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-input:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .form-input:disabled {
+    background: #1a2a4a;
+    color: #6b7280;
+}
+
+.dark .form-input::placeholder {
+    color: #6b7280;
+}
+
+.dark .form-select {
+    background: #0a1628;
+    border-color: #2a3a5a;
+    color: #d1d5db;
+}
+
+.dark .form-select:focus {
+    border-color: #4a7a9c;
+    box-shadow: 0 0 0 4px rgba(74, 122, 156, 0.15);
+}
+
+.dark .modal-actions .modal-btn.outline {
+    color: #9ca3af;
+    border-color: #2a3a5a;
+}
+
+.dark .modal-actions .modal-btn.outline:hover {
+    background: #0a1628;
+}
