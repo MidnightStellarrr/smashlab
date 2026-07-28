@@ -21,7 +21,7 @@
 
             <!-- Logo -->
             <div class="login-logo">
-                <img src="{{ asset('images/logo.png') }}" alt="SmashLab">
+                <img src="{{ asset('images/staff_logo.jpg') }}" alt="SmashLab">
                 <h1>WELCOME BACK!</h1>
                 <p>Front Desk Staff Login</p>
                 <span class="login-badge">Staff Only</span>
