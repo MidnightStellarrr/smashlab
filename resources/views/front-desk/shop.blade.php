@@ -73,35 +73,27 @@
     </div>
 </div>
 
-<!-- ── Tabs ── -->
-<div class="shop-tabs">
-    <button class="shop-tab active" data-tab="products">Products</button>
-    <button class="shop-tab" data-tab="rentals">Gear Rentals</button>
-</div>
-
 <!-- ============================================ -->
-<!-- PRODUCTS TAB -->
+<!-- PRODUCTS SECTION -->
 <!-- ============================================ -->
-<div class="shop-tab-content active" id="tab-products">
+<div class="shop-section" id="tab-products">
     
     <!-- ── Products Filters ── -->
     <div class="shop-actions">
         <div class="filters">
             <div class="filter-group">
-                <i class="fa-solid fa-search"></i>
-                <input type="text" class="filter-input" placeholder="Search products...">
-            </div>
-            <div class="filter-group">
                 <i class="fa-solid fa-filter"></i>
-                <select class="filter-select">
+                <select class="filter-select" id="productCategoryFilter">
                     <option value="all">All Categories</option>
                     <option value="gear">Gear</option>
                     <option value="snacks">Snacks</option>
                     <option value="drinks">Drinks</option>
                 </select>
             </div>
-        </div>
-        <div class="actions">
+            <div class="filter-group">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" class="filter-input" id="productSearch" placeholder="Search products...">
+            </div>
             <button class="btn-primary" id="addProductBtn">
                 <i class="fa-solid fa-plus"></i> Add Product
             </button>
@@ -121,12 +113,14 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="productsTableBody">
                 <!-- Product 1 -->
-                <tr>
+                <tr data-category="gear">
                     <td>
                         <div class="product-info">
-                            <div class="product-icon">🏸</div>
+                            <div class="product-image">
+                                <img src="{{ asset('images/products/racket.jpg') }}" alt="Premium Racket">
+                            </div>
                             <div>
                                 <div class="product-name">Premium Racket</div>
                                 <div class="product-sku">SKU: RKT-001</div>
@@ -141,17 +135,19 @@
                     <td><span class="status-badge in-stock">In Stock</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                            <button class="btn-icon edit" data-id="1" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" data-id="1" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Product 2 -->
-                <tr>
+                <tr data-category="gear">
                     <td>
                         <div class="product-info">
-                            <div class="product-icon">🏸</div>
+                            <div class="product-image">
+                                <img src="{{ asset('images/products/shuttlecocks.jpg') }}" alt="Shuttlecocks Tube">
+                            </div>
                             <div>
                                 <div class="product-name">Shuttlecocks Tube</div>
                                 <div class="product-sku">SKU: SHL-002</div>
@@ -166,17 +162,19 @@
                     <td><span class="status-badge low-stock">Low Stock</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                            <button class="btn-icon edit" data-id="2" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" data-id="2" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Product 3 -->
-                <tr>
+                <tr data-category="drinks">
                     <td>
                         <div class="product-info">
-                            <div class="product-icon">🥤</div>
+                            <div class="product-image">
+                                <img src="{{ asset('images/products/sports-drink.jpg') }}" alt="Sports Drink">
+                            </div>
                             <div>
                                 <div class="product-name">Sports Drink</div>
                                 <div class="product-sku">SKU: DRK-003</div>
@@ -191,17 +189,19 @@
                     <td><span class="status-badge in-stock">In Stock</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                            <button class="btn-icon edit" data-id="3" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" data-id="3" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Product 4 -->
-                <tr>
+                <tr data-category="snacks">
                     <td>
                         <div class="product-info">
-                            <div class="product-icon">🍫</div>
+                            <div class="product-image">
+                                <img src="{{ asset('images/products/energy-bar.jpg') }}" alt="Energy Bar">
+                            </div>
                             <div>
                                 <div class="product-name">Energy Bar</div>
                                 <div class="product-sku">SKU: SNK-004</div>
@@ -216,17 +216,19 @@
                     <td><span class="status-badge out-of-stock">Out of Stock</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                            <button class="btn-icon edit" data-id="4" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" data-id="4" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Product 5 -->
-                <tr>
+                <tr data-category="drinks">
                     <td>
                         <div class="product-info">
-                            <div class="product-icon">💧</div>
+                            <div class="product-image">
+                                <img src="{{ asset('images/products/water-bottle.jpg') }}" alt="Water Bottle">
+                            </div>
                             <div>
                                 <div class="product-name">Water Bottle</div>
                                 <div class="product-sku">SKU: DRK-005</div>
@@ -241,8 +243,8 @@
                     <td><span class="status-badge in-stock">In Stock</span></td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon edit" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn-icon delete" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                            <button class="btn-icon edit" data-id="5" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button class="btn-icon delete" data-id="5" title="Delete"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </td>
                 </tr>
@@ -252,28 +254,26 @@
 </div>
 
 <!-- ============================================ -->
-<!-- RENTALS TAB -->
+<!-- RENTALS SECTION -->
 <!-- ============================================ -->
-<div class="shop-tab-content" id="tab-rentals">
+<div class="shop-section" id="tab-rentals">
     
     <!-- ── Rentals Filters ── -->
     <div class="shop-actions">
         <div class="filters">
             <div class="filter-group">
                 <i class="fa-solid fa-search"></i>
-                <input type="text" class="filter-input" placeholder="Search rentals...">
+                <input type="text" class="filter-input" id="rentalSearch" placeholder="Search rentals...">
             </div>
             <div class="filter-group">
                 <i class="fa-solid fa-filter"></i>
-                <select class="filter-select">
+                <select class="filter-select" id="rentalStatusFilter">
                     <option value="all">All Status</option>
                     <option value="active">Active</option>
                     <option value="overdue">Overdue</option>
                     <option value="returned">Returned</option>
                 </select>
             </div>
-        </div>
-        <div class="actions">
             <button class="btn-primary" id="addRentalBtn">
                 <i class="fa-solid fa-plus"></i> New Rental
             </button>
@@ -294,9 +294,9 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="rentalsTableBody">
                 <!-- Rental 1 - Active -->
-                <tr>
+                <tr data-status="active">
                     <td><span class="rental-ref">#RNT-001</span></td>
                     <td>
                         <div class="customer-info">
@@ -317,7 +317,7 @@
                 </tr>
 
                 <!-- Rental 2 - Overdue -->
-                <tr>
+                <tr data-status="overdue">
                     <td><span class="rental-ref">#RNT-002</span></td>
                     <td>
                         <div class="customer-info">
@@ -338,7 +338,7 @@
                 </tr>
 
                 <!-- Rental 3 - Active -->
-                <tr>
+                <tr data-status="active">
                     <td><span class="rental-ref">#RNT-003</span></td>
                     <td>
                         <div class="customer-info">
@@ -359,7 +359,7 @@
                 </tr>
 
                 <!-- Rental 4 - Returned -->
-                <tr>
+                <tr data-status="returned">
                     <td><span class="rental-ref">#RNT-004</span></td>
                     <td>
                         <div class="customer-info">
@@ -379,7 +379,7 @@
                 </tr>
 
                 <!-- Rental 5 - Overdue -->
-                <tr>
+                <tr data-status="overdue">
                     <td><span class="rental-ref">#RNT-005</span></td>
                     <td>
                         <div class="customer-info">
@@ -410,46 +410,55 @@
     <p>Try adjusting your search or filter.</p>
 </div>
 
-<!-- ── Add Product Modal ── -->
+<!-- ── Add/Edit Product Modal ── -->
 <div id="addProductModal" class="shop-modal" style="display: none;">
     <div class="modal-overlay" id="addProductOverlay"></div>
     <div class="modal-container" style="max-width: 500px;">
         <div class="modal-header">
-            <h2>Add Product</h2>
+            <h2 id="productModalTitle">Add Product</h2>
             <button class="modal-close" id="addProductClose">&times;</button>
         </div>
         <div class="modal-body">
             <form id="addProductForm">
+                <input type="hidden" id="editProductId" value="">
                 <div class="form-group">
                     <label>Product Name <span class="required">*</span></label>
-                    <input type="text" class="form-input" placeholder="Enter product name" required>
+                    <input type="text" class="form-input" id="productName" placeholder="Enter product name" required>
                 </div>
                 <div class="form-group">
                     <label>Category <span class="required">*</span></label>
-                    <select class="form-select" required>
+                    <select class="form-select" id="productCategory" required>
                         <option value="">Select Category</option>
                         <option value="gear">Gear</option>
                         <option value="snacks">Snacks</option>
                         <option value="drinks">Drinks</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <input type="file" class="form-input" id="productImage" accept="image/*">
+                </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Price <span class="required">*</span></label>
-                        <input type="number" class="form-input" placeholder="0.00" required>
+                        <input type="number" class="form-input" id="productPrice" placeholder="0.00" required>
                     </div>
                     <div class="form-group">
                         <label>Stock <span class="required">*</span></label>
-                        <input type="number" class="form-input" placeholder="0" required>
+                        <input type="number" class="form-input" id="productStock" placeholder="0" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>SKU (Optional)</label>
-                    <input type="text" class="form-input" placeholder="Enter SKU">
+                    <input type="text" class="form-input" id="productSku" placeholder="Enter SKU">
+                </div>
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea class="form-input" id="productNotes" rows="3" placeholder="Enter any notes about this product (e.g., supplier, storage location, special instructions, etc.)"></textarea>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="modal-btn outline" id="addProductCancel">Cancel</button>
-                    <button type="submit" class="modal-btn primary">
+                    <button type="submit" class="modal-btn primary" id="productSubmitBtn">
                         <i class="fa-solid fa-plus"></i> Add Product
                     </button>
                 </div>
@@ -461,20 +470,20 @@
 <!-- ── Add Rental Modal ── -->
 <div id="addRentalModal" class="shop-modal" style="display: none;">
     <div class="modal-overlay" id="addRentalOverlay"></div>
-    <div class="modal-container" style="max-width: 500px;">
+    <div class="modal-container" style="max-width: 500px; max-height: auto; overflow: visible;">
         <div class="modal-header">
             <h2>New Rental</h2>
             <button class="modal-close" id="addRentalClose">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="max-height: none; overflow: visible; padding-bottom: 0;">
             <form id="addRentalForm">
                 <div class="form-group">
                     <label>Customer <span class="required">*</span></label>
-                    <input type="text" class="form-input" placeholder="Search or enter customer name" required>
+                    <input type="text" class="form-input" id="rentalCustomer" placeholder="Search or enter customer name" required>
                 </div>
                 <div class="form-group">
                     <label>Gear <span class="required">*</span></label>
-                    <select class="form-select" required>
+                    <select class="form-select" id="rentalGear" required>
                         <option value="">Select Gear</option>
                         <option value="racket">Racket</option>
                         <option value="shuttlecocks">Shuttlecocks</option>
@@ -484,16 +493,16 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Rental Time <span class="required">*</span></label>
-                        <input type="datetime-local" class="form-input" required>
+                        <input type="datetime-local" class="form-input" id="rentalTime" required>
                     </div>
                     <div class="form-group">
                         <label>Return Time <span class="required">*</span></label>
-                        <input type="datetime-local" class="form-input" required>
+                        <input type="datetime-local" class="form-input" id="returnTime" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Notes (Optional)</label>
-                    <textarea class="form-input" rows="2" placeholder="Any notes about this rental..."></textarea>
+                    <textarea class="form-input" id="rentalNotes" rows="2" placeholder="Any notes about this rental..."></textarea>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="modal-btn outline" id="addRentalCancel">Cancel</button>
@@ -559,20 +568,13 @@
 
 @push('scripts')
 <script>
-    // ── Tab switching ──
-    document.querySelectorAll('.shop-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.shop-tab-content').forEach(c => c.classList.remove('active'));
-            
-            this.classList.add('active');
-            const tabId = this.dataset.tab;
-            document.getElementById(`tab-${tabId}`).classList.add('active');
-        });
-    });
-
     // ── Add Product Modal ──
     document.getElementById('addProductBtn').addEventListener('click', function() {
+        // Reset form for adding new product
+        document.getElementById('editProductId').value = '';
+        document.getElementById('productModalTitle').textContent = 'Add Product';
+        document.getElementById('productSubmitBtn').innerHTML = '<i class="fa-solid fa-plus"></i> Add Product';
+        document.getElementById('addProductForm').reset();
         document.getElementById('addProductModal').style.display = 'flex';
         document.body.style.overflow = 'hidden';
     });
@@ -589,8 +591,63 @@
 
     document.getElementById('addProductForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Product added successfully!');
+        const productId = document.getElementById('editProductId').value;
+        const name = document.getElementById('productName').value;
+        const category = document.getElementById('productCategory').value;
+        const price = document.getElementById('productPrice').value;
+        const stock = document.getElementById('productStock').value;
+        const sku = document.getElementById('productSku').value;
+        const notes = document.getElementById('productNotes').value;
+        
+        if (productId) {
+            alert(`✅ Product "${name}" updated successfully!\n\n📦 Category: ${category}\n💰 Price: ₱${price}\n📊 Stock: ${stock}\n📝 Notes: ${notes || 'None'}`);
+        } else {
+            alert(`✅ Product "${name}" added successfully!\n\n📦 Category: ${category}\n💰 Price: ₱${price}\n📊 Stock: ${stock}\n📝 Notes: ${notes || 'None'}`);
+        }
         closeAddProduct();
+    });
+
+    // ── Edit Product ──
+    document.querySelectorAll('#productsTableBody .btn-icon.edit').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const productId = this.dataset.id;
+            
+            // Get product data from the row
+            const name = row.querySelector('.product-name')?.textContent || '';
+            const sku = row.querySelector('.product-sku')?.textContent?.replace('SKU: ', '') || '';
+            const category = row.querySelector('.category-badge')?.textContent?.toLowerCase() || '';
+            const price = row.querySelector('td:nth-child(3)')?.textContent?.replace('₱', '') || '';
+            const stock = row.querySelector('.stock-badge')?.textContent || '';
+            
+            // Fill the form with existing data
+            document.getElementById('editProductId').value = productId;
+            document.getElementById('productModalTitle').textContent = 'Edit Product';
+            document.getElementById('productSubmitBtn').innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Update Product';
+            document.getElementById('productName').value = name.trim();
+            document.getElementById('productCategory').value = category;
+            document.getElementById('productPrice').value = parseFloat(price) || '';
+            document.getElementById('productStock').value = parseInt(stock) || '';
+            document.getElementById('productSku').value = sku.trim();
+            document.getElementById('productNotes').value = ''; // Clear notes field for edit
+            
+            // Open modal
+            document.getElementById('addProductModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // ── Delete product ──
+    document.querySelectorAll('#productsTableBody .btn-icon.delete').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const name = row.querySelector('.product-name')?.textContent || 'this product';
+            if (confirm(`Delete "${name}"?`)) {
+                row.remove();
+                alert('Product deleted successfully!');
+                filterTables();
+            }
+        });
     });
 
     // ── Add Rental Modal ──
@@ -616,7 +673,7 @@
     });
 
     // ── View Rental Modal ──
-    document.querySelectorAll('.btn-icon.view').forEach(btn => {
+    document.querySelectorAll('#rentalsTableBody .btn-icon.view').forEach(btn => {
         btn.addEventListener('click', function() {
             document.getElementById('viewRentalModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -640,7 +697,7 @@
     });
 
     // ── Return rental (from table) ──
-    document.querySelectorAll('.btn-icon.return').forEach(btn => {
+    document.querySelectorAll('#rentalsTableBody .btn-icon.return').forEach(btn => {
         btn.addEventListener('click', function() {
             if (confirm('Return this gear?')) {
                 const row = this.closest('tr');
@@ -652,40 +709,65 @@
         });
     });
 
-    // ── Edit product ──
-    document.querySelectorAll('.btn-icon.edit').forEach(btn => {
-        btn.addEventListener('click', function() {
-            alert('Edit product form would open here.');
-        });
-    });
-
-    // ── Delete product ──
-    document.querySelectorAll('.btn-icon.delete').forEach(btn => {
-        btn.addEventListener('click', function() {
-            if (confirm('Delete this product?')) {
-                this.closest('tr').remove();
-                alert('Product deleted!');
-            }
-        });
-    });
-
     // ── Filter functionality ──
-    const filters = document.querySelectorAll('.filter-input, .filter-select');
+    const productSearch = document.getElementById('productSearch');
+    const productCategoryFilter = document.getElementById('productCategoryFilter');
+    const rentalSearch = document.getElementById('rentalSearch');
+    const rentalStatusFilter = document.getElementById('rentalStatusFilter');
     const noResults = document.getElementById('noResults');
 
     function filterTables() {
-        const activeTab = document.querySelector('.shop-tab-content.active');
-        const rows = activeTab.querySelectorAll('tbody tr');
-        const search = activeTab.querySelector('.filter-input')?.value.toLowerCase().trim() || '';
-        const status = activeTab.querySelector('.filter-select')?.value || 'all';
+        // Check which section is visible
+        const productsSection = document.getElementById('tab-products');
+        const rentalsSection = document.getElementById('tab-rentals');
+        
+        // Determine which section is visible (both are visible, but we check if they have display none)
+        let isProducts = true;
+        if (productsSection.style.display === 'none') {
+            isProducts = false;
+        }
+        
+        const rows = isProducts 
+            ? document.querySelectorAll('#productsTableBody tr')
+            : document.querySelectorAll('#rentalsTableBody tr');
+        
+        let search = '';
+        let categoryFilter = 'all';
+        let statusFilter = 'all';
+        
+        if (isProducts) {
+            search = productSearch?.value.toLowerCase().trim() || '';
+            categoryFilter = productCategoryFilter?.value || 'all';
+        } else {
+            search = rentalSearch?.value.toLowerCase().trim() || '';
+            statusFilter = rentalStatusFilter?.value || 'all';
+        }
+        
         let visibleCount = 0;
 
         rows.forEach(row => {
             const text = row.textContent.toLowerCase();
             let show = true;
             
+            // Search filter
             if (search && !text.includes(search)) {
                 show = false;
+            }
+            
+            // Category filter for products
+            if (isProducts && categoryFilter !== 'all') {
+                const rowCategory = row.dataset.category || '';
+                if (rowCategory !== categoryFilter) {
+                    show = false;
+                }
+            }
+            
+            // Status filter for rentals
+            if (!isProducts && statusFilter !== 'all') {
+                const rowStatus = row.dataset.status || '';
+                if (rowStatus !== statusFilter) {
+                    show = false;
+                }
             }
             
             if (show) {
@@ -696,13 +778,21 @@
             }
         });
 
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        // Show/hide no results
+        if (visibleCount === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
     }
 
-    document.querySelectorAll('.filter-input, .filter-select').forEach(input => {
-        input.addEventListener('input', filterTables);
-        input.addEventListener('change', filterTables);
-    });
+    // Add event listeners for product filters
+    if (productSearch) productSearch.addEventListener('input', filterTables);
+    if (productCategoryFilter) productCategoryFilter.addEventListener('change', filterTables);
+    
+    // Add event listeners for rental filters
+    if (rentalSearch) rentalSearch.addEventListener('input', filterTables);
+    if (rentalStatusFilter) rentalStatusFilter.addEventListener('change', filterTables);
 
     // ── Initial filter ──
     setTimeout(filterTables, 100);

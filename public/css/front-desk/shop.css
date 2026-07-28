@@ -152,7 +152,7 @@
     background: #f9fafb;
     outline: none;
     transition: all 0.3s ease;
-    min-width: 200px;
+    min-width: 837px;
 }
 
 .filter-input:focus {
@@ -265,6 +265,23 @@
 .product-sku {
     font-size: 12px;
     color: #6b7280;
+}
+
+/* ── Product Image ── */
+.product-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ── Category Badges ── */
@@ -489,32 +506,38 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
 
+.shop-modal[style*="display: flex"] {
+    display: flex !important;
+}
+
 .modal-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
+    z-index: 0;
 }
 
 .modal-container {
     position: relative;
     background: white;
     border-radius: 20px;
-    max-width: 600px;
+    max-width: 500px;
     width: 90%;
     max-height: 90vh;
-    overflow-y: auto;
+    overflow: hidden;
     box-shadow: 0 25px 60px rgba(0,0,0,0.3);
     z-index: 1;
     animation: modalSlideUp 0.3s ease;
+    margin: 0 auto;
 }
 
 .modal-header {
@@ -523,6 +546,11 @@
     align-items: center;
     padding: 20px 24px;
     border-bottom: 1px solid #e5e7eb;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-radius: 20px 20px 0 0;
 }
 
 .modal-header h2 {
@@ -542,6 +570,7 @@
     cursor: pointer;
     color: #6b7280;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .modal-close:hover {
@@ -551,6 +580,27 @@
 
 .modal-body {
     padding: 24px;
+    overflow-y: auto;
+    max-height: calc(90vh - 140px);
+    border-radius: 0 !important;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #c1c7cd;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #a0a7ae;
 }
 
 .form-group {
@@ -585,6 +635,7 @@
     transition: all 0.3s ease;
     outline: none;
     background: white;
+    box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -602,6 +653,7 @@
     outline: none;
     background: white;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .form-select:focus {
@@ -618,8 +670,11 @@ textarea.form-input {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding-top: 16px;
+    padding: 16px 24px 20px;
     border-top: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    /* Remove position: sticky and bottom: 0 */
 }
 
 .modal-btn {
@@ -640,6 +695,8 @@ textarea.form-input {
 
 .modal-btn.primary:hover {
     background: #1a3ab8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 71, 216, 0.3);
 }
 
 .modal-btn.outline {
@@ -650,6 +707,50 @@ textarea.form-input {
 
 .modal-btn.outline:hover {
     background: #f3f4f6;
+}
+
+/* ============================================
+   ═══ RENTAL TIME & RETURN TIME WIDTH CONTROL ═══
+   EDIT THE min-width VALUE BELOW TO CHANGE WIDTH
+   ============================================ */
+#rentalTime,
+#returnTime {
+    width: 100%;
+    min-width: 100px; /* ← CHANGE THIS VALUE (e.g., 150px, 250px, 300px) */
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+    background: white;
+    box-sizing: border-box;
+}
+
+/* Force datetime inputs to fit within modal */
+#addRentalForm .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+#addRentalForm .form-row .form-group {
+    width: 100%;
+    min-width: 0; /* Allow the group to shrink */
+}
+
+#addRentalForm .form-row .form-group input[type="datetime-local"] {
+    width: 100%;
+    min-width: 0; /* Override the min-width to prevent overflow */
+    max-width: 100%;
+}
+
+#rentalTime:focus,
+#returnTime:focus {
+    border-color: #1f47d8;
+    box-shadow: 0 0 0 4px rgba(31, 71, 216, 0.08);
 }
 
 /* ── Rental Details ── */
@@ -724,5 +825,9 @@ textarea.form-input {
     }
     .form-row {
         grid-template-columns: 1fr;
+    }
+    #rentalTime,
+    #returnTime {
+        min-width: 100%; /* Full width on mobile */
     }
 }
