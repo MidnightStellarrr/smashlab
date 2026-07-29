@@ -5,6 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// ============================================
+// USER ROUTES (Public)
+// ============================================
 Route::get('/', function () {
     return view('user.app'); 
 });
@@ -53,7 +56,9 @@ Route::get('/cart', function () {
     return view('user.cart');
 })->name('cart');
 
-
+// ============================================
+// AUTHENTICATED USER ROUTES
+// ============================================
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -80,14 +85,16 @@ Route::middleware('auth')->group(function () {
     })->name('myclasses');
 });
 
-// Front Desk Routes
+// ============================================
+// FRONT DESK ROUTES
+// ============================================
 Route::prefix('frontdesk')->name('frontdesk.')->group(function () {
-    // Login
+    // Guest routes (not logged in)
     Route::get('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'login'])->name('login.post');
     Route::post('/logout', [App\Http\Controllers\Frontdesk\AuthController::class, 'logout'])->name('logout');
 
-    // Protected Routes
+    // Protected routes (logged in)
     Route::middleware('auth:frontdesk')->group(function () {
         Route::get('/dashboard', [App\Http\Controllers\Frontdesk\DashboardController::class, 'index'])->name('dashboard');
         Route::get('/bookings', [App\Http\Controllers\Frontdesk\BookingController::class, 'index'])->name('bookings');
@@ -97,15 +104,19 @@ Route::prefix('frontdesk')->name('frontdesk.')->group(function () {
     });
 });
 
-// Front Desk Routes (separate from user routes)
-Route::prefix('frontdesk')->name('frontdesk.')->group(function () {
-    Route::get('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [App\Http\Controllers\Frontdesk\AuthController::class, 'login'])->name('login.post');
-    Route::post('/logout', [App\Http\Controllers\Frontdesk\AuthController::class, 'logout'])->name('logout');
+// ============================================
+// ADMIN ROUTES
+// ============================================
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Guest routes (not logged in)
+    Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
 
-    Route::middleware('auth:frontdesk')->group(function () {
-        Route::get('/dashboard', [App\Http\Controllers\Frontdesk\DashboardController::class, 'index'])->name('dashboard');
-        // ... other routes
+    // Protected routes (logged in)
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        // Add other admin routes here
     });
 });
 

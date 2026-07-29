@@ -33,6 +33,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if ($request->input('guard') === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+        
+        // Check if frontdesk guard was used
+        if ($request->input('guard') === 'frontdesk') {
+            return redirect()->route('frontdesk.dashboard');
+        }
+
+        // Default redirect for regular users
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

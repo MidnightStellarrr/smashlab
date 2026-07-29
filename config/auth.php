@@ -9,7 +9,6 @@ return [
     | Authentication Defaults
     |--------------------------------------------------------------------------
     */
-
     'defaults' => [
         'guard' => env('AUTH_GUARD', 'web'),
         'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
@@ -20,16 +19,20 @@ return [
     | Authentication Guards
     |--------------------------------------------------------------------------
     */
-
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        // ✅ ADD THIS - Frontdesk Guard
+        // ✅ Frontdesk Guard
         'frontdesk' => [
             'driver' => 'session',
             'provider' => 'frontdesk_users',
+        ],
+        // ✅ Admin Guard
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin_users',
         ],
     ],
 
@@ -38,16 +41,20 @@ return [
     | User Providers
     |--------------------------------------------------------------------------
     */
-
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
         ],
-        // ✅ ADD THIS - Frontdesk User Provider
+        // ✅ Frontdesk User Provider
         'frontdesk_users' => [
             'driver' => 'eloquent',
             'model' => App\Models\FrontdeskUser::class,
+        ],
+        // ✅ Admin User Provider
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminUser::class,
         ],
     ],
 
@@ -56,7 +63,6 @@ return [
     | Resetting Passwords
     |--------------------------------------------------------------------------
     */
-
     'passwords' => [
         'users' => [
             'provider' => 'users',
@@ -64,10 +70,17 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        // ✅ OPTIONAL - Add if you want password reset for frontdesk
+        // ✅ Optional - For frontdesk password reset
         'frontdesk_users' => [
             'provider' => 'frontdesk_users',
             'table' => 'frontdesk_password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        // ✅ Optional - For admin password reset
+        'admin_users' => [
+            'provider' => 'admin_users',
+            'table' => 'admin_password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
         ],
@@ -78,7 +91,6 @@ return [
     | Password Confirmation Timeout
     |--------------------------------------------------------------------------
     */
-
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
 ];
